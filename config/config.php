@@ -4,6 +4,8 @@
 /// config/config.php
 // Configuracion global del sistema - Etapa Local
 
+// Ruta absoluta o relativa para el archivo de log de errores PHP
+ini_set('error_log', __DIR__ . '/../logs/access.log');
 
 //Entorno y errores 
 date_default_timezone_set('America/Mexico_City');
