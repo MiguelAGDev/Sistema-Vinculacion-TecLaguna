@@ -1,23 +1,13 @@
 <?php
-//ruta donde se encuentra el wallet de nuestra base de datos
-putenv("TNS_ADMIN=C:\\Conexiones\\Oracle\\Wallet_VinculacionInstitutoTecDeLaLag\\Wallet_VinculacionInstitutoTecDeLaLag");
+require_once __DIR__ . '/../config/config.php';
 
+putenv("TNS_ADMIN=" . ORACLE_TNS_ADMIN);
 
-//credenciales
-$usuario = "ADMIN"; 
-$contrasena = "Abc123456789___"; 
-$service_name="vinculacioninstitutotecdelalag_high";
-
-//se ejecuta la conexion y se pasan por parametros los datos 
-$conn = oci_connect($usuario, $contrasena, $service_name);
-//si resulta fallida nos marca un error
+$conn = oci_connect(ORACLE_USER, ORACLE_PASSWORD, ORACLE_SERVICE_NAME);
 if (!$conn) {
     $e = oci_error();
-    echo "Ha surgido un error en la conexión: " . $e['message'];
+    echo "Error en conexión: " . $e['message'];
 } else {
-//si no nos muestra este msj    
-    echo "La conexión se realizó con éxito";
+    echo "Conexión exitosa";
     oci_close($conn);
 }
-
-?>
