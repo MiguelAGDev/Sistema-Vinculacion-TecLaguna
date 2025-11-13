@@ -10,11 +10,11 @@ function mostrarCampos() {
   camposEgresado.style.display = "none";
 
   // Mostramos según el tipo seleccionado
-  if (tipo === "alumno") {
+  if (tipo === "1") {
     camposAlumno.style.display = "block";
-  } else if (tipo === "residente") {
+  } else if (tipo === "2") {
     camposResidente.style.display = "block";
-  }else if(tipo === "egresado") {
+  }else if(tipo === "3") {
     camposEgresado.style.display = "block";
 }
 }

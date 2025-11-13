@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Usuario</title>
 
-  <!-- Estilos -->
+  <!-- Estilos globales -->
   <link rel="stylesheet" href="../../assets/css/global.css">
-  <link rel="stylesheet" href="../../assets/css/usuarios.css">
+
+  <!-- Estilos del formulario -->
+  <link rel="stylesheet" href="../../assets/css/agregarUsuarios.css">
 </head>
 <body>
   <?php 
@@ -20,7 +22,7 @@
     <section class="form-container">
       <h1>Registrar Usuario</h1>
 
-      <form action="" method="post">
+      <form action="" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre" placeholder="Nombre completo" required>
 
@@ -30,11 +32,11 @@
         <label for="telefono">Teléfono</label>
         <input type="tel" id="telefono" name="telefono" placeholder="Ej. 8711234567" required>
 
-         <label for="telefono">Contraseña</label>
-        <input type="password" id="contraseña" name="contraseña" placeholder="" required>
+        <label for="telefono">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" placeholder="" required>
         
         <label for="carrera">Carrera</label>
-        <select id="carrera" name="carrera" required>
+        <select id="carrera" name="carrera" >
           <option value="">Seleccione una carrera</option>
           <option value="1">Licenciatura en Administración</option>
           <option value="2">Ingeniería en Eléctrica</option>
@@ -51,16 +53,17 @@
         <label for="tipo">Tipo de Usuario</label>
         <select id="tipo" name="tipo" required onchange="mostrarCampos()">
           <option value="">Seleccione un tipo</option>
-          <option value="alumno">Alumno</option>
-          <option value="residente">Residente</option>
-          <option value="egresado">Egresado</option>
-          <option value="empresa">Empresa</option>
+          <option value="1">Alumno</option>
+          <option value="2">Residente</option>
+          <option value="3">Egresado</option>
+          <option value="4">Empresa</option>
         </select>
-
-        <!-- Campos Alumno -->
-        <div id="alumno" style="display: none;">
+       
+         <!-- Campos Alumno -->
+        <div id="alumno" style="display: none;" >
           <label>Matricula</label>
           <input type="text" id="matricula" name="matricula" placeholder="Matrícula">
+
           <label>Semestre</label>
           <input type="text" id="semestre" name="semestre" placeholder="Ej. Ago-Dic 2024">
         </div>
@@ -68,48 +71,52 @@
         <!-- Campos Residente -->
         <div id="residente" style="display: none;">
           <label>Proyecto</label>
-          <input type="text" id="proyecto" name="proyecto" placeholder="Proyecto">
+          <input type="file" name="archivo" id="archivo">
+          <input type="submit" value="Subir archivo">
+
+          <!-- <input type="text" id="proyecto" name="proyecto" placeholder="Proyecto"> -->
+
           <label for="carrera">Carrera</label>
-        <select id="asesor" name="asesor" required>
-          <option value="">Seleccione un asesor</option>
-          <option value="1">Asesor 1</option>
-          <option value="2">Asesor 2</option>
-          <option value="3">Asesor 3</option>
-          <option value="4">Asesor 4</option>
-          <option value="5">Asesor 5</option>
-          <option value="6">Asesor 6</option>
-          <option value="7">Asesor 7</option>
-        </select>
-         <select id="asesor" name="asesor" required>
-          <option value="">Seleccione una empresa</option>
-          <option value="1">Empresa 1</option>
-          <option value="2">Empresa 2</option>
-          <option value="3">Empresa 3</option>
-          <option value="4">Empresa 4</option>
-          <option value="5">Empresa 5</option>
-          <option value="6">Empresa 6</option>
-          <option value="7">Empresa 7</option>
-        </select>
+          <select id="asesor" name="asesor" >
+            <option value="">Seleccione un asesor</option>
+            <option value="1">Asesor 1</option>
+            <option value="2">Asesor 2</option>
+            <option value="3">Asesor 3</option>
+            <option value="4">Asesor 4</option>
+            <option value="5">Asesor 5</option>
+            <option value="6">Asesor 6</option>
+            <option value="7">Asesor 7</option>
+          </select>
+
+          <label for="empresa">Empresa</label>
+          <select id="empresa" name="empresa" >
+            <option value="">Seleccione una empresa</option>
+            <option value="1">Empresa 1</option>
+            <option value="2">Empresa 2</option>
+            <option value="3">Empresa 3</option>
+            <option value="4">Empresa 4</option>
+            <option value="5">Empresa 5</option>
+            <option value="6">Empresa 6</option>
+            <option value="7">Empresa 7</option>
+          </select>
         </div>
 
         <!-- Campos Egresado -->
         <div id="egresado" style="display: none;">
           <label>Año de Egreso</label>
-          <input type="text" id="año_egreso" name="año_egreso" placeholder="Ej. 2025">
+          <input type="text" id="anio_egreso" name="anio_egreso" pattern="\d{4}"placeholder="Ej. 2025">
+
           <label>Empleo</label>
           <input type="text" id="empleo" name="empleo" placeholder="Empleo">
         </div>
+          <button type="submit">Registrar</button>
+          <?php $controlador->insertarUsuario(); ?>  
 
-        <button type="submit" >Registrar</button>
-        <?php $controlador->insertarUsuario();?>
-      </form>
+      </form>           
     </section>
   </main>
-
-  <?php require_once __DIR__.'/../includes/footer.php'; ?>
-
+    <?php require_once __DIR__.'/../includes/footer.php'; ?>
   <!-- Script -->
   <script src="../../assets/js/agregarUsuarios.js"></script>
 </body>
 </html>
-

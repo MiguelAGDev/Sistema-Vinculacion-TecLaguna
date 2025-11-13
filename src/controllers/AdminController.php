@@ -22,40 +22,32 @@ class adminController{
 
     return $html;
     }
-    public function insertarUsuario() {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        
+
+  public function insertarUsuario (){
+    if($_SERVER ['REQUEST_METHOD']==='POST'){
         $nombre = $_POST['nombre'];
-        $correo = $_POST['correo'];
-        $telefono = $_POST['telefono'];
-        $contrasena = $_POST['contrasena'] ?? 'default123';
-        $tipo = $_POST['tipo'];
-        $carrera = $_POST['carrera'];
+        $correo = $_POST ['correo'];
+        $telefono = $_POST ['telefono'];
+        $contrasena = $_POST ['contrasena'] ?? 'default123';
+        $tipo = $_POST ['tipo'];
+        $carrera = $_POST ['carrera'];
 
-        $extra = [];
-        if ($tipo === 'alumno') {
-            $extra['matricula'] = $_POST['matricula'];
-            $extra['semestre'] = $_POST['semestre'];
-        } elseif ($tipo === 'residente') {
-            $extra['proyecto'] = $_POST['proyecto'];
-            $extra['asesor'] = $_POST['asesor'];
-            $extra['empresa'] = $_POST['empresa'];
-        } elseif ($tipo === 'egresado') {
-            $extra['anio_egreso'] = $_POST['año_egreso'];
-            $extra['empleo'] = $_POST['empleo'];
-        }
-
-        $id = $this->adminModel->crearUsuario(
-            $nombre, $correo, $telefono, $contrasena,
-            ucfirst($tipo), $carrera, $extra
-        );
-
-        if ($id) {
-            echo "<script>alert('Usuario creado con ID $id');</script>";
-        } 
-    
-        
+        $datosExtra = [];
+      
+       if($tipo === '1'){
+            $datosExtra['matricula'] = $_POST['matricula'];
+            $datosExtra['semestre'] = $_POST['semestre'];
+       }else if($tipo === '2'){
+            $datosExtra['proyecto'] = file_get_contents($_FILES ['archivo']['tmp_name']);
+            $datosExtra['asesor'] = $_POST['asesor'];
+            $datosExtra['empresa'] = $_POST['empresa'];
+       }else if ($tipo === '3'){
+            $datosExtra['anio_egreso'] = $_POST['anio_egreso'];
+            $datosExtra['empleo'] = $_POST['empleo'];
+       }
+        $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
     }
-}
+
+  }
 }
 ?>

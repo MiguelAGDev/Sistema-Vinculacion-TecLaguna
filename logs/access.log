@@ -289,3 +289,207 @@ Stack trace:
 #3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(16): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[11-Nov-2025 11:53:01 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 11:53:36 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033253) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 107
+[11-Nov-2025 11:56:45 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;USUARIO&quot;.&quot;ID_TIPO_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 11:57:32 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 14:48:02 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;USUARIO&quot;.&quot;ID_TIPO_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 14:48:16 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;USUARIO&quot;.&quot;ID_TIPO_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 14:48:40 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;USUARIO&quot;.&quot;ID_TIPO_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 15:15:07 America/Mexico_City] PHP Warning:  oci_connect(): ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
+Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[11-Nov-2025 15:15:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no válido.
+Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[11-Nov-2025 15:15:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01722: nï¿½mero no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01722/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 15:16:15 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 15:16:40 America/Mexico_City] PHP Fatal error:  Uncaught Error: oci_bind_by_name(): Argument #3 ($var) cannot be passed by reference in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:109
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(48): administrador->crearUsuario('prueba1e', 'rabanito@gmail....', 'hjk', '$2y$10$bqz9yQ8t...', '4', '', Array)
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(101): adminController->insertarUsuario()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 109
+[11-Nov-2025 15:18:45 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00947: no hay suficientes valores
+Ayuda: https://docs.oracle.com/error-help/db/ora-00947/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 117
+[11-Nov-2025 15:19:38 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01008: El valor del marcador de posiciï¿½n de la variable de enlace :NOMBRE (position 1) no se ha proporcionado
+Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 117
+[11-Nov-2025 15:21:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01008: El valor del marcador de posiciï¿½n de la variable de enlace :CORREO (position 2) no se ha proporcionado
+Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 117
+[11-Nov-2025 15:28:36 America/Mexico_City] PHP Warning:  Undefined array key "empresa" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 42
+[11-Nov-2025 15:28:36 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01722: nï¿½mero no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01722/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 15:29:48 America/Mexico_City] PHP Warning:  Undefined array key "empresa" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 42
+[11-Nov-2025 15:29:49 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01722: nï¿½mero no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01722/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
+[11-Nov-2025 19:38:25 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :proyecto no reconocida a la llamada de enlace
+Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 91
+[11-Nov-2025 19:38:25 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :asesor no reconocida a la llamada de enlace
+Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 92
+[11-Nov-2025 19:38:25 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :empresa no reconocida a la llamada de enlace
+Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 93
+[11-Nov-2025 19:38:25 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01008: El valor del marcador de posiciï¿½n de la variable de enlace :PROYECTO_RESIDENTE (position 2) no se ha proporcionado
+Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:42:22 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;RESIDENTE&quot;.&quot;ID_EMPRESA&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:43:50 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;RESIDENTE&quot;.&quot;ID_EMPRESA&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:43:59 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;RESIDENTE&quot;.&quot;ID_EMPRESA&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:45:06 America/Mexico_City] PHP Warning:  Undefined array key "empresa" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 42
+[11-Nov-2025 19:45:07 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:48:14 America/Mexico_City] PHP Warning:  Undefined array key "empresa" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 42
+[11-Nov-2025 19:48:14 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 19:50:30 America/Mexico_City] PHP Warning:  Undefined array key "empresa" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 42
+[11-Nov-2025 19:50:30 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 20:13:54 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 20:17:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 20:18:19 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 119
+[11-Nov-2025 20:45:03 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 41
+[11-Nov-2025 20:45:40 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 41
+[11-Nov-2025 20:51:13 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 93
+[12-Nov-2025 11:36:17 America/Mexico_City] PHP Warning:  Undefined variable $adminModel in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 34
+[12-Nov-2025 11:36:17 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function insertarUsuario() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php:34
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(62): adminController->insertarUsuario()
+#1 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 34
+[12-Nov-2025 11:38:47 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 13:39:40 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 13:43:32 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 13:43:50 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 14:23:52 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:23:52 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:30:57 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:30:57 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:30:57 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
+[12-Nov-2025 14:31:36 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:31:36 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[12-Nov-2025 14:31:58 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:31:58 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:31:59 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:31:59 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[12-Nov-2025 14:33:07 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:33:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[12-Nov-2025 14:34:30 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:34:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[12-Nov-2025 14:35:30 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[12-Nov-2025 14:35:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#4 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
+[12-Nov-2025 15:26:36 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :id_usuario no reconocida a la llamada de enlace
+Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 15:28:33 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :id_usuario no reconocida a la llamada de enlace
+Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 33
+[12-Nov-2025 15:28:33 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 35
+[12-Nov-2025 15:28:33 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;ALUMNO&quot;.&quot;MATRICULA_ALUMNO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 52
+[12-Nov-2025 15:29:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 36
+[12-Nov-2025 15:29:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;ALUMNO&quot;.&quot;MATRICULA_ALUMNO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 53
+[12-Nov-2025 15:31:34 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;ALUMNO&quot;.&quot;MATRICULA_ALUMNO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 53
+[12-Nov-2025 15:33:47 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;ALUMNO&quot;.&quot;MATRICULA_ALUMNO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 53
+[12-Nov-2025 15:49:30 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01465: nï¿½mero hexadecimal no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 64
+[12-Nov-2025 16:59:21 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01722: nï¿½mero no vï¿½lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-01722/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 74
+[12-Nov-2025 17:45:21 America/Mexico_City] PHP Warning:  Undefined variable $conn in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 58
+[12-Nov-2025 17:45:21 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_new_descriptor(): Argument #1 ($connection) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:58
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(58): oci_new_descriptor(NULL, 50)
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(48): administrador->insertarUsuario('qwertyui', 'sdfghj@fgh', '12345678', 'dfghj', '2', '8', Array)
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(113): adminController->insertarUsuario()
+#3 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 58
+[12-Nov-2025 17:50:11 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
+Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
+[12-Nov-2025 17:50:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserciï¿½n NULL en (&quot;ADMIN&quot;.&quot;RESIDENTE&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 88
+[12-Nov-2025 18:04:15 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricciï¿½n de integridad (ADMIN.FK_EMPRESA) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 89
+[12-Nov-2025 18:15:04 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricciï¿½n de integridad (ADMIN.FK_TIPO_USUARIO) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
+[12-Nov-2025 18:15:04 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
+[12-Nov-2025 18:16:17 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricciï¿½n de integridad (ADMIN.FK_TIPO_USUARIO) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
+[12-Nov-2025 18:25:35 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricciï¿½n de integridad (ADMIN.FK_TIPO_USUARIO) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
+[12-Nov-2025 18:34:39 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricciï¿½n de integridad (ADMIN.FK_EMPRESA) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 89

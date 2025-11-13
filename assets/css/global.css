@@ -1,76 +1,116 @@
-/* ==========================
-   FORMULARIO DE REGISTRO
-   ========================== */
-
-.form-container {
-  max-width: 450px;
-  background-color: var(--blanco);
-  margin: 4rem auto;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  border-top: 6px solid var(--dorado-acento);
+/* ========================== ESTILOS GLOBALES ========================== */
+:root {
+  --azul-institucional: #003366;
+  --dorado-acento: #C5A047;
+  --gris-oscuro: #333333;
+  --gris-claro: #D8DEE4;
+  --fondo-grisaceo: #F5F7FA;
+  --blanco: #FFFFFF;
 }
 
-.form-container h1 {
-  color: var(--azul-institucional);
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
+/* ========================== RESET BÁSICO ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
 }
 
-/* ===== Etiquetas ===== */
-form label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
+body {
+  background-color: var(--fondo-grisaceo);
   color: var(--gris-oscuro);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
-/* ===== Campos de texto ===== */
-form input {
-  width: 100%;
-  padding: 0.8rem;
-  margin-top: 0.3rem;
-  border: 1px solid var(--gris-claro);
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-form input:focus {
-  border-color: var(--azul-institucional);
-  outline: none;
-  box-shadow: 0 0 4px rgba(0, 51, 102, 0.4);
-}
-
-/* ===== Botón ===== */
-form button {
-  width: 100%;
-  margin-top: 1.8rem;
-  padding: 0.9rem;
+/* ========================== HEADER ========================== */
+header {
   background-color: var(--azul-institucional);
   color: var(--blanco);
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 60px;
+  height: 90px;
 }
 
-form button:hover {
+header img {
+  height: 55px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--dorado-acento);
+}
+
+nav a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 3px;
   background-color: var(--dorado-acento);
-  color: var(--gris-oscuro);
-  transform: scale(1.02);
+  border-radius: 3px;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 600px) {
-  .form-container {
-    width: 90%;
-    margin: 2rem auto;
-    padding: 1.5rem;
-  }
+/* ========================== FOOTER ========================== */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--azul-institucional);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  border-top: 3px solid var(--dorado-acento);
+  z-index: 1000;
 }
+
+footer .redes {
+  margin-top: 5px;
+}
+
+footer .redes a {
+  color: var(--blanco);
+  margin: 0 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+footer .redes a:hover {
+  color: var(--dorado-acento);
+}
+
+/* === Layout general para que el footer se mantenga al fondo === */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* El contenido crece y empuja el footer hacia abajo */
+}
+
+
 
