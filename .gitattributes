@@ -1,0 +1,4 @@
+database/wallet/*.pem text eol=lf
+database/wallet/*.ora text eol=lf
+database/wallet/README text eol=lf
+database/wallet/ojdbc.properties text eol=lf
