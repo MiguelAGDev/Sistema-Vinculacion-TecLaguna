@@ -154,7 +154,7 @@ if (!$conn) {
 ?>
 
 
-<<!DOCTYPE html>
+<!--<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -168,4 +168,4 @@ if (!$conn) {
         <button type="submit" name="accion" value="desconectar">Desconectar</button>
     </form>
 </body>
-</html>
+</html> -->
