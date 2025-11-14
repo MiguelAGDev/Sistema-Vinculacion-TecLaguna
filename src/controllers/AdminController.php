@@ -10,6 +10,7 @@ class adminController{
 
     public function mostrarUsuarios() {
     $usuarios = $this->adminModel->obtenerUsuarios();
+    
     $html = '';
 
     while ($row = oci_fetch_assoc($usuarios)) {
@@ -45,7 +46,8 @@ class adminController{
             $datosExtra['anio_egreso'] = $_POST['anio_egreso'];
             $datosExtra['empleo'] = $_POST['empleo'];
        }
-        $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
+       
+       $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
     }
 
   }

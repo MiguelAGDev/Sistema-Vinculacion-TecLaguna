@@ -12,12 +12,13 @@
   <link rel="stylesheet" href="../../assets/css/agregarUsuarios.css">
 </head>
 <body>
+
   <?php 
     require_once __DIR__.'/../controllers/AdminController.php';
     require_once __DIR__.'/../includes/header.php';
     $controlador = new AdminController();
   ?>
-
+  
   <main>
     <section class="form-container">
       <h1>Registrar Usuario</h1>

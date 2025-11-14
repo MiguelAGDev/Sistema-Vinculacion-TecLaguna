@@ -40,7 +40,7 @@ define('APP_NAME', 'Sistema de Vinculacion del Tecnologico de la Laguna');
 define('APP_ENV','development');
 
 // Oracle Wallet - conexion
-define('ORACLE_TNS_ADMIN', 'C:\\Conexiones\\Oracle\\Wallet_VinculacionInstitutoTecDeLaLag');
+define('ORACLE_TNS_ADMIN', DATABASE_PATH.DIRECTORY_SEPARATOR.'wallet');
 define('ORACLE_USER', 'ADMIN');
 define('ORACLE_PASSWORD', 'Abc123456789___');
 define('ORACLE_SERVICE_NAME', 'vinculacioninstitutotecdelalag_high');

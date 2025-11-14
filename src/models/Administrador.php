@@ -7,10 +7,7 @@ require_once __DIR__. '/../../database/Conexion.php';
         
         public function __construct(){
             $c= new Conectar();
-          if($this->conn =$c->metodoConectar()){
-           
-          }
-
+          $this->conn =$c->metodoConectar();
         }
         public function obtenerUsuarios (){
             $sql ="SELECT id_usuario, nombre_usuario, correo_usuario, telefono_usuario 
@@ -23,12 +20,14 @@ require_once __DIR__. '/../../database/Conexion.php';
         $sql = "INSERT INTO usuario (nombre_usuario,correo_usuario,telefono_usuario,contrasena_usuario,activo_usuario,id_tipo_usuario,id_carrera) 
                 VALUES (:nombre,:correo,:telefono,:contrasena,1,:id_tipo,:id_carrera)
                 RETURNING id_usuario INTO :id_usuario";
-        
+
+        $hashed = password_hash($contrasena,PASSWORD_DEFAULT);
+
         $stmt = oci_parse($this->conn,$sql);
         oci_bind_by_name($stmt,":nombre",$nombre);
         oci_bind_by_name ($stmt,":correo",$correo);
         oci_bind_by_name ($stmt,":telefono",$telefono);
-        oci_bind_by_name($stmt, ":contrasena", $contrasena);
+        oci_bind_by_name($stmt, ":contrasena", $hashed);
         oci_bind_by_name($stmt, ":id_tipo", $tipo);
         oci_bind_by_name($stmt, ":id_carrera", $carrera);
 

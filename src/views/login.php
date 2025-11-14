@@ -7,21 +7,14 @@
   <link rel="stylesheet" href="../../assets/css/global.css" />
   <link rel="stylesheet" href="../../assets/css/login.css" />
 </head>
+
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <img src="../../assets/img/logo/logo-tecnm.png" alt="Logo TecNM" />
-    <nav>
-      <ul>
-        <li><a href="" class="active">Inicio</a></li>
-        <li><a href="#">Servicios</a></li>
-        <li><a href="#">Contacto</a></li>
-         <li><a href="Usuarios.html">Usuarios</a></li>
-      </ul>
-    </nav>
-  </header>
-
+<?php 
+    require_once __DIR__.'/../controllers/UserController.php';
+    require_once __DIR__.'/../includes/header.php';
+    $controlador = new UsersController();
+?>
   <!-- MAIN -->
   <main>
     
@@ -33,28 +26,20 @@
       </div>
       <div class="login-body">
         <h3>INICIO DE SESIÓN</h3>
-        <form action="validar_login.php" method="POST">
-          <input type="text" name="usuario" placeholder="Usuario" required />
-          <input type="password" name="password" placeholder="Contraseña" required />
+        <form method="POST">
+          <input type="text" name="correo" id="correo" placeholder="Correo" required />
+          <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required />
+
           <button type="submit" class="btn-primary">ACCEDER</button>
-          <button type="button" class="btn-secondary">RECUPERAR CONTRASEÑA</button>
+          <?php $controlador->validarUsuario();?>
+          <button type="button" class="btn-secondary">REGISTRARSE</button>
+         
         </form>
       </div>
     </section>
   </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Tecnológico Nacional de México - Portal de Servicios</p>
-    <div class="redes">
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-    </div>
-  </footer>
-
-  
   <!-- FontAwesome para íconos -->
   <script src="https://kit.fontawesome.com/a2e0d6b8c1.js" crossorigin="anonymous"></script>
+  <?php require_once __DIR__.'/../includes/footer.php'; ?>
 </body>
 </html>

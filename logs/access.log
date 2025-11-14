@@ -493,3 +493,53 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 37
 [12-Nov-2025 18:34:39 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricci�n de integridad (ADMIN.FK_EMPRESA) violada - clave principal no encontrada
 Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 89
+[13-Nov-2025 12:59:57 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: la tabla o vista no existe
+Ayuda: https://docs.oracle.com/error-help/db/ora-00942/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 39
+[13-Nov-2025 12:59:57 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: la tabla o vista no existe
+Ayuda: https://docs.oracle.com/error-help/db/ora-00942/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 105
+[13-Nov-2025 13:03:45 America/Mexico_City] PHP Warning:  oci_execute(): ORA-02291: restricci�n de integridad (ADMIN.FK_CARRERA) violada - clave principal no encontrada
+Ayuda: https://docs.oracle.com/error-help/db/ora-02291/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 39
+[13-Nov-2025 13:03:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;ALUMNO&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 105
+[13-Nov-2025 14:45:30 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function metodoConectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:8
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(9): usuario->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(16): UsersController->__construct()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 8
+[13-Nov-2025 14:46:56 America/Mexico_City] PHP Warning:  Undefined array key "REQUEST METHOD" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 13
+[13-Nov-2025 14:47:54 America/Mexico_City] PHP Warning:  Undefined array key "REQUEST METHOD" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 13
+[13-Nov-2025 14:51:04 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00933: comando SQL no terminado correctamente
+Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 19
+[13-Nov-2025 14:52:35 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00933: comando SQL no terminado correctamente
+Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 19
+[13-Nov-2025 14:52:47 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00933: comando SQL no terminado correctamente
+Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 19
+[13-Nov-2025 14:55:04 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00933: comando SQL no terminado correctamente
+Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 20
+[13-Nov-2025 15:17:26 America/Mexico_City] PHP Warning:  Undefined array key "contrasena_usuario" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 23
+[13-Nov-2025 15:17:26 America/Mexico_City] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 24
+[13-Nov-2025 15:19:57 America/Mexico_City] PHP Warning:  Undefined array key "contrasena_usuario" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 23
+[13-Nov-2025 15:19:57 America/Mexico_City] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 24
+[13-Nov-2025 15:35:03 America/Mexico_City] PHP Warning:  Undefined array key "contrasena_usuario" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 23
+[13-Nov-2025 15:35:03 America/Mexico_City] PHP Deprecated:  password_verify(): Passing null to parameter #2 ($hash) of type string is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 24
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Warning:  oci_connect(): ORA-03135: la conexi�n ha perdido contacto
+Ayuda: https://docs.oracle.com/error-help/db/ora-03135/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 29
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "correo" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 30
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "telefono" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 31
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "tipo" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 33
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "carrera" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 34
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;USUARIO&quot;.&quot;NOMBRE_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 36
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined variable $stmt2 in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 102
+[14-Nov-2025 08:57:34 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_execute(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:102
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(102): oci_execute(NULL, 32)
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(50): administrador->insertarUsuario(NULL, NULL, NULL, 'default123', NULL, NULL, Array)
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(114): adminController->insertarUsuario()
+#3 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 102
