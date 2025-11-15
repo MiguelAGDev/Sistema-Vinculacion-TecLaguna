@@ -15,8 +15,6 @@ class UsersController {
             $contrasena = $_POST ['contrasena'];
             $this->usrModel->validarUsuario ($correo,$contrasena);
         }
-    }
-
-    
+    }  
 }
 ?>

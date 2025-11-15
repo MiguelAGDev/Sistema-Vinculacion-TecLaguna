@@ -27,9 +27,9 @@ class Conexion{
             
             // Se inicializa la conexion
             $this->conn = oci_connect(
-                ORACLE_USER, // Usuario de la base de datos
-                ORACLE_PASSWORD,// Contrasenha del usuario
-                ORACLE_SERVICE_NAME// Nombre del servicio de la base de datos
+                'ADMIN', // Usuario de la base de datos
+                'Abc123456789___',// Contrasenha del usuario
+                'vinculacioninstitutotecdelalag_high'// Nombre del servicio de la base de datos
             );
 
             // Si la conexion no se realizo

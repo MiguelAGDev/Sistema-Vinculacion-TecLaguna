@@ -1,2 +1,2 @@
-WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="?/network/admin")))
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="C:\\xampp\\htdocs\\Sistema-Vinculacion-TecLaguna\\database\\wallet")))
 SSL_SERVER_DN_MATCH=yes
