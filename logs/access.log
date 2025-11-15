@@ -543,3 +543,9 @@ Stack trace:
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(114): adminController->insertarUsuario()
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 102
+[14-Nov-2025 09:19:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: oci_bind_by_name(): Argument #3 ($var) cannot be passed by reference in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:30
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(16): usuario->validarUsuario('23130600@correo...', 'Abc123___')
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(34): UsersController->validarUsuario()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 30
