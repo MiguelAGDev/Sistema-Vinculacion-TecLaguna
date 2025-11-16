@@ -2,6 +2,7 @@
 // src/controllers/FlyerCreateController.php
 
 require_once __DIR__ . '/../models/flyerCreateModel.php';
+require_once SERVICE_PATH . 'PurifierService.php';
 
 class FlyerCreateController {
     private $model;
@@ -58,44 +59,36 @@ class FlyerCreateController {
             'group' => $_POST['group'] ?? ''
         ];
 
+        //PURIFICACION
+        $purifierService = new PurifierService();
+
+        $formData['abstract'] = $purifierService->getPurifiedHtml($formData['abstract']);
+
+        $formData['bus_name'] = htmlspecialchars($formData['bus_name']);
+        $formData['title'] = htmlspecialchars($formData['title']);
+
+        //extraer imagen 1
+        $imageUrl = $this->getFirstImageUrl($formData['abstract']);
+
         // Validar datos
         $validation = $this->model->validateData($formData);
         if (!$validation['success']) {
             $_SESSION['mensaje'] = $validation['error'];
             $_SESSION['tipo_mensaje'] = 'error';
             $_SESSION['form_data'] = $formData;
-            header('Location: /flyer/create');
-            exit;
-        }
-
-        // Procesar imágenes
-        $imageResult = $this->model->processImages(
-            $_FILES['imagen'] ?? [], 
-            $formData['bus_name']
-        );
-        
-        if (!$imageResult['success']) {
-            $_SESSION['mensaje'] = $imageResult['error'];
-            $_SESSION['tipo_mensaje'] = 'error';
-            $_SESSION['form_data'] = $formData;
-            header('Location: /flyer/create');
+            header('Location: /index?ruta=flyer/create');
             exit;
         }
 
         // Preparar datos para guardar
         $flyerData = [
-            "Empresa" => $formData['bus_name'],
             "Titulo" => $formData['title'],
             "Descripcion" => $formData['abstract'],
-            "Fecha_inicio" => date("Y-m-d"),
-            "Fecha_fin" => !empty($formData['end_date']) ? $formData['end_date'] : 'Sin limite',
-            "Sueldo" => $formData['salary'],
-            "Imagenes" => $imageResult['images'],
-            "Carrera" => $formData['career'],
-            "Grupo" => $formData['group']
+            "Imagen" => $imageUrl,
+            "Id" => '1'
         ];
 
-        // Guardar en JSON
+        // Guardar en la bd
         $saveResult = $this->model->saveFlyer($flyerData);
         
         $_SESSION['mensaje'] = $saveResult['message'];
@@ -108,7 +101,26 @@ class FlyerCreateController {
             $_SESSION['form_data'] = $formData;
         }
         
-        header('Location: /flyer/create');
+        header('Location: /index?ruta=flyer/create');
         exit;
+    }
+
+    public function getFirstImageUrl(string $html): string{
+        $dom = new DOMDocument();
+
+        libxml_use_internal_errors(true);
+
+        $dom->loadHTML($html, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+        libxml_clear_errors();
+
+        $images = $dom->getElementsByTagName('img');
+
+        if($images->length > 0 ){
+            $firstImage = $images->item(0);
+            return $firstImage->getAttribute('src');
+        }
+
+        return ''; // <- Poner imagen por default o obligar a subir una imagen
     }
 }

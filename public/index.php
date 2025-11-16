@@ -4,6 +4,8 @@
 // Configuración básica
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
+require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../config/config.php';
 
 // Obtener la ruta solicitada
 $ruta = $_GET['ruta'] ?? 'main';
@@ -45,7 +47,7 @@ switch ($ruta) {
         break;
         
     case '43/upload_img':
-        require_once '../src/controllers/imgController.php';
+        require_once '../src/controllers/services/imgController.php';
         $controller = new imgController();
         $controller->uploadImage();
         break;

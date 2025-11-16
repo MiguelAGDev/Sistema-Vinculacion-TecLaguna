@@ -13,21 +13,6 @@ require __DIR__ . '/../includes/header.php';
         <fieldset class="form-section">
             <legend>📢 Información de la Publicación</legend>
 
-            <!-- PORTADA -->
-            <div class="form-group">
-                <label for="imagen">
-                    📸 Imágenes de Portada
-                    <small>(Opcional - máx. 5 imágenes)</small>
-                </label>
-                <input 
-                    type="file" 
-                    name="imagen[]" 
-                    id="imagen" 
-                    accept=".jpg,.jpeg,.png,.gif,.webp"
-                    multiple
-                    class="form-control">
-                <small class="form-hint">Formatos permitidos: JPG, PNG, GIF, WEBP</small>
-            </div>
 
             <!-- TÍTULO -->
             <div class="form-group">

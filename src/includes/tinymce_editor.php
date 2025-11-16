@@ -123,7 +123,7 @@
             //Placeholder
             editor.on('init', function() {
                 if (!editor.getContent()) {
-                    editor.setContent('<p style="color: #999;">Describe las responsabilidades, requisitos y beneficios del puesto...</p>');
+                    editor.setContent('<p style="color: #999;">Describe las responsabilidades, requisitos y beneficios del puesto... <br> Arrastra imagenes aqui para insertarlas en tu publicacion!</p>');
                     editor.selection.select(editor.getBody(), true);
                     editor.selection.collapse(false);
                 }
