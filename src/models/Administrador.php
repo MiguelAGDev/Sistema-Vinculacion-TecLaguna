@@ -1,14 +1,44 @@
 <?php
-require_once __DIR__. '/../../database/conectar.php';
+// Se requiere de la clase conexion, ya que este envia query's
+/**
+ * @requires Conexion.php
+ * Esta clase es la que realiza las conexiones directamente con
+ * la base de datos, solo tiene constructor, conectar, desconectar
+ *  y destructor
+ */
 require_once __DIR__. '/../../database/Conexion.php';
     
-    class administrador{
+/**
+ * Summary of administrador
+ * Clase que se ecarga de las operaciones relacionadas con el administrador
+ * incluyendo conexion a la base de datos y la gestion de usuarios.
+ */
+class administrador{
+        /** 
+         * Summary of conn
+         * @var Conexion $conn 
+         * se declara la clase 'conn' que sera un objeto conexion,
+         * para conectar y desconectar
+         */
         private $conn;
         
+        
+        /* Summary of __construct
+         * Metodo que construye la conexion, simplemente la inicializa
+         * dentro del objeto "conn"
+         */ 
         public function __construct(){
-            $c= new Conectar();
-          $this->conn =$c->metodoConectar();
+            $conn= new Conexion();
+            $this->conn = $conn->conectar();
         }
+
+        /**
+         * Summary of obtenerUsuarios
+         * Muestra todos las columnas visibles que tiene la tabla USUARIOS
+         * 
+         * @return Statement El resultado que se compila en la base 
+         * de datos
+         */
         public function obtenerUsuarios (){
             $sql ="SELECT id_usuario, nombre_usuario, correo_usuario, telefono_usuario 
                    FROM usuario";
@@ -16,14 +46,62 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_execute($stmt);
             return $stmt;       
         }
+
+      /**
+       * Summary of insertarUsuario
+       * @param string $nombre Nombre completo del usuario
+       * @param string $correo Correo con el que se inscribira el usuario
+       * @param string $telefono Telefono de referencia del usuario
+       * @param string $contrasena Contrasena de la cuenta "Sistema Vinculacion"
+       * @param string $tipo Tipo de usuario (Empresa, Alumno, Residente o Egresado)
+       * @param string $carrera Carrera del alumno (En caso de ser empresa es null)
+       * @param arrayString $datosExtra es un arreglo que mantiene cada una de las
+       *        caracteristicas unincas de cada usuario, puede representar estos son los casos
+       *        -- ALUMNO: ['matricula', 'semestre']
+       *        -- RESIDENTE: ['asesor', 'empresa']
+       *        -- EGRESAD: ['anio_egreso', 'empleo']
+       * @return void
+       */
       public function insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra){
-        $sql = "INSERT INTO usuario (nombre_usuario,correo_usuario,telefono_usuario,contrasena_usuario,activo_usuario,id_tipo_usuario,id_carrera) 
-                VALUES (:nombre,:correo,:telefono,:contrasena,1,:id_tipo,:id_carrera)
+        
+        /**
+         * @var string $sql Consulta para insertar un usuario y retorna su id
+         */
+        $sql = "INSERT INTO usuario 
+                (nombre_usuario , correo_usuario, telefono_usuario, contrasena_usuario, activo_usuario, id_tipo_usuario,id_carrera) 
+                VALUES (:nombre, :correo, :telefono, :contrasena, 1, :id_tipo,:id_carrera)
                 RETURNING id_usuario INTO :id_usuario";
 
+        /**
+         * @var string Contraseña hasheada usando password_hash con un algoritmo por defecto
+         */
         $hashed = password_hash($contrasena,PASSWORD_DEFAULT);
+        /*
+         * --password_hash genera un hash seguro y "salteado" (usa un valor aleatorio 
+         * llamado salt para evitar que dos contraseñas iguales tengan el mismo hash).
+         * 
+         * --PASSWORD_DEFAULT indica usar el algoritmo recomendado por PHP, actualmente 
+         * bcrypt, y garantiza que el código siga siendo seguro en el futuro sin cambios.
+        */
 
+        /**
+         * @var Statement $stmt Prepara  una quey para su ejecucion con Oracle
+         * Recibe como valor un metodo *oci_parse* que prepara la setencia con
+         * el string $sql
+         */
         $stmt = oci_parse($this->conn,$sql);
+        
+        /**
+         * Summary of oci_bind_by_name
+         * Vincula el valor de ":columna" por el parametro solicitado 
+         * Ej. :nombre -> 'Miguel Angel'
+         * 
+         * @param Statement $stm
+         * @param string $parametro
+         * @param mixed $valorParametro
+         * @param int $maxlength (Opcional) Tamaño máximo para variables de salida (en bytes).
+         * @param int $type (Opcional) Tipo de dato Oracle para la variable.
+        */
         oci_bind_by_name($stmt,":nombre",$nombre);
         oci_bind_by_name ($stmt,":correo",$correo);
         oci_bind_by_name ($stmt,":telefono",$telefono);
@@ -31,15 +109,39 @@ require_once __DIR__. '/../../database/Conexion.php';
         oci_bind_by_name($stmt, ":id_tipo", $tipo);
         oci_bind_by_name($stmt, ":id_carrera", $carrera);
 
+        /**
+         * Similar a lo mencionado anteriro mente, pero aqui si reservamos 32 bytes
+         * de memoria para el valor que saldra. En este caso guarda el dato que recibies 
+         * en el RETURN ... INTO ... y lo guarda en la variable $id_usuario
+         */
         oci_bind_by_name($stmt, ":id_usuario", $id_usuario, 32);
 
+        /* If que recibe un metodo oci_execute*/
+        
+        /** Summary of oci_execute
+         * 
+         * @param Statement $stmt Setencia SQL pereaparada con oci_parse()
+         * @param int $mode Modo de ejecucion. el 'OCI_COMMIT_ON_SUCCESS' 
+         * realiza un commit si se realizo la consulta
+         * 
+         */
         if(oci_execute($stmt,OCI_COMMIT_ON_SUCCESS)){
               echo "<p style='color:green;'> Usuario insertado </p>";
         }else{
              echo "<p style='color:red;'> Usuario no insertado </p>";
         }
 
+        /** Summary of switch 
+         * @param int $tipo recibe un int con el tipo de usuario  e inserta 
+         * los datos necesarios de cada una de las tablas.
+         * 
+         * 1 --> ALUMNO: ['idUsuario','matricula', 'semestre']
+         * 2 --> RESIDENTE: ['idUsuario', 'asesor', 'empresa']
+         * 3 --> EGRESAD: ['idUsuario', 'anio_egreso', 'empleo']
+         * 4 --> EMPRESA: ['idUsuario', 'nombre', 'correo', 'telefono', 'tipo']
+        */
         switch ($tipo){
+            //**  ALUMNO **// 
             case '1':
                $sql2 = "INSERT INTO alumno (id_usuario, matricula_alumno, semestre_alumno)
                      VALUES (:id_usuario, :matricula_alumno,:semestre_alumno)";
@@ -49,7 +151,8 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_bind_by_name($stmt2, ":semestre_alumno", $datosExtra['semestre']);
             break;
 
-            case 2: // Residente
+            //**  RESIDENTE **// 
+            case 2: 
             $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_asesor, id_empresa)
                      VALUES (:id_usuario,EMPTY_BLOB(),:id_asesor,:id_empresa)
                      RETURNING proyecto_residente INTO :proyecto_residente";
@@ -62,7 +165,8 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_bind_by_name($stmt2, ":id_empresa", $datosExtra['empresa']);
             break;
 
-            case 3: // Egresado
+            //**  EGRESADO **//
+            case 3: 
             $sql2 = "INSERT INTO egresado (id_usuario, anio_egreso, empleo_actual)
                      VALUES (:id_usuario, :anio_egreso, :empleo_actual)";
             $stmt2 = oci_parse($this->conn, $sql2);
@@ -70,8 +174,9 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_bind_by_name($stmt2, ":anio_egreso", $datosExtra['anio_egreso']);
             oci_bind_by_name($stmt2, ":empleo_actual", $datosExtra['empleo']);
             break;
-            
-            case 4: // Empresa
+           
+            //**  EMPRESA **//
+            case 4: 
             $sql2 = "INSERT INTO empresa ( nombre_empresa,correo_empresa,telefono_empresa,id_tipo_usuario,id_usuario)
                      VALUES (:nombre,:correo,:telefono,:id_tipo,:id_usuario)";
                      
@@ -82,30 +187,32 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_bind_by_name($stmt2, ":id_tipo", $tipo);
             oci_bind_by_name($stmt2, ":id_usuario", $id_usuario, 32);
             break;
-        }
+        }// FINAL SWITCH
+
 
        if ($tipo === '2') {
-    if (oci_execute($stmt2, OCI_DEFAULT)) {
-        if ($lob->save($datosExtra['proyecto'])) {
-            oci_commit($this->conn);
-            echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";
-        } else {
-            oci_rollback($this->conn);
-            echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
+            if (oci_execute($stmt2, OCI_DEFAULT)) {
+                if ($lob->save($datosExtra['proyecto'])) {
+                    oci_commit($this->conn);
+                    echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";
+                } else {
+                    oci_rollback($this->conn);
+                    echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
+                }
+            } else {
+                echo "<p style='color:red;'> Error al insertar usuario residente </p>";
+            }
+        
+            $lob->free();
+            oci_free_statement($stmt2);
+        
+        }else {
+            if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
+                echo "<p style='color:green;'> Usuario insertado </p>";
+            } else {
+                echo "<p style='color:red;'> Usuario no insertado </p>";
+            }
         }
-    } else {
-        echo "<p style='color:red;'> Error al insertar usuario residente </p>";
-    }
-    $lob->free();
-    oci_free_statement($stmt2);
-} else {
-    if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
-        echo "<p style='color:green;'> Usuario insertado </p>";
-    } else {
-        echo "<p style='color:red;'> Usuario no insertado </p>";
-    }
-}
 
-      }
-    }
-?>
+    } // FINALR INSERTAR USUARIO
+}
