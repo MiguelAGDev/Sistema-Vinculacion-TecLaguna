@@ -1,8 +1,7 @@
 <?php
 
 // Este codigo cargara la carpeta
-require_once __DIR__ . '/../config/config.php';
-
+require_once CONFIG_PATH . '/Config.php';
 echo "<h3> Prueba de configuracion</h3>";
 
 

@@ -1,3 +1,10 @@
+
+<?php 
+    require_once __DIR__.'/../controllers/UserController.php';
+    require_once __DIR__.'/../includes/Header.php';
+    $controlador = new UsersController();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -10,11 +17,6 @@
 
 <body>
 
-<?php 
-    require_once __DIR__.'/../controllers/UserController.php';
-    require_once __DIR__.'/../includes/header.php';
-    $controlador = new UsersController();
-?>
   <!-- MAIN -->
   <main>
     
@@ -40,6 +42,6 @@
   </main>
   <!-- FontAwesome para íconos -->
   <script src="https://kit.fontawesome.com/a2e0d6b8c1.js" crossorigin="anonymous"></script>
-  <?php require_once __DIR__.'/../includes/footer.php'; ?>
+  <?php require_once __DIR__.'/../includes/Footer.php'; ?>
 </body>
 </html>

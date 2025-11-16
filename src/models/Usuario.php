@@ -105,7 +105,7 @@ require_once __DIR__.'/Permisos.php';
                         /** 
                          * Redirige al usuario a la página principal después de iniciar sesión exitosamente
                          */
-                        header("Location: main.php");
+                        header("Location: Main.php");
                     } else {
                         echo "<p style='color:red'> Contraseña incorrecta </p>";
                     }

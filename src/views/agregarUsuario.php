@@ -15,7 +15,7 @@
 
   <?php 
     require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../includes/header.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
     $controlador = new AdminController();
   ?>
   
@@ -116,7 +116,7 @@
       </form>           
     </section>
   </main>
-    <?php require_once __DIR__.'/../includes/footer.php'; ?>
+    <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
   <!-- Script -->
   <script src="../../assets/js/agregarUsuarios.js"></script>
 </body>
