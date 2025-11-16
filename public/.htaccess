@@ -1,0 +1,27 @@
+# public/.htaccess
+
+# Activar el módulo de reescritura
+RewriteEngine On
+
+# Si el archivo o directorio existe, servirlo directamente
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todo a index.php con la ruta como parámetro
+RewriteRule ^(.*)$ index.php?ruta=$1 [QSA,L]
+
+# Configuración de seguridad
+Options -Indexes
+
+# Proteger archivos sensibles
+<FilesMatch "\.(json|log|env)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Ignorar query strings en imágenes
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} -f
+    RewriteRule ^(.+)\.(jpg|jpeg|gif|png|webp)$ $1.$2 [L]
+</IfModule>

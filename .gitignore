@@ -2,6 +2,7 @@
 /config/
 /database/
 /logs/
+/data/
 
 # Archivos de entorno
 .env

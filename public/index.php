@@ -1,23 +1,65 @@
 <?php
-// Obtenemos la ruta de la URL (esto depende de tu .htaccess)
-$ruta = $_GET['ruta'] ?? 'login';
+// public/index.php (Punto de entrada con enrutador)
 
-// Enrutador simple
+// Configuración básica
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Obtener la ruta solicitada
+$ruta = $_GET['ruta'] ?? 'main';
+
+// Sistema de enrutamiento
 switch ($ruta) {
     case 'login':
-        require '../src/controllers/LoginController.php';
+        require_once '../src/controllers/LoginController.php';
+        $controller = new LoginController();
+        $controller->index();
         break;
         
     case 'flyer':
-        require '../src/controllers/FlyerController.php';
+        // Lista de flyers (futuro)
+        require_once '../src/controllers/FlyerViewController.php';
+        $controller = new FlyerViewController();
+        $controller->index();
         break;
         
+    case 'flyer/show':
+        // Ver detalle de un flyer
+        require_once '../src/controllers/FlyerViewController.php';
+        $controller = new FlyerViewController();
+        $controller->show();
+        break;
+    
+    case 'flyer/create':
+        // Formulario de creación
+        require_once '../src/controllers/FlyerCreateController.php';
+        $controller = new FlyerCreateController();
+        $controller->create();
+        break;
+        
+    case 'flyer/store':
+        // Guardar flyer
+        require_once '../src/controllers/FlyerCreateController.php';
+        $controller = new FlyerCreateController();
+        $controller->store();
+        break;
+        
+    case '43/upload_img':
+        require_once '../src/controllers/imgController.php';
+        $controller = new imgController();
+        $controller->uploadImage();
+        break;
     case 'main':
-        require '../src/controllers/MainController.php';
+    case '':
+        require_once '../src/controllers/MainController.php';
+        $controller = new MainController();
+        $controller->index();
         break;
 
     default:
         // Página de error 404
-        require '../src/views/404.php';
+        http_response_code(404);
+        require_once '../src/views/404.php';
         break;
 }
+?>
