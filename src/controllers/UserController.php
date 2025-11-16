@@ -1,5 +1,5 @@
 <?php
-require_once SRC_PATH. '/models/Usuario.php';
+require_once __DIR__.'/../models/Usuario.php';
 // a lo que entendi aqui se controla metodos que tiene que ver con el usuario como listarlos obtenerlos
 //o eliminar y estos son los metodos
 class UsersController {

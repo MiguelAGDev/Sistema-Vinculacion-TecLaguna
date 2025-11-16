@@ -1,5 +1,5 @@
 <?php
-require_once SRC_PATH.'/models/Administrador.php';
+require_once __DIR__.'/../models/Administrador.php';
 
 class adminController{
     private $adminModel;

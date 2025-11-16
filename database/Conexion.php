@@ -124,33 +124,9 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-
-
-
-
-
-
-
-//********COMENTARIOS*********//
-
-
-/*
-require_once CONFIG_PATH . '/Config.php';
-putenv("TNS_ADMIN=" . ORACLE_TNS_ADMIN);
-
-$conn = oci_connect(ORACLE_USER, ORACLE_PASSWORD, ORACLE_SERVICE_NAME);
-if (!$conn) {
-    $e = oci_error();
-    echo "Error en conexión: " . $e['message'];
-} else {
-    echo "Conexión exitosa";
-    oci_close($conn);
-}
-*/
-
 ?>
 
-
+<!--
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -166,3 +142,4 @@ if (!$conn) {
     </form>
 </body>
 </html> 
+-->
