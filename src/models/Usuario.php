@@ -23,7 +23,6 @@ require_once __DIR__.'/Permisos.php';
                 $row = oci_fetch_assoc ($stmt); //para recuperar el reglon y poder acceder a a la comlumna;
                 if($row){ //si todo sale bien se pasa a verificar;
                     $permisos = 1;
-                    
                     if(Permisos::verificarPermiso($permisos,Permisos::PERMISO_INICIAR_SESION )){
                          $hashGuardado = $row['CONTRASENA_USUARIO']; //podemos accceder a la contraseña hassheada
                             if(password_verify($contrasena,$hashGuardado)){

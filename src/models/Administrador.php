@@ -16,6 +16,7 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_execute($stmt);
             return $stmt;       
         }
+
       public function insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra){
         $sql = "INSERT INTO usuario (nombre_usuario,correo_usuario,telefono_usuario,contrasena_usuario,activo_usuario,id_tipo_usuario,id_carrera) 
                 VALUES (:nombre,:correo,:telefono,:contrasena,1,:id_tipo,:id_carrera)
@@ -83,29 +84,75 @@ require_once __DIR__. '/../../database/Conexion.php';
             oci_bind_by_name($stmt2, ":id_usuario", $id_usuario, 32);
             break;
         }
+            if ($tipo === '2') {
+                if (oci_execute($stmt2, OCI_DEFAULT)) {
+                    if ($lob->save($datosExtra['proyecto'])) {
+                    oci_commit($this->conn);
+                    echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";
+                    } else {
+                    oci_rollback($this->conn);
+                    echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
+                        }
+                } else {
+                echo "<p style='color:red;'> Error al insertar usuario residente </p>";
+                }
+            $lob->free();
+            oci_free_statement($stmt2);
+           } else {
 
-       if ($tipo === '2') {
-    if (oci_execute($stmt2, OCI_DEFAULT)) {
-        if ($lob->save($datosExtra['proyecto'])) {
-            oci_commit($this->conn);
-            echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";
-        } else {
-            oci_rollback($this->conn);
-            echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
+            if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
+                echo "<p style='color:green;'> Usuario insertado </p>";
+            } else {
+                echo "<p style='color:red;'> Usuario no insertado </p>";
+            }
         }
-    } else {
-        echo "<p style='color:red;'> Error al insertar usuario residente </p>";
     }
-    $lob->free();
-    oci_free_statement($stmt2);
-} else {
-    if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
-        echo "<p style='color:green;'> Usuario insertado </p>";
-    } else {
-        echo "<p style='color:red;'> Usuario no insertado </p>";
-    }
-}
 
-      }
+     public function buscarUsuarioPorId($id_usuario) {
+        $sql = "SELECT  ID_USUARIO,
+                    NOMBRE_USUARIO,
+                    CORREO_USUARIO,
+                    TELEFONO_USUARIO,
+                    ACTIVO_USUARIO,
+                    NOMBRE_CARRERA
+                FROM usuario u
+                LEFT JOIN CARRERA c ON c.ID_CARRERA = u.ID_CARRERA
+                WHERE u.ID_USUARIO = :id";
+
+        $stid = oci_parse($this->conn, $sql);
+
+        oci_bind_by_name($stid, ":id", $id_usuario);
+
+        oci_execute($stid);
+
+        $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
+        if($row['ACTIVO_USUARIO'] === '1'){
+            $row['ACTIVO_USUARIO']='ACTIVO';
+        }else{
+            $row['ACTIVO_USUARIO']='NO ESTA ACTIVO POR EL MOMENTO';
+        }
+        return $row ?: false;
+    }
+    
+    public function actUsuarios ($nombre,$correo,$telefono,$activo,$carrera,$ext){
+        $sql ="UPDATE usuarios
+               SET 
+                    nombre_usuario = :nombre,
+                    correo_usuario = :correo,
+                    telefono_usuario = :telefono,
+                    activo_usuario = :activo
+                WHERE id_usuario = :id";
+        $stmt=oci_parse($this->conn,$sql);
+        oci_bind_by_name($stmt,':nombre',$nombre);
+        oci_bind_by_name ($stmt,':correo',$correo);
+        oci_bind_by_name ($stmt,':telefono',$telefono);
+        oci_bind_by_name ($stmt,':activo',$activo);
+        oci_bind_b_name ($stmt,':id',$id);
+        if (oci_execute($stmt,OCI_DEFAULT)){
+            echo"Cambios realizados";
+        }else{
+            echo"Favor de verifixar los datos";
+        }
+}
     }
 ?>

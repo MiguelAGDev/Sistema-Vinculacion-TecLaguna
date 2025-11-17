@@ -626,3 +626,57 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 33
 [15-Nov-2025 12:47:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01008: El valor del marcador de posici�n de la variable de enlace :VALIDO (position 2) no se ha proporcionado
 Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 34
+[15-Nov-2025 16:59:29 America/Mexico_City] PHP Warning:  Undefined property: adminController::$model in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 55
+[15-Nov-2025 16:59:29 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function buscarUsuarioPorId() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php(12): adminController->obtenerUsuarioPorId('21')
+#1 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 55
+[15-Nov-2025 17:00:24 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;A&quot;.&quot;CARRERA&quot;: identificador no v�lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-00904/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 128
+[15-Nov-2025 17:00:24 America/Mexico_City] PHP Warning:  oci_fetch_array(): ORA-24374: definici�n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 130
+[15-Nov-2025 17:01:35 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;A&quot;.&quot;CARRERA_USUARIO&quot;: identificador no v�lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-00904/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 128
+[15-Nov-2025 17:01:35 America/Mexico_City] PHP Warning:  oci_fetch_array(): ORA-24374: definici�n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 130
+[15-Nov-2025 17:02:06 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;U&quot;.&quot;CARRERA_USUARIO&quot;: identificador no v�lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-00904/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 127
+[15-Nov-2025 17:02:06 America/Mexico_City] PHP Warning:  oci_fetch_array(): ORA-24374: definici�n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 129
+[15-Nov-2025 17:03:53 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;C&quot;.&quot;CARRERA_USUARIO&quot;: identificador no v�lido
+Ayuda: https://docs.oracle.com/error-help/db/ora-00904/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 128
+[15-Nov-2025 17:03:53 America/Mexico_City] PHP Warning:  oci_fetch_array(): ORA-24374: definici�n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 130
+[15-Nov-2025 17:06:44 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00933: comando SQL no terminado correctamente
+Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 130
+[15-Nov-2025 17:06:44 America/Mexico_City] PHP Warning:  oci_fetch_array(): ORA-24374: definici�n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 132
+[15-Nov-2025 17:07:37 America/Mexico_City] PHP Warning:  Undefined array key "CORREO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 59
+[15-Nov-2025 17:07:37 America/Mexico_City] PHP Warning:  Undefined array key "TELEFONO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 65
+[15-Nov-2025 17:07:37 America/Mexico_City] PHP Warning:  Undefined array key "ESTATUS" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 71
+[15-Nov-2025 17:07:37 America/Mexico_City] PHP Warning:  Undefined array key "CARRERA" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 77
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 124
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 127
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 43
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "ID_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 48
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 53
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "CORREO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 59
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "TELEFONO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 65
+[15-Nov-2025 17:23:58 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_CARRERA" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 77
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 129
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 132
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 43
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "ID_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 48
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 53
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "CORREO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 59
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "TELEFONO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 65
+[15-Nov-2025 17:24:43 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_CARRERA" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 77
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Trying to access array offset on value of type bool in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 129
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 132
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 43
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "ID_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 48
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 53
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "CORREO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 59
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "TELEFONO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 65
+[15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_CARRERA" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 77
