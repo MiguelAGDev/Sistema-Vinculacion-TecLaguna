@@ -5,17 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Usuario</title>
 
-  <!-- Estilos globales -->
-  <link rel="stylesheet" href="../../assets/css/global.css">
+  <!-- Estilos globales "../../assets/css/global.css"-->
+  <link rel="stylesheet" href="../../public/assets/css/global.css">
 
   <!-- Estilos del formulario -->
-  <link rel="stylesheet" href="../../assets/css/agregarUsuarios.css">
+  <link rel="stylesheet" href="../../public/assets/css/agregarUsuarios.css">
 </head>
 <body>
 
   <?php 
     require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../includes/header.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
     $controlador = new AdminController();
   ?>
   
@@ -116,8 +116,8 @@
       </form>           
     </section>
   </main>
-    <?php require_once __DIR__.'/../includes/footer.php'; ?>
+    <!--<?php require_once __DIR__.'/../includes/Footer.php';?>-->
   <!-- Script -->
-  <script src="../../assets/js/agregarUsuarios.js"></script>
+  <script src="assets/js/agregarUsuarios.js"></script>
 </body>
 </html>

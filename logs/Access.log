@@ -35,60 +35,60 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-28759/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-28759/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [08-Nov-2025 18:34:37 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 18:35:22 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 18:35:55 America/Mexico_City] PHP Parse error:  syntax error, unexpected variable "$conn" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 7
 [08-Nov-2025 18:36:08 America/Mexico_City] PHP Parse error:  syntax error, unexpected variable "$conn" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 7
 [08-Nov-2025 18:36:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 18:36:48 America/Mexico_City] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(10): Conexion::conectar()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 26
 [08-Nov-2025 18:37:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php(105): Conexion::conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(3): require_once('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): require_once('C:\\xampp\\htdocs...')
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 26
 [08-Nov-2025 18:37:07 America/Mexico_City] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(10): Conexion::conectar()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 26
 [08-Nov-2025 18:39:24 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 18:39:39 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 18:40:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: Using $this when not in object context in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php(105): Conexion::conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(3): require_once('C:\\xampp\\htdocs...')
-#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): require_once('C:\\xampp\\htdocs...')
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 26
 [08-Nov-2025 18:40:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Non-static method Conexion::conectar() cannot be called statically in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php:10
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): UsersController->__construct()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): UsersController->__construct()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 10
 [08-Nov-2025 19:33:17 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\databaseConexion.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php on line 2
@@ -102,170 +102,170 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 3
-[08-Nov-2025 21:07:06 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:07:06 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+[08-Nov-2025 21:07:06 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:07:06 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:28 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:28 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:28 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:28 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:08:30 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:10:45 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
-[08-Nov-2025 21:10:45 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:10:45 America/Mexico_City] PHP Warning:  Undefined variable $usuarios in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
+[08-Nov-2025 21:10:45 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, null given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:3
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): oci_fetch_assoc(NULL)
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): oci_fetch_assoc(NULL)
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 3
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 3
 [08-Nov-2025 21:13:25 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:14:49 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:17:25 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:57 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:58 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:18:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method Conectar::conectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:9
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(3): adminController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(3): adminController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 9
 [08-Nov-2025 21:20:46 America/Mexico_City] PHP Warning:  Undefined variable $oci_parse in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:20:46 America/Mexico_City] PHP Fatal error:  Uncaught Error: Value of type null is not callable in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:15
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(12): administrador->obtenerUsuarios()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): adminController->mostrarUsuarios()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): adminController->mostrarUsuarios()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:21:09 America/Mexico_City] PHP Warning:  Undefined variable $oci_parse in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:21:09 America/Mexico_City] PHP Fatal error:  Uncaught Error: Value of type null is not callable in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:15
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(12): administrador->obtenerUsuarios()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): adminController->mostrarUsuarios()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): adminController->mostrarUsuarios()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:27:53 America/Mexico_City] PHP Warning:  Undefined variable $oci_parse in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:27:53 America/Mexico_City] PHP Fatal error:  Uncaught Error: Value of type null is not callable in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:15
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(12): administrador->obtenerUsuarios()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): adminController->mostrarUsuarios()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): adminController->mostrarUsuarios()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:28:15 America/Mexico_City] PHP Warning:  Undefined variable $oci_parse in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
 [08-Nov-2025 21:28:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Value of type null is not callable in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:15
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(12): administrador->obtenerUsuarios()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(4): adminController->mostrarUsuarios()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(4): adminController->mostrarUsuarios()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 15
-[08-Nov-2025 21:58:12 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 14
-[08-Nov-2025 21:58:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:14
+[08-Nov-2025 21:58:12 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/Footer.ini.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
+[08-Nov-2025 21:58:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/Footer.ini.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:14
 Stack trace:
 #0 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 14
-[08-Nov-2025 21:58:56 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 14
-[08-Nov-2025 21:58:56 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:14
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
+[08-Nov-2025 21:58:56 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/Footer.ini.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
+[08-Nov-2025 21:58:56 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views../includes/Footer.ini.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:14
 Stack trace:
 #0 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 14
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
 [08-Nov-2025 22:19:35 America/Mexico_City] PHP Warning:  foreach() argument must be of type array|object, resource given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 14
-[08-Nov-2025 22:19:35 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method adminController::mostrarUsuariosHTML() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:31
+[08-Nov-2025 22:19:35 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined method adminController::mostrarUsuariosHTML() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:31
 Stack trace:
 #0 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 31
-[08-Nov-2025 22:24:56 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, string given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php:31
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 31
+[08-Nov-2025 22:24:56 America/Mexico_City] PHP Fatal error:  Uncaught TypeError: oci_fetch_assoc(): Argument #1 ($statement) must be of type resource, string given in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:31
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php(31): oci_fetch_assoc('<tr>\r\n         ...')
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php(31): oci_fetch_assoc('<tr>\r\n         ...')
 #1 {main}
-  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\usuarios.php on line 31
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 31
 [10-Nov-2025 17:37:42 America/Mexico_City] PHP Warning:  oci_connect(): ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[10-Nov-2025 17:37:42 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no válido.
+[10-Nov-2025 17:37:42 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(14): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(14): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [10-Nov-2025 20:21:57 America/Mexico_City] PHP Warning:  oci_connect(): ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[10-Nov-2025 20:21:57 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no válido.
+[10-Nov-2025 20:21:57 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(16): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(16): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [10-Nov-2025 21:14:44 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;SEMESTRE&quot;: identificador no vï¿½lido
@@ -280,13 +280,13 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-00904/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 108
 [11-Nov-2025 09:26:30 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[11-Nov-2025 09:26:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[11-Nov-2025 09:26:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(16): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(16): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [11-Nov-2025 11:53:01 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
@@ -305,13 +305,13 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 63
 [11-Nov-2025 15:15:07 America/Mexico_City] PHP Warning:  oci_connect(): ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[11-Nov-2025 15:15:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no válido.
+[11-Nov-2025 15:15:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-29002: El transporte SSL ha detectado un certificado de servidor obsoleto o no vï¿½lido.
 Ayuda: https://docs.oracle.com/error-help/db/ora-29002/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [11-Nov-2025 15:15:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01722: nï¿½mero no vï¿½lido
@@ -321,7 +321,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-00001/ in C:\xampp\htdocs\Siste
 [11-Nov-2025 15:16:40 America/Mexico_City] PHP Fatal error:  Uncaught Error: oci_bind_by_name(): Argument #3 ($var) cannot be passed by reference in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php:109
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(48): administrador->crearUsuario('prueba1e', 'rabanito@gmail....', 'hjk', '$2y$10$bqz9yQ8t...', '4', '', Array)
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(101): adminController->insertarUsuario()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(101): adminController->insertarUsuario()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 109
 [11-Nov-2025 15:18:45 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00947: no hay suficientes valores
@@ -374,7 +374,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01465/ in C:\xampp\htdocs\Siste
 [12-Nov-2025 11:36:17 America/Mexico_City] PHP Warning:  Undefined variable $adminModel in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 34
 [12-Nov-2025 11:36:17 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function insertarUsuario() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php:34
 Stack trace:
-#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(62): adminController->insertarUsuario()
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(62): adminController->insertarUsuario()
 #1 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 34
 [12-Nov-2025 11:38:47 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
@@ -391,16 +391,16 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Siste
 [12-Nov-2025 14:30:57 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
 [12-Nov-2025 14:30:57 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:30:57 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
+[12-Nov-2025 14:30:57 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\Config.php on line 56
 [12-Nov-2025 14:31:36 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:31:36 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[12-Nov-2025 14:31:36 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [12-Nov-2025 14:31:58 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
@@ -408,46 +408,46 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Siste
 [12-Nov-2025 14:31:58 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
 [12-Nov-2025 14:31:59 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:31:59 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[12-Nov-2025 14:31:59 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [12-Nov-2025 14:33:07 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:33:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[12-Nov-2025 14:33:07 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [12-Nov-2025 14:34:30 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:34:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[12-Nov-2025 14:34:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [12-Nov-2025 14:35:30 America/Mexico_City] PHP Warning:  oci_connect(): ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[12-Nov-2025 14:35:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexión ha fallado porque el host destino o el objeto no existen
+[12-Nov-2025 14:35:30 America/Mexico_City] PHP Fatal error:  Uncaught Exception: Error de la conexion: ORA-12545: La conexiï¿½n ha fallado porque el host destino o el objeto no existen
 Ayuda: https://docs.oracle.com/error-help/db/ora-12545/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:39
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(9): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(18): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(18): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [12-Nov-2025 15:26:36 America/Mexico_City] PHP Warning:  oci_bind_by_name(): ORA-01036: se ha transferido una variable de enlace :id_usuario no reconocida a la llamada de enlace
@@ -475,7 +475,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01722/ in C:\xampp\htdocs\Siste
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(58): oci_new_descriptor(NULL, 50)
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(48): administrador->insertarUsuario('qwertyui', 'sdfghj@fgh', '12345678', 'dfghj', '2', '8', Array)
-#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(113): adminController->insertarUsuario()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(113): adminController->insertarUsuario()
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 58
 [12-Nov-2025 17:50:11 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00001: restricciï¿½n ï¿½nica (ADMIN.SYS_C0033229) violada
@@ -504,7 +504,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Siste
 [13-Nov-2025 14:45:30 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to undefined function metodoConectar() in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:8
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(9): usuario->__construct()
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(16): UsersController->__construct()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php(16): UsersController->__construct()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 8
 [13-Nov-2025 14:46:56 America/Mexico_City] PHP Warning:  Undefined array key "REQUEST METHOD" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 13
@@ -526,8 +526,8 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-00933/ in C:\xampp\htdocs\Siste
 [13-Nov-2025 15:54:23 America/Mexico_City] PHP Warning:  oci_connect(): ORA-03135: la conexiï¿½n ha perdido contacto
 Ayuda: https://docs.oracle.com/error-help/db/ora-03135/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
 [13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 29
-[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
-[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\config.php on line 56
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\Config.php on line 56
+[13-Nov-2025 15:54:23 America/Mexico_City] PHP Fatal error:  Maximum execution time of 120 seconds exceeded in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\config\Config.php on line 56
 [14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "nombre" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 29
 [14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "correo" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 30
 [14-Nov-2025 08:57:34 America/Mexico_City] PHP Warning:  Undefined array key "telefono" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 31
@@ -540,13 +540,13 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Siste
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(102): oci_execute(NULL, 32)
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(50): administrador->insertarUsuario(NULL, NULL, NULL, 'default123', NULL, NULL, Array)
-#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(114): adminController->insertarUsuario()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(114): adminController->insertarUsuario()
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 102
 [14-Nov-2025 09:19:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: oci_bind_by_name(): Argument #3 ($var) cannot be passed by reference in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:30
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(16): usuario->validarUsuario('23130600@correo...', 'Abc123___')
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(34): UsersController->validarUsuario()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php(34): UsersController->validarUsuario()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 30
 [15-Nov-2025 07:38:16 America/Mexico_City] PHP Fatal error:  Uncaught Error: Undefined constant "ORACLE_USER" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php:30
@@ -554,7 +554,7 @@ Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(10): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(19): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(19): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 30
 [15-Nov-2025 07:41:32 America/Mexico_City] PHP Warning:  oci_connect(): ORA-28759: fallo al abrir el archivo
@@ -565,7 +565,7 @@ Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(10): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(19): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(19): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [15-Nov-2025 07:55:47 America/Mexico_City] PHP Warning:  oci_connect(): ORA-28759: fallo al abrir el archivo
@@ -576,7 +576,7 @@ Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\conectar.php(46): Conexion->conectar()
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php(10): Conectar->metodoConectar()
 #2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(8): administrador->__construct()
-#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php(19): adminController->__construct()
+#3 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\AgregarUsuario.php(19): adminController->__construct()
 #4 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\database\Conexion.php on line 39
 [15-Nov-2025 08:01:44 America/Mexico_City] PHP Warning:  oci_connect(): ORA-28759: fallo al abrir el archivo
@@ -586,13 +586,13 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-28759/ in C:\xampp\htdocs\Siste
 [15-Nov-2025 11:11:18 America/Mexico_City] PHP Fatal error:  Uncaught Error: Class "Permiso" not found in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(16): usuario->validarUsuario('azu2.p@teclagun...', 'contras_segura_...')
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(34): UsersController->validarUsuario()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php(34): UsersController->validarUsuario()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 26
 [15-Nov-2025 11:14:48 America/Mexico_City] PHP Fatal error:  Uncaught Error: Class "Permiso" not found in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php:26
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(16): usuario->validarUsuario('23130600@correo...', 'Abc123___')
-#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(34): UsersController->validarUsuario()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php(34): UsersController->validarUsuario()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 26
 [15-Nov-2025 11:22:02 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00904: &quot;EXITO_INICIO&quot;: identificador no vï¿½lido
@@ -606,7 +606,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-12262/ in C:\xampp\htdocs\Siste
 Stack trace:
 #0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php(27): Permisos::verificarPermiso('sam@gmail.com', 1)
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php(16): usuario->validarUsuario('sam@gmail.com', 'Samuel')
-#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\login.php(34): UsersController->validarUsuario()
+#2 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php(34): UsersController->validarUsuario()
 #3 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Permisos.php on line 47
 [15-Nov-2025 12:23:44 America/Mexico_City] PHP Warning:  Undefined variable $permisos in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 25
@@ -626,6 +626,7 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Siste
 Ayuda: https://docs.oracle.com/error-help/db/ora-01036/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 33
 [15-Nov-2025 12:47:12 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01008: El valor del marcador de posiciï¿½n de la variable de enlace :VALIDO (position 2) no se ha proporcionado
 Ayuda: https://docs.oracle.com/error-help/db/ora-01008/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 34
+<<<<<<< HEAD:logs/access.log
 [15-Nov-2025 16:59:29 America/Mexico_City] PHP Warning:  Undefined property: adminController::$model in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 55
 [15-Nov-2025 16:59:29 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function buscarUsuarioPorId() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php:55
 Stack trace:
@@ -680,3 +681,219 @@ Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Siste
 [15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "CORREO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 59
 [15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "TELEFONO_USUARIO" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 65
 [15-Nov-2025 17:25:07 America/Mexico_City] PHP Warning:  Undefined array key "NOMBRE_CARRERA" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 77
+=======
+[16-Nov-2025 03:34:14 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:34:14 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:34:18 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:34:18 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:34:59 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:34:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:01 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:01 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:03 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 23
+[16-Nov-2025 03:35:58 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:35:58 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:64
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:35:59 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:35:59 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:64
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:36:00 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:36:00 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:64
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 64
+[16-Nov-2025 03:38:40 America/Mexico_City] PHP Warning:  Undefined array key "correo" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 14
+[16-Nov-2025 03:38:40 America/Mexico_City] PHP Warning:  Undefined array key "contrasena" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 15
+[16-Nov-2025 03:38:40 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 61
+[16-Nov-2025 03:38:40 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 126
+[16-Nov-2025 03:38:46 America/Mexico_City] PHP Warning:  Undefined array key "correo" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 14
+[16-Nov-2025 03:38:46 America/Mexico_City] PHP Warning:  Undefined array key "contrasena" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\UserController.php on line 15
+[16-Nov-2025 03:38:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 61
+[16-Nov-2025 03:38:46 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 126
+[16-Nov-2025 03:41:01 America/Mexico_City] PHP Warning:  Undefined variable $controlador in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:41:01 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function validarUsuario() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:41:58 America/Mexico_City] PHP Warning:  Undefined variable $controlador in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:41:58 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function validarUsuario() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:42:00 America/Mexico_City] PHP Warning:  Undefined variable $controlador in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:42:00 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function validarUsuario() on null in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\Index.php(37): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 50
+[16-Nov-2025 03:42:58 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 61
+[16-Nov-2025 03:42:58 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: table or view does not exist in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 126
+>>>>>>> 3e8f2032a92551c0b22d361da03c97c328d44d98:logs/Access.log
+[17-Nov-2025 11:22:51 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../include/Footer.ini.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:22:51 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../include/Footer.ini.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:24:04 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../include/Footer.ini.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:24:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../include/Footer.ini.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:32:23 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
+[17-Nov-2025 11:32:23 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Header.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:14
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 14
+[17-Nov-2025 11:35:15 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: la tabla o vista no existe
+Ayuda: https://docs.oracle.com/error-help/db/ora-00942/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 46
+[17-Nov-2025 11:35:15 America/Mexico_City] PHP Warning:  oci_fetch_assoc(): ORA-24374: definiciï¿½n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 16
+[17-Nov-2025 11:35:15 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 36
+[17-Nov-2025 11:35:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:36
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 36
+[17-Nov-2025 11:37:11 America/Mexico_City] PHP Warning:  oci_execute(): ORA-00942: la tabla o vista no existe
+Ayuda: https://docs.oracle.com/error-help/db/ora-00942/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Administrador.php on line 46
+[17-Nov-2025 11:37:11 America/Mexico_City] PHP Warning:  oci_fetch_assoc(): ORA-24374: definiciï¿½n no realizada antes de recuperar o de ejecutar y recuperar
+Ayuda: https://docs.oracle.com/error-help/db/ora-24374/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 16
+[17-Nov-2025 11:37:11 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:37:11 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:42:53 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:42:53 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:43:35 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:43:35 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:44:37 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:44:37 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:46:13 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:46:13 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:46:29 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:46:29 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 11:47:10 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:47:10 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:49:33 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:49:33 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:53:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:53:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:55:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 11:55:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119

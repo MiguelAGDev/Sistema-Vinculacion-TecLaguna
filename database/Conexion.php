@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../config/config.php';
-
+require_once __DIR__.'/../config/Config.php';
 // 7 de Noviembre 2025, 3:40 PM
 class Conexion{
 
@@ -13,10 +12,9 @@ class Conexion{
     public function __construct(){
         // Establece la variable de entorno para el oracle wallet
         putenv("TNS_ADMIN=".ORACLE_TNS_ADMIN);
-        putenv("PATH=" . getenv("PATH") . PATH_SEPARATOR . "C:\\Conexiones\\Oracle\\instantclient-basic-windows.x64-19.28.0.0.0dbru\\instantclient_19_28");
-        putenv("LD_LIBRARY_PATH=C:\\Conexiones\\Oracle\\instantclient-basic-windows.x64-19.28.0.0.0dbru\\instantclient_19_28");
-        putenv("SSL_CERT_FILE=" . ORACLE_TNS_ADMIN . "\\ewallet.p12");
-
+        putenv("PATH=" . getenv("PATH") . PATH_SEPARATOR .ORACLE_INSTANT_CLIENT);
+        putenv(ORACLE_LD_LIBRARY_PATH);
+        putenv(ORACLE_SSL_CERT_FILE);
     }
 
     // Metodo conexion, realiza la conexion con la base de datos
@@ -29,7 +27,7 @@ class Conexion{
             $this->conn = oci_connect(
                 'ADMIN', // Usuario de la base de datos
                 'Abc123456789___',// Contrasenha del usuario
-                'vinculacioninstitutotecdelalag_high'// Nombre del servicio de la base de datos
+                'vinculacioninstitutotecdelalag_high' 
             );
 
             // Si la conexion no se realizo
@@ -126,35 +124,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-
-
-
-
-
-
-
-//********COMENTARIOS*********//
-
-
-/*
-require_once __DIR__ . '/../config/config.php';
-
-putenv("TNS_ADMIN=" . ORACLE_TNS_ADMIN);
-
-$conn = oci_connect(ORACLE_USER, ORACLE_PASSWORD, ORACLE_SERVICE_NAME);
-if (!$conn) {
-    $e = oci_error();
-    echo "Error en conexión: " . $e['message'];
-} else {
-    echo "Conexión exitosa";
-    oci_close($conn);
-}
-*/
-
 ?>
 
-
-<!--<<!DOCTYPE html>
+<!--
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
@@ -168,4 +141,5 @@ if (!$conn) {
         <button type="submit" name="accion" value="desconectar">Desconectar</button>
     </form>
 </body>
-</html> -->
+</html> 
+-->
