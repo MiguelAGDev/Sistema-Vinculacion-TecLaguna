@@ -28,7 +28,12 @@ if (!$datosUsuario) {
 </head>
 <body>
 
-<?php require_once __DIR__.'/../includes/header.php'; ?>
+<?php require_once __DIR__.'/../includes/header.php'; 
+      require_once __DIR__.'/../../controllers/AdminController.php';
+      require_once __DIR__.'/../../models/Administrador.php';
+      $adminModel = new administrador();
+      $adminController = new adminController();
+?>
 
 <main class="perfil-wrapper">
 
@@ -47,41 +52,7 @@ if (!$datosUsuario) {
 
             <input type="hidden" name="id_usuario" value="<?= $datosUsuario['ID_USUARIO'] ?>">
 
-            <div class="campo">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre"
-                       value="<?= $datosUsuario['NOMBRE_USUARIO'] ?>" required>
-            </div>
-
-            <div class="campo">
-                <label for="correo">Correo</label>
-                <input type="email" id="correo" name="correo"
-                       value="<?= $datosUsuario['CORREO_USUARIO'] ?>" required>
-            </div>
-
-            <div class="campo">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono"
-                       value="<?= $datosUsuario['TELEFONO_USUARIO'] ?>">
-            </div>
-
-            <div class="campo">
-                <label for="estatus">Estatus</label>
-                <input type="text" id="estatus" name="estatus"
-                       value="<?= $datosUsuario['ACTIVO_USUARIO'] ?>">
-            </div>
-
-            <div class="campo">
-                <label for="carrera">Carrera</label>
-                <input type="text" id="carrera" name="carrera"
-                       value="<?= $datosUsuario['NOMBRE_CARRERA'] ?>">
-            </div>
-
-            <div class="perfil-botones">
-                <button type="submit" class="btn-guardar">Guardar Cambios</button>
-                <button type="button" class="btn-cancelar"
-                        onclick="window.location.href='usuarios.php'"><a href="usuarios.php">Cancelar</a></button>
-            </div>
+           <?php $adminController->regresarSalidas();?>
 
         </form>
         <?php require_once __DIR__.'/../includes/footer.php'; ?>

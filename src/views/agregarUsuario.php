@@ -35,7 +35,20 @@
 
         <label for="telefono">Contraseña</label>
         <input type="password" id="contrasena" name="contrasena" placeholder="" required>
-        
+
+        <label for="tipo">Tipo de Usuario</label>
+        <select id="tipo" name="tipo" required onchange="mostrarCampos()">
+          <option value="">Seleccione un tipo</option>
+          <option value="1">Alumno</option>
+          <option value="2">Residente</option>
+          <option value="3">Egresado</option>
+          <option value="4">Empresa</option>
+        </select>
+        <!-- Si no es una empresa -->
+         <label for="tipo">Curriculum</label>
+        <input type="file" name="archivo" id="archivo">
+        <button type="submit" value="Subir archivo">
+
         <label for="carrera">Carrera</label>
         <select id="carrera" name="carrera" >
           <option value="">Seleccione una carrera</option>
@@ -51,14 +64,6 @@
           <option value="10">Ingeniería Química</option>
         </select>
 
-        <label for="tipo">Tipo de Usuario</label>
-        <select id="tipo" name="tipo" required onchange="mostrarCampos()">
-          <option value="">Seleccione un tipo</option>
-          <option value="1">Alumno</option>
-          <option value="2">Residente</option>
-          <option value="3">Egresado</option>
-          <option value="4">Empresa</option>
-        </select>
        
          <!-- Campos Alumno -->
         <div id="alumno" style="display: none;" >
