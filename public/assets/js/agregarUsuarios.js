@@ -3,6 +3,8 @@ function mostrarCampos() {
   const camposAlumno = document.getElementById("alumno");
   const camposResidente = document.getElementById("residente");
   const camposEgresado = document.getElementById("egresado");
+  const carrera = document.getElementById("carrera");
+  const curriculum = document.getElementById ("archivo");
 
   // Ocultamos ambos primero
   camposAlumno.style.display = "none";
@@ -16,5 +18,8 @@ function mostrarCampos() {
     camposResidente.style.display = "block";
   }else if(tipo === "3") {
     camposEgresado.style.display = "block";
-}
+  }else if (tipo==="4"){
+    curriculum.style.display ="none";
+    carrera.style.display= "none";
+  }
 }

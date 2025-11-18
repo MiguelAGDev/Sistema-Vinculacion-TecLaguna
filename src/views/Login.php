@@ -19,7 +19,7 @@
 <?php 
     require_once __DIR__.'/../controllers/UserController.php';
     require_once __DIR__.'/../includes/Header.ini.php';
-    $controlador = new UsersController();
+    $controlador = new UserController();
 ?>
 
 

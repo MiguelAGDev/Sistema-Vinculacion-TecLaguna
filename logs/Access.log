@@ -897,3 +897,125 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 17:08:12 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:08:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:09:05 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 17:09:05 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:119
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 17:15:06 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:15:06 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:15:10 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:15:10 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:16:10 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:16:10 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:18:16 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:18:16 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:18:17 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:18:17 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php:39
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Usuarios.php on line 39
+[17-Nov-2025 17:38:04 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 17:38:04 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 17:39:34 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 17:39:34 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 17:41:38 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 17:41:38 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 18:20:59 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "<<" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 62
+[17-Nov-2025 18:21:16 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "<<" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 62
+[17-Nov-2025 18:21:25 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "<<" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 62
+[17-Nov-2025 18:23:26 America/Mexico_City] PHP Parse error:  Unclosed '{' on line 5 in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 147
+[17-Nov-2025 18:26:20 America/Mexico_City] PHP Fatal error:  Uncaught Error: Class "UsersController" not found in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:22
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(106): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 22
+[17-Nov-2025 18:26:28 America/Mexico_City] PHP Fatal error:  Uncaught Error: Class "UsersController" not found in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:22
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(106): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 22
+[17-Nov-2025 18:26:43 America/Mexico_City] PHP Fatal error:  Uncaught Error: Class "UsersController" not found in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php:22
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(5): require_once()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(106): AuthController->login()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\Login.php on line 22
+[17-Nov-2025 21:06:56 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:06:56 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:09:21 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[17-Nov-2025 21:09:21 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "<", expecting end of file in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 2
+[17-Nov-2025 21:16:16 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 142
+[17-Nov-2025 21:16:16 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;SESION&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 144
+[17-Nov-2025 21:17:27 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 142
+[17-Nov-2025 21:17:27 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;SESION&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 144
+[17-Nov-2025 21:17:51 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 142
+[17-Nov-2025 21:17:51 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;SESION&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 144
+[17-Nov-2025 21:26:21 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 142
+[17-Nov-2025 21:26:21 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;SESION&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 144
+[17-Nov-2025 21:34:33 America/Mexico_City] PHP Deprecated:  Automatic conversion of false to array is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 142
+[17-Nov-2025 21:34:33 America/Mexico_City] PHP Warning:  oci_execute(): ORA-01400: no se puede realizar una inserci�n NULL en (&quot;ADMIN&quot;.&quot;SESION&quot;.&quot;ID_USUARIO&quot;)
+Ayuda: https://docs.oracle.com/error-help/db/ora-01400/ in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 144
+[17-Nov-2025 21:51:21 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:51:21 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:52:02 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:52:02 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:52:09 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:52:09 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:53:12 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:53:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:53:41 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:53:41 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php:124
+Stack trace:
+#0 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 124
+[17-Nov-2025 21:54:21 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 50
+[17-Nov-2025 21:54:21 America/Mexico_City] PHP Warning:  Undefined array key "ROL" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 53
+[17-Nov-2025 22:03:42 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "public", expecting end of file in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 37

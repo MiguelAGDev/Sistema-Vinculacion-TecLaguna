@@ -35,10 +35,13 @@ class administrador{
         /**
          * Summary of obtenerUsuarios
          * Muestra todos las columnas visibles que tiene la tabla USUARIOS
-         * 
+         *
          * @return Statement El resultado que se compila en la base 
          * de datos
          */
+        
+
+        
         public function obtenerUsuarios (){
             $sql ="SELECT id_usuario, nombre_usuario, correo_usuario, telefono_usuario 
                    FROM usuario";
@@ -278,7 +281,7 @@ class administrador{
         if (oci_execute($stmt,OCI_DEFAULT)){
             echo"Cambios realizados";
         }else{
-            echo"Favor de verifixar los datos";
+            echo"Favor de verificar los datos";
         }
 }
     }
