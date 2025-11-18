@@ -59,7 +59,6 @@ require_once __DIR__.'/Permisos.php';
 
             /**If que valida que la query se haya ejecutado */
             if(oci_execute($stmt)){
-<<<<<<< HEAD
                 $row = oci_fetch_assoc ($stmt); //para recuperar el reglon y poder acceder a a la comlumna;
                 if($row){ //si todo sale bien se pasa a verificar;
                     $permisos = 1;
@@ -78,7 +77,6 @@ require_once __DIR__.'/Permisos.php';
                       }else{
                              echo"<p style='color:red'> No tiene permiso de iniciar sesion </p>";
                       }  
-=======
                 
         /** 
              * Obtiene la fila con los datos del usuario si existe, en forma de arreglo asociativo
@@ -131,7 +129,6 @@ require_once __DIR__.'/Permisos.php';
                     }
                 } else {
                     echo "<p style='color:red'> No tiene permiso de iniciar sesión </p>";
->>>>>>> 3e8f2032a92551c0b22d361da03c97c328d44d98
                 }
             }
         } else {
@@ -147,4 +144,5 @@ require_once __DIR__.'/Permisos.php';
         oci_execute($stmt2);
     }
 
+    }
 } // FINAL CLASE usuario

@@ -897,3 +897,4 @@ Stack trace:
 Stack trace:
 #0 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\agregarUsuario.php on line 119
+[17-Nov-2025 18:22:56 America/Mexico_City] PHP Parse error:  syntax error, unexpected token "<<" in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 62
