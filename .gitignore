@@ -1,1 +1,32 @@
-config/Config.php
+# Ignorar carpetas específicas
+/config/
+/database/
+/logs/
+/data/
+
+# Archivos de entorno
+.env
+.env.local
+.env.*
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales o de respaldo
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Dependencias (si llegas a usar Composer o npm)
+vendor/
+node_modules/
+
+# Archivos de caché
+.cache/
+.idea/
+.vscode/
+
+# Archivos del servidor
+.htaccess
