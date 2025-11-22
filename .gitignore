@@ -3,6 +3,7 @@
 /database/
 /logs/
 /data/
+/public/uploads/
 
 # Archivos de entorno
 .env
