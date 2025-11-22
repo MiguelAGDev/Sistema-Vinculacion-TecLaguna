@@ -1,143 +1,179 @@
+<?php 
+// src/views/flyer_form.php
+
+// Inicialización de variables para evitar "Undefined index" si no llegan datos
+$formData = $viewData['form_data'] ?? [];
+$carreras = $viewData['carreras'] ?? [];
+$grupos = $viewData['grupos'] ?? [];
+$mensaje = $viewData['mensaje'] ?? ''; // Por si quieres mostrar notificaciones aquí también
+$tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
+
+require_once __DIR__.'/../includes/Header.ini.php';
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moderación de Publicaciones</title>
-
+    <title>Publicar Nueva Oferta</title>
     <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/moderacion.css">
+    <link rel="stylesheet" href="/assets/css/flyers_form.css">
 </head>
-
 <body>
 
-<?php 
-    session_start();
-    require __DIR__ . '/../includes/header.ini.php';
-    require_once __DIR__ . '/../config/database.php';
-    require_once __DIR__ . '/../controllers/FlyerController.php';
+    <div class="main-container"> <div class="form-container">
+            <h1>📝 Publicar Nueva Oferta de Trabajo</h1>
+            <br><br>
+            <form method="POST" action="index.php?url=flyer/store" enctype="multipart/form-data" class="flyer-form">
 
-    $controller = new FlyerController($conn);
-    $data = $controller->handleRequest();
+                <fieldset class="form-section">
+                    <legend>📢 Información de la Publicación</legend>
 
-    $flyers = $data['flyers'];
-    $flyerSeleccionado = $data['flyerSeleccionado'];
-    $totalPendientes = $data['totalPendientes'];
-?>
-
-<main>
-    <section class="form-container moderacion-container">
-        <h1>📋 Moderación de Publicaciones</h1>
-        <p class="section-subtitle">Revisa y gestiona las publicaciones enviadas</p>
-
-        <div class="moderacion-layout">
-            <!-- PANEL IZQUIERDO: Lista de publicaciones -->
-            <fieldset class="form-section sidebar-section">
-                <legend>📑 Publicaciones Pendientes</legend>
-                <small class="pending-count"><?= $totalPendientes ?> elementos por revisar</small>
-
-                <div class="publications-list">
-                    <?php if (empty($flyers)): ?>
-                        <div class="empty-state">
-                            <p>✅ No hay publicaciones pendientes</p>
-                        </div>
-                    <?php else: ?>
-                        <?php foreach ($flyers as $flyer): ?>
-                            <a href="?id=<?= $flyer['FLAYER_ID'] ?>" 
-                               class="publication-card <?= ($flyerSeleccionado && $flyerSeleccionado['FLAYER_ID'] == $flyer['FLAYER_ID']) ? 'active' : '' ?>">
-                                <div class="card-image">
-                                    <img src="<?= htmlspecialchars($flyer['URL_IMAGEN']) ?>" 
-                                         alt="<?= htmlspecialchars($flyer['TITULO']) ?>">
-                                </div>
-                                <div class="card-info">
-                                    <h3><?= htmlspecialchars($flyer['TITULO']) ?></h3>
-                                    <p class="author">por <?= htmlspecialchars($flyer['NOMBRE_EMPRESA']) ?></p>
-                                    <span class="category-tag">🏢 Empresa</span>
-                                </div>
-                            </a>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </fieldset>
-
-            <!-- PANEL DERECHO: Detalle de publicación -->
-            <fieldset class="form-section detail-section">
-                <legend>👁️ Vista Previa</legend>
-
-                <?php if ($flyerSeleccionado): ?>
-                    <!-- Encabezado del detalle -->
-                    <div class="detail-header">
-                        <div class="detail-title-row">
-                            <h2><?= htmlspecialchars($flyerSeleccionado['TITULO']) ?></h2>
-                            <span class="status-badge pending">⏳ Pendiente</span>
-                        </div>
-
-                        <!-- Meta información -->
-                        <div class="detail-meta">
-                            <span>🏢 <?= htmlspecialchars($flyerSeleccionado['NOMBRE_EMPRESA']) ?></span>
-                            <span class="separator">•</span>
-                            <span>🎓 Carrera</span>
-                            <span class="separator">•</span>
-                            <span>📅 <?= date('d/m/Y', strtotime($flyerSeleccionado['FECHA_CREACION'])) ?></span>
-                        </div>
-
-                        <!-- Botones de acción -->
-                        <div class="form-actions detail-actions">
-                            <a href="?action=aprobar&id=<?= $flyerSeleccionado['FLAYER_ID'] ?>" 
-                               class="btn btn-primary btn-approve">
-                                ✅ Aprobar
-                            </a>
-                            <a href="?action=rechazar&id=<?= $flyerSeleccionado['FLAYER_ID'] ?>" 
-                               class="btn btn-secondary btn-reject">
-                                ❌ Rechazar
-                            </a>
-                            <button type="button" class="btn btn-secondary btn-delete" title="Eliminar permanentemente">
-                                🗑️ Eliminar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Imagen principal -->
-                    <div class="detail-image">
-                        <img src="<?= htmlspecialchars($flyerSeleccionado['URL_IMAGEN']) ?>" 
-                             alt="<?= htmlspecialchars($flyerSeleccionado['TITULO']) ?>">
-                    </div>
-
-                    <!-- Descripción -->
                     <div class="form-group">
-                        <label>📝 Descripción</label>
-                        <div class="detail-description">
-                            <?= $flyerSeleccionado['DESCRIPCION'] ?>
-                        </div>
+                        <label for="title">
+                            📌 Título de la Oferta *
+                        </label>
+                        <input 
+                            type="text" 
+                            name="title" 
+                            id="title" 
+                            placeholder="Ej: Desarrollador Full Stack - Proyecto Enterprise"
+                            maxlength="200" 
+                            required
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($formData['title'] ?? ''); ?>">
+                        <small class="form-hint">Máximo 200 caracteres</small>
                     </div>
 
-                <?php else: ?>
-                    <div class="empty-state">
-                        <p>👈 Selecciona una publicación para ver sus detalles</p>
+                    <div class="form-group">
+                        <label for="abstract">
+                            📝 Descripción del Puesto *
+                        </label>
+                        <input type="file" id="image-upload-trigger" accept="image/*" style="display: none;">
+                        
+                        <textarea 
+                            name="abstract" 
+                            id="abstract" 
+                            class="tinymce-editor"
+                            placeholder="Describe las responsabilidades, requisitos y beneficios del puesto..."><?php echo htmlspecialchars($formData['abstract'] ?? ''); ?></textarea>
+                        <small class="form-hint">Usa el editor para dar formato a tu texto, para agregar imagenes solo pegalas o arrastralas al editor.</small>
                     </div>
-                <?php endif; ?>
-            </fieldset>
+
+                    <div class="form-group">
+                        <label for="career">
+                            🎓 Carrera de Interés *
+                        </label>
+                        <select id="career" name="career" required class="form-control">
+                            <option value="" disabled <?php echo empty($formData['career']) ? 'selected' : ''; ?>>
+                                Selecciona una carrera...
+                            </option>
+                            <?php foreach ($carreras as $codigo => $nombre): ?>
+                                <option 
+                                    value="<?php echo $codigo; ?>"
+                                    <?php echo (($formData['career'] ?? '') === $codigo) ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($nombre); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-section">
+                    <legend>ℹ️ Información Adicional</legend>
+
+                    <div class="form-group">
+                        <label for="group">
+                            👥 Tipo de Trabajador *
+                        </label>
+                        <select id="group" name="group" required class="form-control">
+                            <option value="" disabled <?php echo empty($formData['group']) ? 'selected' : ''; ?>>
+                                Selecciona una opción...
+                            </option>
+                            <?php foreach ($grupos as $codigo => $nombre): ?>
+                                <option 
+                                    value="<?php echo $codigo; ?>"
+                                    <?php echo (($formData['group'] ?? '') === $codigo) ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($nombre); ?>
+                                </option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">
+                            💰 Sueldo *
+                        </label>
+                        <input 
+                            type="text" 
+                            name="salary" 
+                            id="salary" 
+                            placeholder="Ej: $15,000 - $20,000 MXN mensuales"
+                            required
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($formData['salary'] ?? ''); ?>">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="end_date">
+                            📅 Fecha de Cierre
+                            <small>(Opcional)</small>
+                        </label>
+                        <input 
+                            type="date" 
+                            name="end_date" 
+                            id="end_date"
+                            class="form-control"
+                            value="<?php echo htmlspecialchars($formData['end_date'] ?? ''); ?>">
+                        <small class="form-hint">Dejar vacío si no hay límite de tiempo</small>
+                    </div>
+                </fieldset>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        ✅ Publicar Oferta
+                    </button>
+
+                    <button type="reset" class="btn btn-secondary" onclick="navigator.sendBeacon('/index.php?ruta=43/clean_img', 'cancel');">
+                        🔄 Limpiar Formulario
+                    </button>
+
+                    <a 
+                        href="/flyer" 
+                        class="btn btn-secondary"
+                        onclick="navigator.sendBeacon('/index.php?url=api/delimg', 'cancel');"
+                    >
+                        ❌ Cancelar
+                    </a>
+                </div>
+
+                <div class="form-notice">
+                    <small>
+                        📋 Consulta las <a href="#">"Reglas de la Comunidad"</a> antes de publicar.
+                        <br>
+                        Los campos marcados con (*) son obligatorios.
+                    </small>
+                </div>
+            </form>
         </div>
 
-        <div class="form-notice">
-            <small>
-                📋 Las publicaciones aprobadas serán visibles para todos los usuarios.<br>
-                Las publicaciones rechazadas serán ocultadas del panel de moderación.
-            </small>
+    </div> <?php if (!empty($mensaje)): ?>
+        <div class="toast <?= $tipo_mensaje ?>" style="position: fixed; bottom: 20px; right: 20px; padding: 15px; background: #333; color: #fff; border-radius: 5px; z-index: 1000;">
+            <?= $mensaje ?>
         </div>
-    </section>
-</main>
-
-<?php if (isset($_SESSION['mensaje'])): ?>
-    <div class="toast <?= $_SESSION['tipo_mensaje'] ?>">
-        <?= $_SESSION['mensaje'] ?>
-    </div>
-    <?php unset($_SESSION['mensaje'], $_SESSION['tipo_mensaje']); ?>
-<?php endif; ?>
-
-<?php 
-    require __DIR__ . '/../includes/footer.ini.php';
-?>
+        <script>
+            setTimeout(function() {
+                const toast = document.querySelector('.toast');
+                if(toast) {
+                    toast.style.opacity = '0';
+                    toast.style.transition = 'opacity 0.5s';
+                    setTimeout(() => toast.remove(), 500);
+                }
+            }, 3000);
+        </script>
+    <?php endif; ?>
+    <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
+    <?php require __DIR__ . '/../includes/tinymce_editor.php'; ?>
+    <script src="/assets/js/clean_img.js"></script>
 
 </body>
 </html>

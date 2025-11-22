@@ -1,5 +1,7 @@
 <?php
 
+require __DIR__.'/../vendor/autoload.php';
+
 /* 16 de Noviembre 2025 01:36 AM */
 /** Sumary of Index.php
  * El index recibe las direcciones url para cada una de las 

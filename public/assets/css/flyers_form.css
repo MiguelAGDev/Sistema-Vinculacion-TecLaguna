@@ -1,8 +1,14 @@
 /* Estilos específicos para el layout del formulario */
-.form-upload {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 20px;
+.form-container {
+    max-width: 800px;       /* Limita el ancho (puedes bajar a 700px si lo quieres más angosto) */
+    width: 90%;             /* En móviles ocupará el 90% para dejar margenes a los lados */
+    margin: 40px auto;      /* 40px arriba/abajo y AUTO a los lados (esto es lo que lo centra) */
+    padding: 30px;          /* Espacio interno */
+    
+    /* Opcional: Para que se vea como una tarjeta centrada */
+    background-color: #ffffff; /* Asegura fondo blanco si tu body es gris */
+    border-radius: 8px;        /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Sombrita suave para resaltar */
 }
 
 .form-section-title {
@@ -94,4 +100,23 @@
 .mensaje.success {
     background-color: #efe;
     border: 1px solid #cfc;
+}
+
+/* Quitar el borde feo del fieldset */
+.form-section {
+    border: none;       /* Adiós a la línea negra */
+    padding: 0;         /* Quita el relleno por defecto */
+    margin: 0 0 30px 0; /* Mantiene separación entre secciones */
+}
+
+/* Darle estilo al título (legend) para que parezca un encabezado normal */
+.form-section legend {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    width: 100%;        /* Que ocupe todo el ancho */
+    border-bottom: 1px solid #eee; /* Opcional: una línea suave solo abajo del título */
+    display: block;
 }

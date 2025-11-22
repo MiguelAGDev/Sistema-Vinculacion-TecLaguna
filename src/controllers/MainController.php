@@ -37,7 +37,7 @@ class MainController {
     private function login() {
         include 'views/login.php';
     }
-    public function main() {
+    public function manage() {
         include 'adminFlyersManageController.php';
         $ver = new adminFlyersManageController();
         $ver->index();

@@ -17,17 +17,42 @@ body {
 }
 
 /* Contenedor principal */
-.moderacion-container {
+/* .moderacion-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 1.5rem;
     min-height: 100vh;
-}
+} */
 
-.header-content h1 {
+/* Header (headerd por el global :V) */
+.headerd-content h1 {
     font-size: 1.5rem;
     font-weight: 600;
     margin-bottom: 0.25rem;
+}
+
+.headerd {
+    background-color: white; /* Variable de global.css */
+    color: black;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    
+    /* Reseteamos propiedades del header global por si acaso */
+    height: auto; 
+    display: block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.headerd h1 {
+    color: black;
+}
+
+/* El subtítulo necesita ser claro sobre fondo oscuro */
+.headerd .section-subtitle {
+    color: var(--dorado-acento); /* Usamos tu color de acento */
+    font-weight: 500;
+    opacity: 0.9;
 }
 
 .section-subtitle {
@@ -38,9 +63,11 @@ body {
 /* Layout de dos columnas */
 .moderacion-layout {
     display: grid;
-    grid-template-columns: 350px 1fr;
+    /* 350px fijo a la izquierda, el resto a la derecha (sin deformarse) */
+    grid-template-columns: 350px minmax(0, 1fr); 
     gap: 1.5rem;
     align-items: start;
+    width: 100%; /* Asegura que use todo el ancho del contenedor padre */
 }
 
 /* ========================================
@@ -185,6 +212,36 @@ body {
     color: #333;
 }
 
+.detail-description {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+    
+    /* ALTO FIJO: Define el alto de la caja de lectura */
+    height: 500px;       /* Altura fija */
+    overflow-y: auto;    /* Scroll solo dentro de esta caja */
+    
+    /* Estilo visual del scrollbar para que se vea integrado */
+    scrollbar-width: thin;
+    scrollbar-color: var(--azul-institucional) #f1f1f1;
+}
+
+.detail-description img {
+    max-width: 100%;        /* No más ancho que el contenedor */
+    max-height: 300px;      /* IMPORTANTE: Límite de altura para la imagen */
+    object-fit: contain;    /* La imagen se reduce para caber sin estirarse */
+    display: block;         /* Comportamiento de bloque */
+    margin: 1rem auto;      /* Centrada horizontalmente */
+    
+    border-radius: 6px;
+    border: 1px solid #ddd; /* Borde suave para delimitar la imagen */
+    background-color: #fff; /* Fondo blanco por si la imagen tiene transparencia */
+}
+
 /* Badge de estado */
 .status-badge {
     padding: 0.3rem 0.75rem;
@@ -264,13 +321,16 @@ body {
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     padding: 1.25rem;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    color: #333;
-    max-height: 60vh;
-    overflow-y: auto;
+    
+    /* MANTENEMOS EL CONTENEDOR FIJO */
+    width: 100%;
+    height: 600px;        
+    overflow-y: auto;     /* El scroll permite que el contenido sea tan largo como quiera */
+    box-sizing: border-box;
+    
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
 }
-
 .detail-description p {
     margin-bottom: 1rem;
 }
@@ -280,10 +340,17 @@ body {
 }
 
 .detail-description img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 6px;
-    margin: 0.5rem 0;
+    /* IMPORTANTE: */
+    max-width: 100%;        /* Nunca más ancho que la caja (evita scroll horizontal) */
+    height: auto !important;/* Altura automática para respetar proporciones originales */
+    
+    display: inline-block;  /* Deja que floten o se comporten como texto si así venían */
+    margin: 0.5rem 0;       /* Un poco de aire vertical */
+    
+    /* Quitamos los bordes y fondos grises forzados anteriores */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 /* Estado vacío */
@@ -400,4 +467,38 @@ body {
 .publications-list::-webkit-scrollbar-thumb:hover,
 .detail-description::-webkit-scrollbar-thumb:hover {
     background: #a1a1a1;
+}
+
+.detail-description ul, 
+.detail-description ol {
+    margin: 1em 0;          /* Espacio arriba y abajo */
+    padding-left: 40px;     /* Espacio a la izquierda para que se vean los puntos */
+    list-style-position: outside; /* Puntos fuera del texto */
+}
+
+.detail-description ul {
+    list-style-type: disc;  /* Puntos negros */
+}
+
+.detail-description ol {
+    list-style-type: decimal; /* Números */
+}
+
+.detail-description li {
+    margin-bottom: 0.5em; /* Separación entre elementos de lista */
+}
+
+/* 2. Títulos dentro de la descripción */
+.detail-description h1, 
+.detail-description h2, 
+.detail-description h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* 3. Párrafos */
+.detail-description p {
+    margin-bottom: 1em; /* Devolver el espacio entre párrafos */
 }

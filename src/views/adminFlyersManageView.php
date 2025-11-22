@@ -8,6 +8,8 @@ $flyerSeleccionado = $viewData['flyerSeleccionado'] ?? null;
 $totalPendientes = $viewData['totalPendientes'] ?? 0;
 $mensaje = $viewData['mensaje'] ?? '';
 $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
+
+require_once __DIR__.'/../includes/Header.ini.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -16,12 +18,13 @@ $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moderación de Publicaciones</title>
     <link rel="stylesheet" href="assets/css/moderacion.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
 </head>
 <body>
     <div class="moderacion-container">
         
-        <header class="header" style="margin-bottom: 1.5rem;">
-            <div class="header-content">
+        <header class="headerd" style="margin-bottom: 1.5rem;">
+            <div class="headerd-content">
                 <h1>Moderación de Publicaciones</h1>
                 <p class="section-subtitle">Revisa y gestiona las publicaciones enviadas</p>
             </div>
@@ -33,18 +36,18 @@ $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
             <aside class="sidebar-section">
                 <div class="sidebar-header">
                     <h2>Pendientes</h2>
-                    <span class="pending-count"><?= $totalPendientes ?> por revisar</span>
+                    <span class="pending-count" id="pendingCount"><?= $totalPendientes ?> por revisar</span>
                 </div>
                 
-                <div class="publications-list">
+                <div class="publications-list" id="publicationsList">
                     <?php if (empty($flyers)): ?>
                         <div class="empty-state">
                             <p>No hay publicaciones pendientes</p>
                         </div>
                     <?php else: ?>
                         <?php foreach ($flyers as $flyer): ?>
-                            <a href="?id=<?= $flyer['FLAYER_ID'] ?>" 
-                               class="publication-card <?= ($flyerSeleccionado && $flyerSeleccionado['FLAYER_ID'] == $flyer['FLAYER_ID']) ? 'active' : '' ?>">
+                            <div class="publication-card <?= ($flyerSeleccionado && $flyerSeleccionado['FLAYER_ID'] == $flyer['FLAYER_ID']) ? 'active' : '' ?>"
+                                 data-flyer-id="<?= $flyer['FLAYER_ID'] ?>">
                                 <div class="card-image">
                                     <?php $imgSrc = !empty($flyer['URL_IMAGEN']) ? htmlspecialchars($flyer['URL_IMAGEN']) : 'assets/img/placeholder.png'; ?>
                                     <img src="<?= $imgSrc ?>" alt="<?= htmlspecialchars($flyer['TITULO']) ?>">
@@ -54,14 +57,15 @@ $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
                                     <p class="author">por <?= htmlspecialchars($flyer['NOMBRE_EMPRESA']) ?></p>
                                     <span class="category-tag">Empresa</span>
                                 </div>
-                            </a>
+                            </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
                 </div>
             </aside>
 
             <!-- DETAIL: Vista previa de publicación -->
-            <section class="detail-section">
+            <section class="detail-section" id="detailSection" 
+                     data-current-id="<?= $flyerSeleccionado ? $flyerSeleccionado['FLAYER_ID'] : '' ?>">
                 <?php if ($flyerSeleccionado): ?>
                     
                     <div class="detail-header">
@@ -79,16 +83,16 @@ $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
                         </div>
 
                         <div class="detail-actions">
-                            <a href="?action=aprobar&id=<?= $flyerSeleccionado['FLAYER_ID'] ?>" class="btn btn-approve">
+                            <button type="button" class="btn btn-approve" data-action="aprobar" data-id="<?= $flyerSeleccionado['FLAYER_ID'] ?>">
                                 ✓ Aprobar
-                            </a>
-                            <a href="?action=rechazar&id=<?= $flyerSeleccionado['FLAYER_ID'] ?>" class="btn btn-reject">
+                            </button>
+                            <button type="button" class="btn btn-reject" data-action="rechazar" data-id="<?= $flyerSeleccionado['FLAYER_ID'] ?>">
                                 ✕ Rechazar
-                            </a>
+                            </button>
                         </div>
                     </div>
 
-                    <!-- Descripción (contiene las imágenes embebidas) -->
+                    <!-- Descripción -->
                     <div class="detail-description">
                         <?= $flyerSeleccionado['DESCRIPCION'] ?> 
                     </div>
@@ -102,19 +106,11 @@ $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
         </div>
     </div>
 
-    <?php if (!empty($mensaje)): ?>
-        <div class="toast <?= $tipo_mensaje ?>">
-            <?= $mensaje ?>
-        </div>
-        <script>
-            setTimeout(function() {
-                const toast = document.querySelector('.toast');
-                if(toast) {
-                    toast.style.opacity = '0';
-                    setTimeout(() => toast.remove(), 500);
-                }
-            }, 3000);
-        </script>
-    <?php endif; ?>
+    <!-- Toast para notificaciones -->
+    <div class="toast" id="toast" style="display: none;"></div>
+    <!-- FOOTER -->
+    <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
+    <!-- JavaScript externo -->
+    <script src="assets/js/moderacion.js"></script>
 </body>
 </html>

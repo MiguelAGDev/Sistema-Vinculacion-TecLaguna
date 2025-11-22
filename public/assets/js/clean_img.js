@@ -1,4 +1,4 @@
-const CLEANUP_ENDPOINT = '/index.php?=ruta=43/clean_img';
+const CLEANUP_ENDPOINT = '/index.php?url=api/delimg';
 
 document.addEventListener('visibilitychange', function(e){
     if (document.visibilityState === 'hidden'){

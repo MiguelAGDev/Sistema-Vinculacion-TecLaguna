@@ -2,7 +2,7 @@
 // src/controllers/FlyerCreateController.php
 
 require_once __DIR__ . '/../models/flyerCreateModel.php';
-require_once SERVICE_PATH . 'PurifierService.php';
+require_once SERVICE_PATH . '/PurifierService.php';
 
 class FlyerController {
     private $model;
@@ -44,7 +44,7 @@ class FlyerController {
     public function store() {
         // Verificar que sea una petición POST
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-            header('Location: /flyer/create');
+            header('Location: index.php?url=flyer/create');
             exit;
         }
 
@@ -76,7 +76,7 @@ class FlyerController {
             $_SESSION['mensaje'] = $validation['error'];
             $_SESSION['tipo_mensaje'] = 'error';
             $_SESSION['form_data'] = $formData;
-            header('Location: /index?ruta=flyer/create');
+            header('Location: /index.php?url=flyer/create');
             exit;
         }
 
@@ -99,7 +99,7 @@ class FlyerController {
             $savedImageUrls = $this->getAllImagesUrl($formData['abstract']);
             $this->cleanImgs($savedImageUrls);
             unset($_SESSION['form_data']);
-            header('Location: /index?ruta=flyer/create');
+            header('Location: /index.php?url=flyer/create');
         } else {
             $_SESSION['form_data'] = $formData;
         }

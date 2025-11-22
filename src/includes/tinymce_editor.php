@@ -56,7 +56,7 @@
         file_picker_callback:null,
         images_upload_handler: function (blobInfo, success, failure) {
             return new Promise((resolve, reject)=>{
-                const uploadUrl = 'index.php?ruta=43/upload_img';
+                const uploadUrl = 'index.php?url=api/upimg';
 
                 const formData = new FormData();
                 formData.append('file', blobInfo.blob(), blobInfo.filename());
@@ -162,7 +162,7 @@
     });
 
     function uploadFileAndInsert(file, editor){
-        const uploadUrl = 'index.php?ruta=43/upload_img';
+        const uploadUrl = 'index.php?url=api/upimg';
         const formData = new FormData();
         formData.append('file', file, file.name);
 
