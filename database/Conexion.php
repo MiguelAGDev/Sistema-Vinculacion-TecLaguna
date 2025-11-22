@@ -1,7 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../config/config.php';
-
+require_once __DIR__.'/../config/Config.php';
 // 7 de Noviembre 2025, 3:40 PM
 class Conexion{
 
@@ -13,6 +12,9 @@ class Conexion{
     public function __construct(){
         // Establece la variable de entorno para el oracle wallet
         putenv("TNS_ADMIN=".ORACLE_TNS_ADMIN);
+        putenv("PATH=" . getenv("PATH") . PATH_SEPARATOR .ORACLE_INSTANT_CLIENT);
+        putenv(ORACLE_LD_LIBRARY_PATH);
+        putenv(ORACLE_SSL_CERT_FILE);
     }
 
     // Metodo conexion, realiza la conexion con la base de datos
@@ -23,9 +25,9 @@ class Conexion{
             
             // Se inicializa la conexion
             $this->conn = oci_connect(
-                ORACLE_USER, // Usuario de la base de datos
-                ORACLE_PASSWORD,// Contrasenha del usuario
-                ORACLE_SERVICE_NAME // Nombre del servicio de la base de datos
+                'ADMIN', // Usuario de la base de datos
+                'Abc123456789___',// Contrasenha del usuario
+                'vinculacioninstitutotecdelalag_high' 
             );
 
             // Si la conexion no se realizo
@@ -67,6 +69,10 @@ class Conexion{
 }
 
 
+// Processar el html
+// vamos a tener un metodo 'accion', que va contar con conectar' y 'desconectar'.
+//  Los cuales se consultara para realizar el proceso de abrir y cerrar conexion 
+
 //Esta variable solo mostrar el mensje de 'conexion - realizada o no realizada'
 $mensaje = '';
 
@@ -76,6 +82,11 @@ $conexion = new Conexion();
 //Aqui es todo el proceso
 // Verificamos si el formulario fue enviado con metodo POST
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+    // Aqui es donde verificamos el arreglo accion
+    // verifica si la variable post en la posicion conectar
+    // no es nula
+    // el isset es una uncion que verifica si una variable esta definida y no es null
 
     if(isset($_POST['accion'])){
 
@@ -113,4 +124,22 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
+?>
 
+<!--
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Test conexión Oracle</title>
+</head>
+<body>
+    <h1>Estado de la conexión: <?php echo $mensaje ? $mensaje : "Desconectada"; ?></h1>
+
+    <form method="post">
+        <button type="submit" name="accion" value="conectar">Conectar</button>
+        <button type="submit" name="accion" value="desconectar">Desconectar</button>
+    </form>
+</body>
+</html> 
+-->
