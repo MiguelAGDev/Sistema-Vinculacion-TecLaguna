@@ -1,0 +1,53 @@
+/* === Estilos del Menú Lateral === */
+
+.menu-container {
+    width: 230px;
+    background: var(--azul-institucional);
+    color: white;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.menu-title {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.menu-user {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.menu-ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-ul li {
+    padding: 12px 20px;
+}
+
+.menu-ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-ul li:hover {
+    background: var(--azul-institucional);
+    cursor: pointer;
+}
+
+.menu-divider {
+    border-color:var(--azul-institucional);
+    margin: 10px 0;
+}

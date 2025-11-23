@@ -5,11 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Usuario</title>
 
-  <!-- Estilos globales "../../assets/css/global.css"-->
-  <link rel="stylesheet" href="../../public/assets/css/global.css">
-
-  <!-- Estilos del formulario -->
-  <link rel="stylesheet" href="../../public/assets/css/agregarUsuarios.css">
+  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
+  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/agregarUsuarios.css">
+   <!-- Script -->
+  <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/agregarUsuarios.js"></script>
 </head>
 <body>
 
@@ -44,13 +43,14 @@
           <option value="3">Egresado</option>
           <option value="4">Empresa</option>
         </select>
+
         <!-- Si no es una empresa -->
-         <label for="tipo">Curriculum</label>
-        <input type="file" name="archivo" id="archivo">
-        <button type="submit" value="Subir archivo">
+      <div id="opcional" style="display:none;">
+        <label for="Curriculum" >Curriculum</label>
+        <input type="file" name="curriculum" id="curriculum">
 
         <label for="carrera">Carrera</label>
-        <select id="carrera" name="carrera" >
+        <select id="carrera" name="carrera">
           <option value="">Seleccione una carrera</option>
           <option value="1">Licenciatura en Administración</option>
           <option value="2">Ingeniería en Eléctrica</option>
@@ -64,6 +64,8 @@
           <option value="10">Ingeniería Química</option>
         </select>
 
+      </div>
+
        
          <!-- Campos Alumno -->
         <div id="alumno" style="display: none;" >
@@ -76,13 +78,13 @@
 
         <!-- Campos Residente -->
         <div id="residente" style="display: none;">
-          <label>Proyecto</label>
-          <input type="file" name="archivo" id="archivo">
-          <input type="submit" value="Subir archivo">
+         <label for="proyecto">Proyecto</label>
+         <input type="file" name="archivo_proyecto" id="proyecto">
+
 
           <!-- <input type="text" id="proyecto" name="proyecto" placeholder="Proyecto"> -->
 
-          <label for="carrera">Carrera</label>
+          <label for="asesor">Asesor</label>
           <select id="asesor" name="asesor" >
             <option value="">Seleccione un asesor</option>
             <option value="1">Asesor 1</option>
@@ -122,7 +124,7 @@
     </section>
   </main>
     <!--<?php require_once __DIR__.'/../includes/Footer.php';?>-->
-  <!-- Script -->
-  <script src="assets/js/agregarUsuarios.js"></script>
+ 
 </body>
 </html>
+ 

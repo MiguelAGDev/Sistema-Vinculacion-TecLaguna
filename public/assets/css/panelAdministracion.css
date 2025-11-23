@@ -1,0 +1,67 @@
+.panel-container {
+    max-width: 1100px;
+    margin: 40px auto 120px auto; 
+    background: var(--blanco);
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.panel-title {
+    font-size: 2rem;
+    color: var(--azul-institucional);
+    margin-bottom: 8px;
+}
+
+.panel-sub {
+    color: var(--gris-oscuro);
+    margin-bottom: 30px;
+}
+
+/* ===== Botón principal del rubro ===== */
+.panel-option {
+    background-color: var(--azul-institucional);
+    color: var(--blanco);
+    padding: 18px 25px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.25s ease;
+    position: relative;
+}
+
+/* Flecha */
+.panel-option::after {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s ease;
+}
+
+.panel-option.active::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.panel-option:hover {
+    background-color: #00264d;
+}
+
+/* ===== Contenedor del menú desplegable ===== */
+.dropdown {
+    background: var(--gris-claro);
+    margin-top: -10px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--azul-institucional);
+    border-radius: 0 0 6px 6px;
+    display: none;
+    padding: 12px 20px;
+}
+
+/* Dentro del dropdown (aún vacío, solo estructura) */
+.dropdown p {
+    color: var(--gris-oscuro);
+    padding: 6px 0;
+}

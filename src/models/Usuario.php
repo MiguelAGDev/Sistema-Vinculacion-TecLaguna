@@ -54,7 +54,7 @@ public function validarUsuario($correo, $contrasena) {
                     oci_bind_by_name($stmt2, ':valido', $valido);
                     oci_execute($stmt2);
 
-                    return true;
+                    return $row;
                 } else {
                     echo "<p style='color:red'>Contraseña incorrecta</p>";
                 }

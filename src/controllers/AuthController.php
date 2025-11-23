@@ -1,49 +1,47 @@
 <?php
 class AuthController {
-    public function login() {
-        // Carga la vista del login
-        include __DIR__ . '/../views/login.php';
-    }
 
     public function index() {
-        // Método por defecto si no se pasa método
         $this->login();
     }
 
+    public function login() {
+        include __DIR__ . '/../views/login.php';
+    }
+
+    public function agregarUsuario() {
+        include __DIR__ . '/../views/agregarUsuario.php';
+    }
+    public function panelAdministracion (){
+        include __DIR__.'/../views/panelAdministracion.php';
+    }
+
     public function validar() {
+    ob_start();
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $correo = $_POST['correo'] ?? '';
         $contrasena = $_POST['contrasena'] ?? '';
 
         require_once __DIR__ . '/../models/Usuario.php';
-        $usuarioModel = new Usuario();
-        $usuario = $usuarioModel->validarUsuario($correo, $contrasena);
-
+        $this->usuarioModel = new Usuario(); // Asignación correcta si estás en una clase
+        $usuario = $this->usuarioModel->validarUsuario($correo, $contrasena);
         if ($usuario) {
             session_start();
             $_SESSION['usuario'] = $usuario['NOMBRE_USUARIO'];
             $_SESSION['id_usuario'] = $usuario['ID_USUARIO'];
-            // Redirección dinámica mañana le pregunto a miguel
-        switch ($_SESSION['rol']) {
-            case 'admin':
-                header('Location: index.php?url=admin/agregar');
-                break;
-            case 'coordinador':
-                header('Location: index.php?url=coordinador/dashboard');
-                break;
-            case 'empresa':
-                header('Location: index.php?url=empresa/perfil');
-                break;
-            default:
-                header('Location: index.php?url=main/home');
-
+            $_SESSION['id_tipo_usuario'] = $usuario['ID_TIPO_USUARIO'];
+            header('Location: index.php?url=auth/panelAdministracion');
             exit;
         } else {
             echo "<p style='color:red;'>Credenciales incorrectas</p>";
             include __DIR__ . '/../views/login.php';
         }
     }
+
+    ob_end_flush();
 }
+
 
     public function logout() {
         session_start();
@@ -63,6 +61,7 @@ class AuthController {
 
     public function home() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/main.php'; // Asegúrate que esta vista exista
+        include __DIR__ . '/../views/main.php';
     }
 }
+

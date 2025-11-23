@@ -1,25 +1,37 @@
 function mostrarCampos() {
-  const tipo = document.getElementById("tipo").value;
+  const tipo = parseInt(document.getElementById("tipo").value);
+
   const camposAlumno = document.getElementById("alumno");
   const camposResidente = document.getElementById("residente");
   const camposEgresado = document.getElementById("egresado");
-  const carrera = document.getElementById("carrera");
-  const curriculum = document.getElementById ("archivo");
+  const opcional = document.getElementById("opcional");
 
-  // Ocultamos ambos primero
+  // Ocultar todo
   camposAlumno.style.display = "none";
   camposResidente.style.display = "none";
   camposEgresado.style.display = "none";
+  opcional.style.display = "none";
 
-  // Mostramos según el tipo seleccionado
-  if (tipo === "1") {
-    camposAlumno.style.display = "block";
-  } else if (tipo === "2") {
-    camposResidente.style.display = "block";
-  }else if(tipo === "3") {
-    camposEgresado.style.display = "block";
-  }else if (tipo==="4"){
-    curriculum.style.display ="none";
-    carrera.style.display= "none";
+  // Mostrar según el tipo
+  switch (tipo) {
+    case 1: // Alumno
+      opcional.style.display = "block";
+      camposAlumno.style.display = "block";
+      break;
+
+    case 2: // Residente
+      camposResidente.style.display = "block";
+      opcional.style.display = "block";
+      break;
+
+    case 3: // Egresado
+      camposEgresado.style.display = "block";
+      opcional.style.display = "block";
+      break;
+
+    case 4: // Empresa
+      opcional.style.display = "none";
+      break;
   }
 }
+

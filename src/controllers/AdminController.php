@@ -63,6 +63,7 @@ class AdminController{
                $contrasena = $_POST ['contrasena'] ?? 'default123';
                $tipo = $_POST ['tipo'];
                $carrera = $_POST ['carrera'];
+              // $cv = file_get_contents($_FILES['curriculum']['tmp_name']);
 
                $datosExtra = [];
                
@@ -70,17 +71,15 @@ class AdminController{
                     $datosExtra['matricula'] = $_POST['matricula'];
                     $datosExtra['semestre'] = $_POST['semestre'];
                }else if($tipo === '2'){
-                    $datosExtra['proyecto'] = file_get_contents($_FILES ['archivo']['tmp_name']);
+                    $datosExtra['proyecto'] = file_get_contents($_FILES ['archivo_proyecto']['tmp_name']);
                     $datosExtra['asesor'] = $_POST['asesor'];
                     $datosExtra['empresa'] = $_POST['empresa'];
                }else if ($tipo === '3'){
                     $datosExtra['anio_egreso'] = $_POST['anio_egreso'];
                     $datosExtra['empleo'] = $_POST['empleo'];
-               }
-               
+               }  
                $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
           }
-
      }
       public function obtenerUsuarioPorId($id) {
         return $this->adminModel->buscarUsuarioPorId($id);
