@@ -19,6 +19,10 @@ class AdminController{
         $this->verificarSesion();
         include __DIR__ . '/../views/usuarios.php';
     }
+    public function main() {
+        $this->verificarSesion();
+        include __DIR__ . '/../views/main.php';
+    }
 
     public function agregar() {
         $this->verificarSesion();

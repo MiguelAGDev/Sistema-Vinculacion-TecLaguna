@@ -1,15 +1,11 @@
 <?php
 require_once __DIR__ . '/../controllers/AdminController.php';
-
-if (!isset($_GET['id'])) {
-    die("No se recibió el ID del usuario.");
-}
-
-$id_usuario = $_GET['id'];
-
-// Llamar al controlador para obtener los datos
 $adminController = new adminController();
-$datosUsuario = $adminController->obtenerUsuarioPorId($id_usuario);
+      if (session_status() === PHP_SESSION_NONE) {
+       session_start();
+      }
+       $tipo = $_SESSION['id_usuario'] ?? null;
+$datosUsuario = $adminController->obtenerUsuarioPorId($tipo);
 
 if (!$datosUsuario) {
     die("No se encontró el usuario.");
@@ -28,11 +24,10 @@ if (!$datosUsuario) {
 </head>
 <body>
 
-<?php require_once __DIR__.'/../includes/header.php'; 
+<?php require_once __DIR__.'/../includes/Header.ini.php'; 
       require_once __DIR__.'/../../controllers/AdminController.php';
       require_once __DIR__.'/../../models/Administrador.php';
-      $adminModel = new administrador();
-      $adminController = new adminController();
+      
 ?>
 
 <main class="perfil-wrapper">
@@ -52,15 +47,12 @@ if (!$datosUsuario) {
 
             <input type="hidden" name="id_usuario" value="<?= $datosUsuario['ID_USUARIO'] ?>">
 
-           <?php $adminController->regresarSalidas();?>
+           <?php $adminController->regresarSalidas($datosUsuario);?>
 
         </form>
         <?php require_once __DIR__.'/../includes/footer.php'; ?>
 
     </div>
 </main>
-
-
-
 </body>
 </html>

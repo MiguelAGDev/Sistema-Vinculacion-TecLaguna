@@ -2014,3 +2014,69 @@ Stack trace:
 #1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->validar()
 #2 {main}
   thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\models\Usuario.php on line 3
+[22-Nov-2025 22:12:05 America/Mexico_City] PHP Deprecated:  Creation of dynamic property AuthController::$usuarioModel is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 49
+[22-Nov-2025 22:12:19 America/Mexico_City] PHP Deprecated:  Creation of dynamic property AuthController::$usuarioModel is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 49
+[22-Nov-2025 22:12:48 America/Mexico_City] PHP Deprecated:  Creation of dynamic property AuthController::$usuarioModel is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 49
+[22-Nov-2025 22:12:49 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 53
+[22-Nov-2025 22:12:50 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:12:50 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(18): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->panelAdministracion()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:21:11 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:22:19 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:24:11 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:24:12 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(18): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->panelAdministracion()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:24:52 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:24:52 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(18): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->panelAdministracion()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:24:56 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:28:29 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:29:02 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:31:38 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:32:26 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:41:55 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:41:55 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../../controllers/AdminController.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 28
+[22-Nov-2025 22:41:55 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../../controllers/AdminController.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php:28
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(39): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AdminController->perfil()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 28
+[22-Nov-2025 22:43:53 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:43:53 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(18): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->panelAdministracion()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:44:39 America/Mexico_City] PHP Deprecated:  Creation of dynamic property AuthController::$usuarioModel is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 49
+[22-Nov-2025 22:44:59 America/Mexico_City] PHP Deprecated:  Creation of dynamic property AuthController::$usuarioModel is deprecated in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 49
+[22-Nov-2025 22:44:59 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php on line 53
+[22-Nov-2025 22:45:00 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:45:00 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../includes/Footer.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php:93
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AuthController.php(18): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AuthController->panelAdministracion()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\panelAdministracion.php on line 93
+[22-Nov-2025 22:45:05 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:45:14 America/Mexico_City] PHP Notice:  session_start(): Ignoring session_start() because a session is already active in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php on line 11
+[22-Nov-2025 22:45:15 America/Mexico_City] PHP Warning:  require_once(C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../../controllers/AdminController.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 28
+[22-Nov-2025 22:45:15 America/Mexico_City] PHP Fatal error:  Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views/../../controllers/AdminController.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php:28
+Stack trace:
+#0 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\controllers\AdminController.php(39): include()
+#1 C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\public\index.php(108): AdminController->perfil()
+#2 {main}
+  thrown in C:\xampp\htdocs\Sistema-Vinculacion-TecLaguna\src\views\perfil.php on line 28

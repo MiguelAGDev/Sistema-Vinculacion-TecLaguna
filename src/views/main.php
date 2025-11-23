@@ -5,11 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portal Principal - Panel de Administración</title>
 
-  <!-- CSS global (no tocar) -->
-  <link rel="stylesheet" href="../../assets/css/global.css" />
-
-  <!-- CSS específico para main (este archivo es el que te doy ahora) -->
-  <link rel="stylesheet" href="../../assets/css/main.css" />
+  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
+  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/main.css">
 </head>
 <body>
 

@@ -65,7 +65,7 @@
 
             <div class="panel-option" onclick="toggleMenu('menu_user_perfil')">Perfil</div>
             <div class="dropdown" id="menu_user_perfil">
-                <p href="index.php?url=admin/perfil">VER PERFIL</p>
+                <a href="index.php?url=admin/perfil">VER PERFIL</a>
             </div>
         </div>
     </main>
