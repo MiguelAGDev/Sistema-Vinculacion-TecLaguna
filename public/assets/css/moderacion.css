@@ -1,0 +1,504 @@
+/* ========================================
+   MODERACIÓN DE PUBLICACIONES
+   ======================================== */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+/* .moderacion-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    min-height: 100vh;
+} */
+
+/* Header (headerd por el global :V) */
+.headerd-content h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.headerd {
+    background-color: white; /* Variable de global.css */
+    color: black;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    
+    /* Reseteamos propiedades del header global por si acaso */
+    height: auto; 
+    display: block;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.headerd h1 {
+    color: black;
+}
+
+/* El subtítulo necesita ser claro sobre fondo oscuro */
+.headerd .section-subtitle {
+    color: var(--dorado-acento); /* Usamos tu color de acento */
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.section-subtitle {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Layout de dos columnas */
+.moderacion-layout {
+    display: grid;
+    /* 350px fijo a la izquierda, el resto a la derecha (sin deformarse) */
+    grid-template-columns: 350px minmax(0, 1fr); 
+    gap: 1.5rem;
+    align-items: start;
+    width: 100%; /* Asegura que use todo el ancho del contenedor padre */
+}
+
+/* ========================================
+   SIDEBAR - Panel izquierdo
+   ======================================== */
+.sidebar-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.sidebar-header {
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidebar-header h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.pending-count {
+    display: block;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+/* Lista de publicaciones */
+.publications-list {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 0.75rem;
+}
+
+/* Cards de publicación */
+.publication-card {
+    display: flex;
+    gap: 1rem;
+    padding: 0.875rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.publication-card:last-child {
+    margin-bottom: 0;
+}
+
+.publication-card:hover {
+    border-color: #4a90a4;
+    background: #f8fbfc;
+}
+
+.publication-card.active {
+    border-color: #4a90a4;
+    background: #f0f9fc;
+    box-shadow: 0 2px 8px rgba(74, 144, 164, 0.15);
+}
+
+.card-image {
+    width: 65px;
+    height: 65px;
+    border-radius: 6px;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #e0e0e0;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.card-info h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-info .author {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.4rem;
+}
+
+.category-tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    background: #f0f9fc;
+    border: 1px solid #d0e8f0;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    color: #4a90a4;
+}
+
+/* ========================================
+   DETAIL SECTION - Panel derecho
+   ======================================== */
+.detail-section {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem;
+    min-height: 400px;
+}
+
+.detail-header {
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.detail-title-row h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.detail-description {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #333;
+    
+    /* ALTO FIJO: Define el alto de la caja de lectura */
+    height: 500px;       /* Altura fija */
+    overflow-y: auto;    /* Scroll solo dentro de esta caja */
+    
+    /* Estilo visual del scrollbar para que se vea integrado */
+    scrollbar-width: thin;
+    scrollbar-color: var(--azul-institucional) #f1f1f1;
+}
+
+.detail-description img {
+    max-width: 100%;        /* No más ancho que el contenedor */
+    max-height: 300px;      /* IMPORTANTE: Límite de altura para la imagen */
+    object-fit: contain;    /* La imagen se reduce para caber sin estirarse */
+    display: block;         /* Comportamiento de bloque */
+    margin: 1rem auto;      /* Centrada horizontalmente */
+    
+    border-radius: 6px;
+    border: 1px solid #ddd; /* Borde suave para delimitar la imagen */
+    background-color: #fff; /* Fondo blanco por si la imagen tiene transparencia */
+}
+
+/* Badge de estado */
+.status-badge {
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+/* Meta información */
+.detail-meta {
+    color: #666;
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+.detail-meta .separator {
+    margin: 0 0.4rem;
+    color: #ccc;
+}
+
+/* ========================================
+   BOTONES DE ACCIÓN
+   ======================================== */
+.detail-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.25rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+}
+
+.btn-approve {
+    background: #10b981;
+    color: white;
+}
+
+.btn-approve:hover {
+    background: #059669;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-reject {
+    background: #fff;
+    color: #dc2626;
+    border: 2px solid #dc2626;
+}
+
+.btn-reject:hover {
+    background: #fef2f2;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   DESCRIPCIÓN
+   ======================================== */
+.detail-description {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 1.25rem;
+    
+    /* MANTENEMOS EL CONTENEDOR FIJO */
+    width: 100%;
+    height: 600px;        
+    overflow-y: auto;     /* El scroll permite que el contenido sea tan largo como quiera */
+    box-sizing: border-box;
+    
+    scrollbar-width: thin;
+    scrollbar-color: #c1c1c1 #f1f1f1;
+}
+.detail-description p {
+    margin-bottom: 1rem;
+}
+
+.detail-description p:last-child {
+    margin-bottom: 0;
+}
+
+.detail-description img {
+    /* IMPORTANTE: */
+    max-width: 100%;        /* Nunca más ancho que la caja (evita scroll horizontal) */
+    height: auto !important;/* Altura automática para respetar proporciones originales */
+    
+    display: inline-block;  /* Deja que floten o se comporten como texto si así venían */
+    margin: 0.5rem 0;       /* Un poco de aire vertical */
+    
+    /* Quitamos los bordes y fondos grises forzados anteriores */
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* Estado vacío */
+.empty-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    color: #999;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* ========================================
+   TOAST NOTIFICACIONES
+   ======================================== */
+.toast {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    color: white;
+    font-weight: 500;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: opacity 0.3s ease;
+}
+
+.toast.success { background: #10b981; }
+.toast.error { background: #ef4444; }
+.toast.warning { background: #f59e0b; }
+
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+@media (max-width: 900px) {
+    .moderacion-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar-section {
+        order: 1;
+    }
+
+    .detail-section {
+        order: 2;
+    }
+
+    /* FIX: Limitar altura en móvil */
+    .publications-list {
+        max-height: 250px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (max-width: 600px) {
+    .moderacion-container {
+        padding: 1rem;
+    }
+
+    .detail-title-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .detail-actions {
+        width: 100%;
+    }
+
+    .btn {
+        flex: 1;
+        min-width: 120px;
+    }
+
+    .detail-section {
+        padding: 1rem;
+    }
+
+    .publications-list {
+        max-height: 200px;
+    }
+
+    .publication-card {
+        padding: 0.75rem;
+    }
+
+    .card-image {
+        width: 55px;
+        height: 55px;
+    }
+}
+
+/* Scrollbar personalizado */
+.publications-list::-webkit-scrollbar,
+.detail-description::-webkit-scrollbar {
+    width: 6px;
+}
+
+.publications-list::-webkit-scrollbar-track,
+.detail-description::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.publications-list::-webkit-scrollbar-thumb,
+.detail-description::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+}
+
+.publications-list::-webkit-scrollbar-thumb:hover,
+.detail-description::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+.detail-description ul, 
+.detail-description ol {
+    margin: 1em 0;          /* Espacio arriba y abajo */
+    padding-left: 40px;     /* Espacio a la izquierda para que se vean los puntos */
+    list-style-position: outside; /* Puntos fuera del texto */
+}
+
+.detail-description ul {
+    list-style-type: disc;  /* Puntos negros */
+}
+
+.detail-description ol {
+    list-style-type: decimal; /* Números */
+}
+
+.detail-description li {
+    margin-bottom: 0.5em; /* Separación entre elementos de lista */
+}
+
+/* 2. Títulos dentro de la descripción */
+.detail-description h1, 
+.detail-description h2, 
+.detail-description h3 {
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+/* 3. Párrafos */
+.detail-description p {
+    margin-bottom: 1em; /* Devolver el espacio entre párrafos */
+}

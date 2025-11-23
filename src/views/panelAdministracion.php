@@ -32,14 +32,14 @@
             <!-- USUARIOS -->
             <div class="panel-option" onclick="toggleMenu('menu_admin_usuarios')">Usuarios</div>
             <div class="dropdown" id="menu_admin_usuarios">
-                <a>VER USUARIOS</a>
+                <a href="index.php?url=admin/usuarios">VER USUARIOS</a>
             </div>
 
             <!-- CONVOCATORIAS -->
             <div class="panel-option" onclick="toggleMenu('menu_admin_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_admin_conv">
-                <a>VER CONVOCATORIAS</a>
-                <a>AUTORIZAR CONVOCATORIAS</a>
+                <a href="index.php?url=admin/main">VER CONVOCATORIAS</a>
+                <a href="index.php?url=admin/adminFlyersManageView">AUTORIZAR CONVOCATORIAS</a>
             </div>
 
             <!-- ESTADÍSTICAS -->
@@ -60,12 +60,12 @@
 
             <div class="panel-option" onclick="toggleMenu('menu_user_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_user_conv">
-                <p>VER CONVOCATORIAS</p>
+                <a href="index.php?url=admin/main">VER CONVOCATORIAS</a>
             </div>
 
             <div class="panel-option" onclick="toggleMenu('menu_user_perfil')">Perfil</div>
             <div class="dropdown" id="menu_user_perfil">
-                <p>VER PERFIL</p>
+                <p href="index.php?url=admin/perfil">VER PERFIL</p>
             </div>
         </div>
     </main>
@@ -81,8 +81,8 @@
 
             <div class="panel-option" onclick="toggleMenu('menu_empresa_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_empresa_conv">
-                <p>SUBIR CONVOCATORIA</p>
-                <p>VER CONVOCATORIAS</p>
+                <p href="index.php?url=admin/flyerCreateView">SUBIR CONVOCATORIA</p>
+                <p href="index.php?url=admin/main">VER CONVOCATORIAS</p>
             </div>
 
         </div>
