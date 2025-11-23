@@ -7,7 +7,9 @@ El diseño está orientado a ser modular, seguro, escalable y accesible, con un 
 
 ## Autores
 - Azucena Rodriguez Flores  
-- Miguel Angel Avila Garcia  
+- Miguel Angel Avila Garcia
+  
+## Colaborador
 - Juan Pablo Chavez Ramirez  
 
 ## Estructura del Proyecto
