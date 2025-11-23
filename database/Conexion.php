@@ -3,8 +3,6 @@
 require_once __DIR__.'/../config/Config.php';
 // 7 de Noviembre 2025, 3:40 PM
 class Conexion{
-
-
     
     private $conn = null;
 
@@ -25,9 +23,9 @@ class Conexion{
             
             // Se inicializa la conexion
             $this->conn = oci_connect(
-                'ADMIN', // Usuario de la base de datos
-                'Abc123456789___',// Contrasenha del usuario
-                'vinculacioninstitutotecdelalag_high' 
+                ORACLE_ADMIN, // Usuario de la base de datos
+                ORACLE_PASSWORD,// Contrasenha del usuario
+                ORACLE_SERVICE_NAME
             );
 
             // Si la conexion no se realizo
