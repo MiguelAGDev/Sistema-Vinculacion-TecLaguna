@@ -19,14 +19,16 @@ if (!$datosUsuario) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 
-    <link rel="stylesheet" href="../../assets/css/global.css">
-    <link rel="stylesheet" href="../../assets/css/perfil.css">
+    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
+    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/perfil.css">
+    <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/perfil.js"></script>
 </head>
 <body>
 
-<?php require_once __DIR__.'/../includes/Header.ini.php'; 
-      require_once __DIR__.'/../../controllers/AdminController.php';
-      require_once __DIR__.'/../../models/Administrador.php';
+<?php  
+      require_once __DIR__.'/../controllers/AdminController.php';
+      require_once __DIR__.'/../includes/Header.ini.php';
+      //require_once __DIR__.'/../../models/Administrador.php';
       
 ?>
 
@@ -50,7 +52,7 @@ if (!$datosUsuario) {
            <?php $adminController->regresarSalidas($datosUsuario);?>
 
         </form>
-        <?php require_once __DIR__.'/../includes/footer.php'; ?>
+       <!-- <?php require_once __DIR__.'/../includes/footer.php'; ?>-->
 
     </div>
 </main>

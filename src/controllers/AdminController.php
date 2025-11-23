@@ -7,20 +7,20 @@ class AdminController{
           public function __construct(){
                $this->adminModel= new administrador();
           }
-      private function verificarSesion() {
+      /*private function verificarSesion() {
         session_start();
         if (!isset($_SESSION['usuario'])) {
             header('Location: index.php?url=auth/login');
             exit;
         }
-    }
+    }*/
       
      public function index() {
         $this->verificarSesion();
         include __DIR__ . '/../views/usuarios.php';
     }
     public function main() {
-        $this->verificarSesion();
+        //$this->verificarSesion();
         include __DIR__ . '/../views/main.php';
     }
 
@@ -35,7 +35,7 @@ class AdminController{
     }
 
     public function perfil() {
-        $this->verificarSesion();
+        //$this->verificarSesion();
         include __DIR__ . '/../views/perfil.php';
     }
 
@@ -90,6 +90,10 @@ class AdminController{
     }
 
       public function regresarSalidas($datosUsuario) {
+        
+            if ($datosUsuario['NOMBRE_CARRERA'] === null){
+            $datosUsuario['NOMBRE_CARRERA'] = " ";
+            }
     echo '
         <input type="hidden" name="id_usuario" value="' . htmlspecialchars($datosUsuario['ID_USUARIO']) . '">
 
@@ -124,8 +128,12 @@ class AdminController{
         </div>
 
         <div class="perfil-botones">
-            <button type="submit" class="btn-guardar">Guardar Cambios</button>
-            <button type="button" class="btn-cancelar" onclick="window.location.href=\'usuarios.php\'">Cancelar</button>
+            <button type="button" class="btn-guardar" id="modificar" name="modificar" onclick="mostrarButtons()">Actualizar Perfil</button>
+
+            <div>
+            <button type="submit" class="btn-guardar" id="guardar" name="guardar" style="display:none;">Guardar Cambios</button>
+            <button type="button" class="btn-cancelar"  id="cancelar" name="cancelar"  style="display:none;">Cancelar</button>
+            </div>
         </div>';
           }
           

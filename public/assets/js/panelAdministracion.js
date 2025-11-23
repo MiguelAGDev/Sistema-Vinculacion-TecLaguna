@@ -21,8 +21,3 @@ function toggleMenu(id) {
         button.classList.add("active");
     }
 }
-
-function mostrarCampos($id){
-    
-
-}
