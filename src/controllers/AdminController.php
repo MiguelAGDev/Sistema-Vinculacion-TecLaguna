@@ -88,55 +88,32 @@ class AdminController{
       public function obtenerUsuarioPorId($id) {
         return $this->adminModel->buscarUsuarioPorId($id);
     }
+    public function modficarUsuario (){
+            if (isset($_POST['guardar'])) {
 
-      public function regresarSalidas($datosUsuario) {
-        
-            if ($datosUsuario['NOMBRE_CARRERA'] === null){
-            $datosUsuario['NOMBRE_CARRERA'] = " ";
-            }
-    echo '
-        <input type="hidden" name="id_usuario" value="' . htmlspecialchars($datosUsuario['ID_USUARIO']) . '">
+        $id_usuario = $_POST['id_usuario'];
+        $nombre     = $_POST['nombre'];
+        $correo     = $_POST['correo'];
+        $telefono   = $_POST['telefono'];
+        $activo     = $_POST['estatus'];
+        $carrera    = $_POST['carrera'];
 
-        <div class="campo">
-            <label for="nombre">Nombre</label>
-            <input type="text" id="nombre" name="nombre"
-                   value="' . htmlspecialchars($datosUsuario['NOMBRE_USUARIO']) . '" required>
-        </div>
+        $resultado = $this->adminModel->actUsuarios(
+            $id_usuario,
+            $nombre,
+            $correo,
+            $telefono,
+            $activo,
+            $carrera
+        );
 
-        <div class="campo">
-            <label for="correo">Correo</label>
-            <input type="email" id="correo" name="correo"
-                   value="' . htmlspecialchars($datosUsuario['CORREO_USUARIO']) . '" required>
-        </div>
-
-        <div class="campo">
-            <label for="telefono">Teléfono</label>
-            <input type="tel" id="telefono" name="telefono"
-                   value="' . htmlspecialchars($datosUsuario['TELEFONO_USUARIO']) . '">
-        </div>
-
-        <div class="campo">
-            <label for="estatus">Estatus</label>
-            <input type="text" id="estatus" name="estatus"
-                   value="' . htmlspecialchars($datosUsuario['ACTIVO_USUARIO']) . '">
-        </div>
-
-        <div class="campo">
-            <label for="carrera">Carrera</label>
-            <input type="text" id="carrera" name="carrera"
-                   value="' . htmlspecialchars($datosUsuario['NOMBRE_CARRERA']) . '">
-        </div>
-
-        <div class="perfil-botones">
-            <button type="button" class="btn-guardar" id="modificar" name="modificar" onclick="mostrarButtons()">Actualizar Perfil</button>
-
-            <div>
-            <button type="submit" class="btn-guardar" id="guardar" name="guardar" style="display:none;">Guardar Cambios</button>
-            <button type="button" class="btn-cancelar"  id="cancelar" name="cancelar"  style="display:none;">Cancelar</button>
-            </div>
-        </div>';
-          }
-          
-      }
-
+        if ($resultado) {
+           // echo "<script>alert('Cambios guardados correctamente');</script>";
+        } else {
+           // echo "<script>alert('Error al actualizar');</script>";
+        }
+       }
+    }
+    
+}
 ?>

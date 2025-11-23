@@ -272,26 +272,34 @@ class administrador{
         return $row ?: false;
     }
     
-    public function actUsuarios ($nombre,$correo,$telefono,$activo,$carrera,$ext){
-        $sql ="UPDATE usuarios
-               SET 
-                    nombre_usuario = :nombre,
-                    correo_usuario = :correo,
-                    telefono_usuario = :telefono,
-                    activo_usuario = :activo
-                WHERE id_usuario = :id";
-        $stmt=oci_parse($this->conn,$sql);
-        oci_bind_by_name($stmt,':nombre',$nombre);
-        oci_bind_by_name ($stmt,':correo',$correo);
-        oci_bind_by_name ($stmt,':telefono',$telefono);
-        oci_bind_by_name ($stmt,':activo',$activo);
-        oci_bind_b_name ($stmt,':id',$id);
-        if (oci_execute($stmt,OCI_DEFAULT)){
-            echo"Cambios realizados";
-        }else{
-            echo"Favor de verificar los datos";
-        }
-}
+    public function actUsuarios($id_usuario, $nombre, $correo, $telefono, $activo, $carrera) {
+
+    $sql = "UPDATE usuario
+            SET nombre_usuario = :nombre,
+                correo_usuario = :correo,
+                telefono_usuario = :telefono,
+                activo_usuario = :activo,
+                id_carrera = :nombre_carrera
+            WHERE id_usuario = :id";
+
+    $stmt = oci_parse($this->conn, $sql);
+
+    oci_bind_by_name($stmt, ':nombre', $nombre);
+    oci_bind_by_name($stmt, ':correo', $correo);
+    oci_bind_by_name($stmt, ':telefono', $telefono);
+    oci_bind_by_name($stmt, ':activo', $activo);
+    oci_bind_by_name($stmt, ':nombre_carrera', $carrera);
+    oci_bind_by_name($stmt, ':id', $id_usuario);
+
+    // Ejecuta sin auto-commit
+    if (oci_execute($stmt, OCI_DEFAULT)) {
+        oci_commit($this->conn);   
+        echo "Cambios realizados";
+    } else {
+        $e = oci_error($stmt);
+        echo "Error al modificar: " . $e['message'];
     }
+}
+}
 ?>
 

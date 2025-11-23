@@ -3,6 +3,8 @@ function toggleMenu(id) {
     const allDropdowns = document.querySelectorAll('.dropdown');
     const allButtons = document.querySelectorAll('.panel-option');
 
+    
+
     // Cerrar todos los demás
     allDropdowns.forEach(menu => {
         if (menu.id !== id) menu.style.display = "none";
