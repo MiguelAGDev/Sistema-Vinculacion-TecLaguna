@@ -1,6 +1,6 @@
 <?php
 // src/models/FlyerCreateModel.php
-require_once DATABASE_PATH;
+require_once __DIR__. '/../../database/Conexion.php';
 class FlyerCreateModel {
     
     // Mapeos de datos

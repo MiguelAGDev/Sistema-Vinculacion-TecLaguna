@@ -15,32 +15,19 @@ class AdminController{
         }
     }*/
       
-     public function index() {
-        $this->verificarSesion();
+     public function usuarios() {
         include __DIR__ . '/../views/usuarios.php';
     }
-    public function main() {
-        //$this->verificarSesion();
-        include __DIR__ . '/../views/main.php';
+    public function manage() {
+        include __DIR__ . '/../views/adminFlyerManageView.php';
     }
-
     public function agregar() {
-        $this->verificarSesion();
         include __DIR__ . '/../views/agregarUsuario.php';
     }
 
-    public function flyer() {
-        $this->verificarSesion();
-        include __DIR__ . '/../views/flyers.php';
-    }
-
     public function perfil() {
-        //$this->verificarSesion();
         include __DIR__ . '/../views/perfil.php';
     }
-
-
-    
 
      //metodos con logica
           public function mostrarUsuarios() {
@@ -48,13 +35,16 @@ class AdminController{
           
           $html = '';
 
-          while ($row = oci_fetch_assoc($usuarios)) {
-               $html .= "<tr>
-                         <td><a href='perfil.php? id=" . urlencode($row['ID_USUARIO']) . "'>" . htmlspecialchars($row['NOMBRE_USUARIO']) . "</a></td>
-                              <td>" . htmlspecialchars($row['CORREO_USUARIO']) . "</td>
-                              <td>" . htmlspecialchars($row['TELEFONO_USUARIO']) . "</td>
-                         </tr>";
-          }
+         while ($row = oci_fetch_assoc($usuarios)) {
+                $html .= 
+                    "<tr>
+                    <td><a href='index.php?url=admin/perfil&id=" . urlencode($row['ID_USUARIO']) . "'>" . htmlspecialchars($row['NOMBRE_USUARIO']) . "</a></td>
+                    <td>" . htmlspecialchars($row['CORREO_USUARIO']) . "</td>
+                    <td>" . htmlspecialchars($row['TELEFONO_USUARIO']) . "</td>
+                    </tr>";
+                    }
+
+
 
           return $html;
           }

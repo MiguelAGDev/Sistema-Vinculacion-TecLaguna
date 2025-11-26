@@ -6,13 +6,17 @@ $adminController = new adminController();
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+if(isset($_GET['id'])){
+    $tipo =  $_GET['id'];
+}else{
+    $tipo = $_SESSION['id_usuario'] ?? null;
+}
 
-$tipo = $_SESSION['id_usuario'] ?? null;
 $datosUsuario = $adminController->obtenerUsuarioPorId($tipo);
 
-if (!$datosUsuario) {
-    die("No se encontró el usuario.");
-}
+        if (!$datosUsuario) {
+            die("No se encontró el usuario.");
+        }
 ?>
 
 <!DOCTYPE html>
@@ -22,9 +26,9 @@ if (!$datosUsuario) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
 
-    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
-    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/perfil.css">
-    <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/perfil.js"></script>
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/perfil.css">
+    <script src="/assets/js/perfil.js"></script>
 </head>
 <body>
 
@@ -120,8 +124,7 @@ require_once __DIR__.'/../includes/Header.ini.php';
 
 </form>
 
-
-    </div>
+</div>
 </main>
 
 </body>

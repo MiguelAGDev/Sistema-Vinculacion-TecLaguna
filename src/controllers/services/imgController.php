@@ -1,6 +1,7 @@
 <?php
     require_once __DIR__ . '/../../../config/config.php';
     class imgController{
+
         public function uploadImage(){
             header('Content-Type: application/json');
 
@@ -32,7 +33,7 @@
             //Guardado
             $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
             $filename = uniqid('img_').'.'.strtolower($extension);
-            $target_file = UPLOADS_PATH.'img_flyers/'.$filename;
+            $target_file = UPLOADS_PATH.'/img_flyers/'.$filename;
             $public_url = PUBLIC_IMG_FLYERS.$filename;
 
             if(!is_dir(UPLOADS_PATH)){

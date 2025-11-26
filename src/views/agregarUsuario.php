@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrar Usuario</title>
 
-  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
-  <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/agregarUsuarios.css">
+  <link rel="stylesheet" href="assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/agregarUsuarios.css">
    <!-- Script -->
   <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/agregarUsuarios.js"></script>
 </head>
@@ -42,6 +42,7 @@
           <option value="2">Residente</option>
           <option value="3">Egresado</option>
           <option value="4">Empresa</option>
+          <option value="5">Administrador</option>
         </select>
 
         <!-- Si no es una empresa -->

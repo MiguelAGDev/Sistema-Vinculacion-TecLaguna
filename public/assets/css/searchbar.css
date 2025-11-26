@@ -1,0 +1,224 @@
+/* searchbar.css - Estilos para la barra de búsqueda con AJAX */
+
+.searchbar-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    position: relative;
+    display: block;
+}
+
+.searchbar-input-wrapper {
+    position: relative;
+}
+
+#searchbar-form {
+    margin: 0;
+    padding: 0;
+}
+
+.searchbar-input {
+    width: 100%;
+    padding: 12px 50px 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.searchbar-input:focus {
+    border-color: #4CAF50;
+}
+
+.searchbar-button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4CAF50;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s;
+}
+
+.searchbar-button:hover {
+    background: #45a049;
+}
+
+.searchbar-button:active {
+    background: #3d8b40;
+}
+
+.searchbar-suggestions {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 2px solid #ddd;
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: -2px;
+}
+
+.searchbar-suggestions.active {
+    display: block;
+}
+
+.suggestion-category {
+    padding: 8px 15px;
+    background: #f5f5f5;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.suggestion-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.suggestion-item:hover {
+    background: #e8f5e9;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-tag {
+    color: #333;
+    font-size: 14px;
+}
+
+.suggestion-count {
+    color: #666;
+    font-size: 13px;
+    background: #e0e0e0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.searchbar-selected-tags {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 0;
+}
+
+.selected-tag {
+    background: #4CAF50;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    animation: tagSlideIn 0.3s ease;
+}
+
+@keyframes tagSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.selected-tag-remove {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1;
+    transition: color 0.2s;
+}
+
+.selected-tag-remove:hover {
+    color: #ffeb3b;
+}
+
+.searchbar-loading {
+    padding: 10px 15px;
+    text-align: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.no-results {
+    padding: 10px 15px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}
+
+#hidden-tags-container {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .searchbar-container {
+        max-width: 95%;
+        margin: 15px auto;
+    }
+    
+    .searchbar-input {
+        font-size: 14px;
+        padding: 10px 45px 10px 12px;
+    }
+    
+    .searchbar-button {
+        padding: 6px 12px;
+        font-size: 16px;
+    }
+    
+    .suggestion-item {
+        padding: 8px 12px;
+    }
+    
+    .selected-tag {
+        font-size: 13px;
+        padding: 5px 10px;
+    }
+}
+
+/* Scrollbar personalizada para sugerencias */
+.searchbar-suggestions::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchbar-suggestions::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 0 8px 0;
+}
+
+.searchbar-suggestions::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.searchbar-suggestions::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

@@ -16,8 +16,8 @@ require_once __DIR__.'/../includes/Header.ini.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Publicar Nueva Oferta</title>
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/flyers_form.css">
+    <link rel="stylesheet" href= "assets/css/global.css">
+  <link rel="stylesheet" href="assets/css/flyers_form.css">
 </head>
 <body>
 
@@ -171,7 +171,7 @@ require_once __DIR__.'/../includes/Header.ini.php';
             }, 3000);
         </script>
     <?php endif; ?>
-    <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
+   <!-- <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>-->    
     <?php require __DIR__ . '/../includes/tinymce_editor.php'; ?>
     <script src="/assets/js/clean_img.js"></script>
 

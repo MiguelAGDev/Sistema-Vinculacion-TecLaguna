@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/global.css">
-    <link rel="stylesheet" href="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/css/panelAdministracion.css">
-    <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/panelAdministracion.js"></script>
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/assets/css/panelAdministracion.css">
+    <script src="/assets/js/panelAdministracion.js"></script>
     
 </head>
 <body>
@@ -33,13 +33,16 @@
             <div class="panel-option" onclick="toggleMenu('menu_admin_usuarios')">Usuarios</div>
             <div class="dropdown" id="menu_admin_usuarios">
                 <a href="index.php?url=admin/usuarios">VER USUARIOS</a>
+                <br> <br>
+                <a href="index.php?url=admin/agregar">AGREGAR USUARIOS</a>
             </div>
 
             <!-- CONVOCATORIAS -->
             <div class="panel-option" onclick="toggleMenu('menu_admin_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_admin_conv">
-                <a href="index.php?url=admin/main">VER CONVOCATORIAS</a>
-                <a href="index.php?url=admin/adminFlyersManageView">AUTORIZAR CONVOCATORIAS</a>
+                <a href="index.php?url=flyer/search">VER CONVOCATORIAS</a>
+                <br><br>
+                <a href="index.php?url=main/manage">AUTORIZAR CONVOCATORIAS</a>
             </div>
 
             <!-- ESTADÍSTICAS -->
@@ -60,7 +63,7 @@
 
             <div class="panel-option" onclick="toggleMenu('menu_user_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_user_conv">
-                <a href="index.php?url=admin/main">VER CONVOCATORIAS</a>
+                <a href="index.php?url=flyer/search">VER CONVOCATORIAS</a>
             </div>
 
             <div class="panel-option" onclick="toggleMenu('menu_user_perfil')">Perfil</div>
@@ -81,8 +84,9 @@
 
             <div class="panel-option" onclick="toggleMenu('menu_empresa_conv')">Convocatorias</div>
             <div class="dropdown" id="menu_empresa_conv">
-                <p href="index.php?url=admin/flyerCreateView">SUBIR CONVOCATORIA</p>
-                <p href="index.php?url=admin/main">VER CONVOCATORIAS</p>
+                <a href="index.php?url=flyer/create">SUBIR CONVOCATORIA</a>
+                <br><br>
+                <a href="index.php?url=flyer/search">VER CONVOCATORIAS</a>
             </div>
 
         </div>

@@ -1,5 +1,6 @@
 <?php
-require_once DATABASE_PATH;
+// src/models/FlyerCreateModel.php
+require_once __DIR__. '/../../database/Conexion.php';
 
 class adminFlyersManageModel {
     private $db;

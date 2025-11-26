@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Usuarios</title>
    <!-- Estilos globales "../../assets/css/global.css"-->
-  <link rel="stylesheet" href="../../public/assets/css/global.css">
+  <link rel="stylesheet" href="/assets/css/global.css">
 
   <!-- Estilos del formulario -->
-  <link rel="stylesheet" href="../../public/assets/css/usuarios.css">
+  <link rel="stylesheet" href="/assets/css/usuarios.css">
 </head>
 <body>
 
