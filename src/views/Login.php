@@ -11,7 +11,7 @@
 
 <body>
 
-  <?php require_once __DIR__.'/../includes/Header.ini.php'; ?>
+  <?php require_once __DIR__.'/../includes/Header.ini.copy.php'; ?>
 
   <main>
     <h2>Bienvenido al Portal de Servicios en Línea.</h2>

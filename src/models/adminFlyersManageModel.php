@@ -21,7 +21,7 @@ class adminFlyersManageModel {
                     f.URL_IMAGEN,
                     e.ID_EMPRESA,
                     e.NOMBRE_EMPRESA
-                FROM FLAYER f
+                FROM FLYER f
                 INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA
                 ORDER BY f.FECHA_CREACION DESC";
         
@@ -76,7 +76,7 @@ class adminFlyersManageModel {
                     f.URL_IMAGEN,
                     e.ID_EMPRESA,
                     e.NOMBRE_EMPRESA
-                FROM FLAYER f
+                FROM FLYER f
                 INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA
                 WHERE f.FLAYER_ID = :id"; // Cambiamos ? por :id
         
@@ -141,7 +141,7 @@ class adminFlyersManageModel {
      */
     public function contarPendientes() {
         // $sql = "SELECT COUNT(*) as total FROM FLAYER WHERE ACTIVO = 0 OR ACTIVO IS NULL";
-        $sql = "SELECT COUNT(*) as TOTAL FROM FLAYER";
+        $sql = "SELECT COUNT(*) as TOTAL FROM FLYER";
         
         try {
             // 1. Conectar

@@ -183,14 +183,13 @@ class administrador{
             //***********************************  RESIDENTE *************************************// 
             case 2: 
             $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_asesor, id_empresa)
-                     VALUES (:id_usuario,EMPTY_BLOB(),:id_asesor,:id_empresa)
+                     VALUES (:id_usuario,EMPTY_BLOB(),:id_empresa)
                      RETURNING proyecto_residente INTO :proyecto_residente";
             $stmt2 = oci_parse($this->conn, $sql2);
             $lob = oci_new_descriptor($this->conn, OCI_D_LOB);
             
             oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
             oci_bind_by_name($stmt2, ":proyecto_residente", $lob, -1, OCI_B_BLOB);
-            oci_bind_by_name($stmt2, ":id_asesor", $datosExtra['asesor']);
             oci_bind_by_name($stmt2, ":id_empresa", $datosExtra['empresa']);
             break;
 
@@ -206,15 +205,17 @@ class administrador{
            
             //**************************************  EMPRESA ******************************************//
             case 4: 
-            $sql2 = "INSERT INTO empresa ( nombre_empresa,correo_empresa,telefono_empresa,id_tipo_usuario,id_usuario)
-                     VALUES (:nombre,:correo,:telefono,:id_tipo,:id_usuario)";
+            $sql2 = "INSERT INTO empresa ( nombre_empresa,correo_empresa,telefono_empresa,id_usuario,giro_empresa,tamanio_empresa,sector_empresa)
+                                  VALUES (:nombre,:correo,:telefono,:id_usuario,:giro_empresa,:tamanio_empresa,:sector_empresa)";
                      
             $stmt2 = oci_parse($this->conn, $sql2);
             oci_bind_by_name($stmt2, ":nombre", $nombre);
             oci_bind_by_name($stmt2, ":correo", $correo);
             oci_bind_by_name($stmt2, ":telefono", $telefono);
-            oci_bind_by_name($stmt2, ":id_tipo", $tipo);
             oci_bind_by_name($stmt2, ":id_usuario", $id_usuario, 32);
+            oci_bind_by_name($stmt2, ":giro_empresa", $giro_empresa, 32);
+            oci_bind_by_name($stmt2, ":tamanio_empresa", $tamanio_empresa, 32);
+            oci_bind_by_name($stmt2, ":sector_empresa", $sector_empresa, 32);
             break;
 
         }

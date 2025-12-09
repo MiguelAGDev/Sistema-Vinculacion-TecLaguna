@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="assets/css/global.css">
   <link rel="stylesheet" href="assets/css/agregarUsuarios.css">
    <!-- Script -->
-  <script src="/SISTEMA-VINCULACION-TECLAGUNA/public/assets/js/agregarUsuarios.js"></script>
+  <script src="/assets/js/agregarUsuarios.js"></script>
 </head>
 <body>
 
@@ -42,7 +42,7 @@
           <option value="2">Residente</option>
           <option value="3">Egresado</option>
           <option value="4">Empresa</option>
-          <option value="5">Administrador</option>
+          
         </select>
 
         <!-- Si no es una empresa -->
@@ -85,28 +85,16 @@
 
           <!-- <input type="text" id="proyecto" name="proyecto" placeholder="Proyecto"> -->
 
-          <label for="asesor">Asesor</label>
-          <select id="asesor" name="asesor" >
-            <option value="">Seleccione un asesor</option>
-            <option value="1">Asesor 1</option>
-            <option value="2">Asesor 2</option>
-            <option value="3">Asesor 3</option>
-            <option value="4">Asesor 4</option>
-            <option value="5">Asesor 5</option>
-            <option value="6">Asesor 6</option>
-            <option value="7">Asesor 7</option>
-          </select>
-
           <label for="empresa">Empresa</label>
           <select id="empresa" name="empresa" >
             <option value="">Seleccione una empresa</option>
-            <option value="1">Empresa 1</option>
-            <option value="2">Empresa 2</option>
-            <option value="3">Empresa 3</option>
-            <option value="4">Empresa 4</option>
-            <option value="5">Empresa 5</option>
-            <option value="6">Empresa 6</option>
-            <option value="7">Empresa 7</option>
+            <option value="1">Tech Solutions SA</option>
+            <option value="2">InnovaSoft</option>
+            <option value="3">AgroMex</option>
+            <option value="4">Construcciones del Norte</option>
+            <option value="5">Servicios MÃ©dicos TorreÃ³n</option>
+            <option value="6">EducaPlus</option>
+            <option value="7">LogÃ­stica Express</option>
           </select>
         </div>
 
@@ -118,6 +106,33 @@
           <label>Empleo</label>
           <input type="text" id="empleo" name="empleo" placeholder="Empleo">
         </div>
+           
+
+        <!-- Campos Empresa -->
+        <div id="cempresa" style="display: none;">
+          <label>Giro</label>
+          <select id="giro_empresa" name="giro_empresa" >
+            <option value="">Seleccione una giro</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Industrial">Industrial</option>
+            <option value="De Servicios">De Servicios</option>
+          </select>
+           <label>Tamaño</label>
+          <select id="tamanio_empresa" name="tamanio_empresa" >
+            <option value="">Seleccione una giro</option>
+            <option value="Pequeña">Comercial</option>
+            <option value="Mediana">Industrial</option>
+            <option value="Grande">De Servicios</option>
+          </select>
+           <label>Sector</label>
+          <select id="sector_empresa" name="sector_empresa" >
+            <option value="">Seleccione una giro</option>
+            <option value="Primario">Comercial</option>
+            <option value="Secundario">Industrial</option>
+            <option value="Terciario">De Servicios</option>
+          </select>
+          </div>
+
           <button type="submit">Registrar</button>
           <?php $controlador->insertarUsuario(); ?>  
 

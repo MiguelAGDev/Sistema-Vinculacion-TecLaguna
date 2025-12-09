@@ -28,7 +28,7 @@ class FlyerSearchModel {
                         f.URL_IMAGEN,
                         e.ID_EMPRESA,
                         e.NOMBRE_EMPRESA
-                    FROM FLAYER f
+                    FROM FLYER f
                     INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA";
             
             // Construir WHERE dinámicamente
@@ -209,7 +209,7 @@ class FlyerSearchModel {
             $conn = $this->db->conectar();
             
             $sql = "SELECT COUNT(*) as TOTAL 
-                    FROM FLAYER f
+                    FROM FLYER f
                     INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA";
             
             $where_conditions = [];
