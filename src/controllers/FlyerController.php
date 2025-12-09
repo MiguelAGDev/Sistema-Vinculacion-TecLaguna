@@ -41,6 +41,15 @@ class FlyerController {
      */
     public function store() {
         require_once __DIR__ . '/../models/flyerCreateModel.php';
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
+        }
+        if(isset($_GET['id'])){
+            $tipo =  $_GET['id'];
+        }else{
+            $tipo = $_SESSION['id_usuario'] ?? null;
+        }
+
         $this->model = new FlyerCreateModel();
         // Verificar que sea una petición POST
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -85,7 +94,7 @@ class FlyerController {
             "Titulo" => $formData['title'],
             "Descripcion" => $formData['abstract'],
             "Imagen" => $imageUrl,
-            "Id" => '1'
+            "Id" => $tipo ?? 1 //con una sesion
         ];
 
         // Guardar en la bd

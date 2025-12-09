@@ -66,11 +66,14 @@ class AdminController{
                     $datosExtra['semestre'] = $_POST['semestre'];
                }else if($tipo === '2'){
                     $datosExtra['proyecto'] = file_get_contents($_FILES ['archivo_proyecto']['tmp_name']);
-                    $datosExtra['asesor'] = $_POST['asesor'];
                     $datosExtra['empresa'] = $_POST['empresa'];
                }else if ($tipo === '3'){
                     $datosExtra['anio_egreso'] = $_POST['anio_egreso'];
                     $datosExtra['empleo'] = $_POST['empleo'];
+               }else if ($tipo === '4'){
+                     $datosExtra['tamanio_empresa'] = $_POST ['tamanio_empresa'];
+                     $datosExtra['giro_empresa'] = $_POST ['giro_empresa'];
+                     $datosExtra['sector_empresa'] = $_POST ['sector_empresa'];
                }  
                $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
           }

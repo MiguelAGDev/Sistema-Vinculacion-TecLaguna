@@ -84,16 +84,18 @@ class FlyerCreateModel {
      * @return array Resultado de la operación
      */
     public function saveFlyer($data) {
-        $sql  = "INSERT INTO flayer (
+        $sql  = "INSERT INTO flyer (
             titulo,
             descripcion,
             url_imagen,
-            id_empresa
+            id_empresa,
+            estado
             ) VALUES (
              :titulo,
              :descripcion,
              :imagen,
-             :id
+             :id,
+             :estado
             ) 
         ";
 
@@ -106,6 +108,7 @@ class FlyerCreateModel {
             oci_bind_by_name($stid, ':descripcion', $data['Descripcion']);
             oci_bind_by_name($stid, ':imagen', $data['Imagen']);
             oci_bind_by_name($stid, ':id', $data['Id']);
+            oci_bind_by_name($stid, ':estado', $data['estado']);
 
             $r = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
 

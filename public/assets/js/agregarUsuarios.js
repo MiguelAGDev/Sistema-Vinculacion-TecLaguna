@@ -4,12 +4,14 @@ function mostrarCampos() {
   const camposAlumno = document.getElementById("alumno");
   const camposResidente = document.getElementById("residente");
   const camposEgresado = document.getElementById("egresado");
+  const camposEmpresa = document.getElementById ("cempresa");
   const opcional = document.getElementById("opcional");
 
   // Ocultar todo
   camposAlumno.style.display = "none";
   camposResidente.style.display = "none";
   camposEgresado.style.display = "none";
+  camposEmpresa.style.display = "none";
   opcional.style.display = "none";
 
   // Mostrar según el tipo
@@ -30,6 +32,7 @@ function mostrarCampos() {
       break;
 
     case 4: // Empresa
+      camposEmpresa.style.display = "block";
       opcional.style.display = "none";
       break;
   }

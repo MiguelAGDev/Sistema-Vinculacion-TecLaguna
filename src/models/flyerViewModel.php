@@ -27,7 +27,7 @@ class FlyerViewModel {
                         f.URL_IMAGEN,
                         e.ID_EMPRESA,
                         e.NOMBRE_EMPRESA
-                    FROM FLAYER f
+                    FROM FLYER f
                     INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA
                     WHERE f.FLAYER_ID = :id";
             
@@ -145,7 +145,7 @@ class FlyerViewModel {
                             f.TITULO,
                             f.URL_IMAGEN,
                             e.NOMBRE_EMPRESA
-                        FROM FLAYER f
+                        FROM FLYER f
                         INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA";
             
             if ($exclude_id !== null) {
