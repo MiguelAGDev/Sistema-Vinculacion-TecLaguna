@@ -4,6 +4,9 @@ require_once ROOT_PATH.'/src/models/adminFlyersManageModel.php';
 class adminFlyersManageController {
     private $model;
     
+    /**
+     * Constructor de la clase
+     */
     public function __construct() {
         $this->model = new adminFlyersManageModel();
 

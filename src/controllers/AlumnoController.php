@@ -1,6 +1,9 @@
 <?php
 class AlumnoController {
 
+    /**
+     * Verifica si el usuario tiene una sesión activa como alumno
+     */
     private function verificarSesion() {
         session_start();
         if (!isset($_SESSION['usuario']) || $_SESSION['tipo'] != 2) {
@@ -8,6 +11,10 @@ class AlumnoController {
             exit;
         }
     }
+
+    /**
+     * Muestra la vista de inicio del alumno
+     */
 
     public function inicio() {
         $this->verificarSesion();

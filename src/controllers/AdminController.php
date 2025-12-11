@@ -4,9 +4,14 @@ require_once __DIR__.'/../models/Administrador.php';
 class AdminController{
           private $adminModel;
 
-          public function __construct(){
+    /**
+     * Summary of __construct
+     * Inicializa el modelo de administrador
+     */      
+    public function __construct(){
                $this->adminModel= new administrador();
-          }
+    }
+
       /*private function verificarSesion() {
         session_start();
         if (!isset($_SESSION['usuario'])) {
@@ -15,16 +20,22 @@ class AdminController{
         }
     }*/
       
+        //metodos que llaman a las vistas
      public function usuarios() {
         include __DIR__ . '/../views/usuarios.php';
     }
+
+    //metodo para mostrar la vista de gestion de flyers
     public function manage() {
         include __DIR__ . '/../views/adminFlyerManageView.php';
     }
+    
+    //metodo para mostrar la vista de agregar usuario
     public function agregar() {
         include __DIR__ . '/../views/agregarUsuario.php';
     }
 
+    /*  Método para mostrar la vista de perfil  */
     public function perfil() {
         include __DIR__ . '/../views/perfil.php';
     }
@@ -35,6 +46,7 @@ class AdminController{
           
           $html = '';
 
+          // Generar filas de tabla para cada usuario
          while ($row = oci_fetch_assoc($usuarios)) {
                 $html .= 
                     "<tr>
@@ -44,11 +56,10 @@ class AdminController{
                     </tr>";
                     }
 
-
-
           return $html;
           }
 
+          /*  Método para insertar un nuevo usuario  */
           public function insertarUsuario (){
           if($_SERVER ['REQUEST_METHOD']==='POST'){
                $nombre = $_POST['nombre'];
@@ -78,9 +89,13 @@ class AdminController{
                $insertar=$this->adminModel->insertarUsuario($nombre,$correo,$telefono,$contrasena,$tipo,$carrera,$datosExtra);
           }
      }
+
+    /*  Método para obtener los datos de un usuario por ID  */
       public function obtenerUsuarioPorId($id) {
         return $this->adminModel->buscarUsuarioPorId($id);
     }
+
+    /*  Método para modificar los datos de un usuario  */
     public function modficarUsuario (){
             if (isset($_POST['guardar'])) {
 

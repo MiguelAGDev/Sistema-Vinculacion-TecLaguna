@@ -26,6 +26,11 @@ class UserController {
         $this->verificarSesion();
         include __DIR__ . '/../views/perfil.php';
     }
+
+     public function agregar() {
+        $this->verificarSesion();
+        include __DIR__ . '/../views/agregarUsuario.php';
+    }
     
     public function validarUsuario(){
         if($_SERVER ['REQUEST_METHOD'] === 'POST'){
@@ -35,4 +40,4 @@ class UserController {
         }
     }  
 }
-?>
+
