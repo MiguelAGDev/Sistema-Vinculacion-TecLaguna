@@ -6,21 +6,36 @@
 
 require_once ROOT_PATH.'/src/models/adminFlyersManageModel.php';
 
+/**
+ * Summary of FlyerApiController
+ * Clase FlyerApiController, maneja las solicitudes AJAX para la gestión de flyers
+ */
 class FlyerApiController {
+    /**
+     * @var adminFlyersManageModel Clase modelo para la gestión de flyers
+     */
     private $model;
 
+    /**
+     * Summary of __construct
+     * Constructor de la clase, inicializa el modelo y configura la cabecera JSON
+     */
     public function __construct() {
         $this->model = new adminFlyersManageModel();
         header('Content-Type: application/json; charset=utf-8');
     }
 
     /**
-     * Router interno para las acciones de la API
+     * Summary of handleRequest
+     * Maneja la solicitud entrante y llama al método correspondiente
+     * @return void 
      */
     public function handleRequest($action = null) {
+        
         $action = $action ?? ($_GET['action'] ?? 'getFlyer');
         $id = isset($_GET['id']) ? (int)$_GET['id'] : null;
 
+        // Llama al método correspondiente según la acción
         switch ($action) {
             case 'getFlyer':
                 $this->getFlyer($id);
@@ -40,14 +55,16 @@ class FlyerApiController {
     }
 
     /**
-     * Obtiene un flyer específico por ID
+     * Obtiene los detalles de un flyer por ID
      */
     private function getFlyer($id) {
+        // Validar ID
         if (!$id) {
             $this->jsonResponse(['error' => 'ID no proporcionado'], 400);
             return;
         }
 
+        // Obtener flyer desde el modelo
         $flyer = $this->model->getFlyerById($id);
 
         if ($flyer) {

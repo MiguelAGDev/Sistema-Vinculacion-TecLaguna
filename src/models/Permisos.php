@@ -26,7 +26,6 @@ class Permisos{
 
     /* PERMISO DE EMPRESA (CRUD ADMIN) (bits 24-28) */
     const PERMISO_VER_EMPRESAS                 = 16777216;          // 2^24
-   // const PERMISO_CREAR_EMPRESA                = 33554432;  // 2^25
     const PERMISO_VALIDAR_EMPRESA               = 33554432;         // 2^25
     const PERMISO_EDITAR_EMPRESA                = 67108864;         // 2^26
     const PERMISO_ELIMINAR_EMPRESA              = 134217728;        // 2^27
