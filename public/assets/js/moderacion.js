@@ -6,9 +6,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const API_URL = '/index.php?url=api/flyer';
     
-    // Obtener el ID inicial del flyer seleccionado (si existe)
-    const detailSection = document.getElementById('detailSection');
-    let currentFlyerId = detailSection?.dataset.currentId || null;
+    let currentFlyerId = document.getElementById('detailSection')?.dataset.currentId || null;
 
     // =============================================
     // SELECCIÓN DE FLYER (AJAX)
@@ -17,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.publication-card').forEach(card => {
             card.addEventListener('click', function() {
                 const flyerId = this.dataset.flyerId;
-                
                 if (flyerId == currentFlyerId) return;
 
                 document.querySelectorAll('.publication-card').forEach(c => c.classList.remove('active'));
@@ -29,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // CARGAR FLYER VIA AJAX
+    // CARGAR FLYER
     // =============================================
     function loadFlyer(id) {
         const detailSection = document.getElementById('detailSection');
@@ -42,17 +39,16 @@ document.addEventListener('DOMContentLoaded', function() {
                     currentFlyerId = id;
                     renderDetail(data.data);
                 } else {
-                    showToast(data.error || 'Error al cargar', 'error');
+                    console.error(data.error || 'Error al cargar');
                 }
             })
             .catch(err => {
                 console.error(err);
-                showToast('Error de conexión', 'error');
             });
     }
 
     // =============================================
-    // RENDERIZAR DETALLE
+    // RENDER DETALLE
     // =============================================
     function renderDetail(flyer) {
         const html = `
@@ -90,15 +86,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // BOTONES APROBAR / RECHAZAR
+    // BOTONES (UNIFICADO)
     // =============================================
     function bindActionButtons() {
         document.querySelectorAll('[data-action]').forEach(btn => {
             btn.addEventListener('click', function() {
                 const action = this.dataset.action;
                 const id = this.dataset.id;
-                const mensaje = action === 'aprobar' 
-                    ? '¿Aprobar esta publicación?' 
+
+                const mensaje = action === 'aprobar'
+                    ? '¿Aprobar esta publicación?'
                     : '¿Rechazar esta publicación?';
 
                 if (confirm(mensaje)) {
@@ -109,71 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // EJECUTAR ACCIÓN (APROBAR/RECHAZAR)
+    // EJECUTAR ACCIÓN SIN AJAX (REDIRECCIÓN)
     // =============================================
     function executeAction(action, id) {
-        fetch(`${API_URL}&action=${action}&id=${id}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data.success) {
-                    showToast(data.message, action === 'aprobar' ? 'success' : 'warning');
-                    
-                    // Remover card
-                    const card = document.querySelector(`.publication-card[data-flyer-id="${id}"]`);
-                    if (card) card.remove();
-
-                    updatePendingCount();
-
-                    // Seleccionar siguiente o mostrar vacío
-                    const nextCard = document.querySelector('.publication-card');
-                    if (nextCard) {
-                        nextCard.click();
-                    } else {
-                        document.getElementById('detailSection').innerHTML = 
-                            '<div class="empty-state"><p>No hay más publicaciones pendientes</p></div>';
-                        currentFlyerId = null;
-                    }
-                } else {
-                    showToast(data.error || 'Error en la operación', 'error');
-                }
-            })
-            .catch(err => {
-                console.error(err);
-                showToast('Error de conexión', 'error');
-            });
+    window.location.href = `index.php?url=main/${action}&id=${id}`;
     }
-
     // =============================================
-    // ACTUALIZAR CONTADOR
+    // CONTADOR
     // =============================================
     function updatePendingCount() {
         const count = document.querySelectorAll('.publication-card').length;
         const counter = document.getElementById('pendingCount');
-        if (counter) {
-            counter.textContent = `${count} por revisar`;
-        }
+        if (counter) counter.textContent = `${count} por revisar`;
     }
 
     // =============================================
-    // TOAST NOTIFICACIONES
-    // =============================================
-    function showToast(message, type = 'success') {
-        const toast = document.getElementById('toast');
-        if (!toast) return;
-
-        toast.textContent = message;
-        toast.className = `toast ${type}`;
-        toast.style.display = 'block';
-        toast.style.opacity = '1';
-
-        setTimeout(() => {
-            toast.style.opacity = '0';
-            setTimeout(() => toast.style.display = 'none', 300);
-        }, 3000);
-    }
-
-    // =============================================
-    // HELPER: Escapar HTML
+    // ESCAPAR HTML
     // =============================================
     function escapeHtml(text) {
         if (!text) return '';
@@ -183,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // =============================================
-    // INICIALIZAR
+    // INIT
     // =============================================
     initCardListeners();
     bindActionButtons();

@@ -42,6 +42,7 @@
           <option value="2">Residente</option>
           <option value="3">Egresado</option>
           <option value="4">Empresa</option>
+          <option value="5">Admin</option>
           
         </select>
 
@@ -119,17 +120,17 @@
           </select>
            <label>Tamaño</label>
           <select id="tamanio_empresa" name="tamanio_empresa" >
-            <option value="">Seleccione una giro</option>
-            <option value="Pequeña">Comercial</option>
-            <option value="Mediana">Industrial</option>
-            <option value="Grande">De Servicios</option>
+            <option value="">Seleccione una opcion</option>
+            <option value="Pequeña">Pequeña</option>
+            <option value="Mediana">Mediana</option>
+            <option value="Grande">Grande</option>
           </select>
            <label>Sector</label>
           <select id="sector_empresa" name="sector_empresa" >
-            <option value="">Seleccione una giro</option>
-            <option value="Primario">Comercial</option>
-            <option value="Secundario">Industrial</option>
-            <option value="Terciario">De Servicios</option>
+            <option value="">Seleccione una opcion</option>
+            <option value="Primario">Primario</option>
+            <option value="Secundario">Secundario</option>
+            <option value="Terciario">Terciario</option>
           </select>
           </div>
 

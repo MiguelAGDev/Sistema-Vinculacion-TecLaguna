@@ -48,4 +48,34 @@ class MainController {
      private function usuarios() {
         include 'views/login.php';
     }
+    public function aprobar() {
+    include 'adminFlyersManageController.php';
+    $ctrl = new adminFlyersManageController();
+
+    $id = $_GET['id'] ?? null;
+    $ctrl->aprobar($id);
+    }
+    public function rechazar() {
+        include 'adminFlyersManageController.php';
+        $ctrl = new adminFlyersManageController();
+
+        $id = $_GET['id'] ?? null;
+        $ctrl->rechazar($id);
+    }
+    public function editar() {
+    include 'adminFlyersManageController.php';
+    $ctrl = new adminFlyersManageController();
+
+    $id = $_GET['id'] ?? null;
+    $ctrl->editar($id);
+    }
+    public function update() {
+    include 'adminFlyersManageController.php';
+    $ctrl = new adminFlyersManageController();
+    $ctrl->update();
+   }
+
+
+
 }
+
