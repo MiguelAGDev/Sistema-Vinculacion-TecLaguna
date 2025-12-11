@@ -3,6 +3,10 @@ class PurifierService {
 
     private $purifier;
 
+    /**
+     * Summary of __construct
+     * Inicializa el purificador HTML con una configuración segura.
+     */
     public function __construct() {
         // Configuración por defecto (permite HTML básico)
         $config = \HTMLPurifier_Config::createDefault();
