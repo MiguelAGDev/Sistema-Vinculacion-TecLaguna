@@ -2,6 +2,9 @@
 /**
  * VISTA: adminFlyerManageView.php
  */
+$controlador = new adminFlyersManageController();
+$editMode = $viewData['edit_mode'] ?? false;
+$id = $viewData['id'] ?? null;
 
 $flyers = $viewData['flyers'] ?? [];
 $flyerSeleccionado = $viewData['flyerSeleccionado'] ?? null;
@@ -86,8 +89,12 @@ require_once __DIR__.'/../includes/Header.ini.php';
                             <button type="button" class="btn btn-approve" data-action="aprobar" data-id="<?= $flyerSeleccionado['FLAYER_ID'] ?>">
                                 ✓ Aprobar
                             </button>
-                            <button type="button" class="btn btn-reject" data-action="rechazar" data-id="<?= $flyerSeleccionado['FLAYER_ID'] ?>">
+                            <button type="button" class="btn btn-reject" data-action="rechazar"  data-id="<?= $flyerSeleccionado['FLAYER_ID'] ?>">
                                 ✕ Rechazar
+                            </button>
+                            <button class="btn btn-edit" 
+                                    onclick="window.location.href='index.php?url=main/editar&id=<?= $flyerSeleccionado['FLAYER_ID'] ?>'">
+                                ✎ Editar
                             </button>
                         </div>
                     </div>
@@ -112,5 +119,8 @@ require_once __DIR__.'/../includes/Header.ini.php';
     <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
     <!-- JavaScript externo -->
     <script src="assets/js/moderacion.js"></script>
+   <!--<script src="assets/js/validacion.js"></script>-->
+ 
+
 </body>
 </html>

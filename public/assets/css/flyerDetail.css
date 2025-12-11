@@ -395,3 +395,12 @@ body {
 .detail-content table tr:hover {
     background: #fafafa;
 }
+.detail-image {
+    max-width: 600px;   /* tamaño máximo deseado */
+    width: 100%;        /* que se adapte en pantallas pequeñas */
+    height: auto;       /* evita deformaciones */
+    display: block;
+    margin: 20px auto;  /* centrar la imagen */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
