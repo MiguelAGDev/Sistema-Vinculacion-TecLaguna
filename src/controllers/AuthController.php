@@ -1,8 +1,8 @@
 <?php
 class AuthController {
 /***************************************FUNCIONES PARA LAS VISTAS******************************************** 
- * nada mas no sirven para movernos por medio del index hay una para cada vista 
-*/
+*************** nada mas no sirven para movernos por medio del index hay una para cada vista ****************/
+
     public function index() {
         $this->login();
     }
@@ -33,6 +33,8 @@ class AuthController {
         require_once __DIR__ . '/../views/flyerCreateView.php';
     }
     /********************************************************************************************************* */
+
+    
     /*****************************VALIDACION*************************************************************** 
      * Basiacemte es para entrar a la pagina existe un metodo en usuarios y lo que hace que que verifica si esta el correo
      * tambien la contraseña  hasheada y despues en est emetodo inicia la sesion y nos redirecciona por medio al 

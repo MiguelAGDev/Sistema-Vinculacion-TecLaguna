@@ -2,11 +2,19 @@
 
 require_once __DIR__.'/../config/Config.php';
 // 7 de Noviembre 2025, 3:40 PM
+/**
+ * Summary of Conexion
+ * Clase Conexion, se encarga de realizar la conexion con la base de datos Oracle
+ */
 class Conexion{
     
     private $conn = null;
 
     // Constructor de la clase conexion php
+    /**
+     * Summary of __construct
+     * @return void constructor default de la clase Conexion, inicializa las variables clave para la conexion
+     */
     public function __construct(){
         // Establece la variable de entorno para el oracle wallet
         putenv("TNS_ADMIN=".ORACLE_TNS_ADMIN);
@@ -16,6 +24,11 @@ class Conexion{
     }
 
     // Metodo conexion, realiza la conexion con la base de datos
+    /**
+     * Summary of conectar
+     * @return resource Devuelve el recurso de conexion a la base de datos Oracle
+     * @throws Exception Lanza una excepcion si no se puede conectar a la base de datos
+     */
     public function conectar(){
         
         // Si la conexion es nula
@@ -47,6 +60,10 @@ class Conexion{
 
     
     // Metodo de desconectar
+    /**
+     * Summary of desconectar
+     * @return void Cierra la conexion a la base de datos Oracle si existe
+     */
     public function desconectar(){
 
         // Si existe una conexion
@@ -60,6 +77,10 @@ class Conexion{
         }
     }
 
+    /**
+     * Summary of __destruct
+     * @return void Destructor de la clase Conexion, cierra la conexion si existe
+     */
     public function __destruct(){
 
         $this->desconectar();
@@ -67,10 +88,11 @@ class Conexion{
 }
 
 
-// Processar el html
-// vamos a tener un metodo 'accion', que va contar con conectar' y 'desconectar'.
-//  Los cuales se consultara para realizar el proceso de abrir y cerrar conexion 
+/**
+ * Proceso de prueba de la conexion
+ */
 
+/*
 //Esta variable solo mostrar el mensje de 'conexion - realizada o no realizada'
 $mensaje = '';
 
@@ -122,7 +144,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     }
 }
 
-?>
+
+
 
 <!--
 <!DOCTYPE html>

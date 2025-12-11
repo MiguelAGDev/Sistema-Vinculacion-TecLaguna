@@ -71,25 +71,25 @@ class administrador{
         /**
          * @var string $sql Consulta para insertar un usuario y retorna su id
          */
-      $sql = "INSERT INTO usuario (
-                          nombre_usuario, 
-                          correo_usuario, 
-                          telefono_usuario, 
-                          contrasena_usuario, 
-                          activo_usuario, 
-                          id_tipo_usuario, 
-                          id_carrera, 
-                          cv_usuario)
-              VALUES 
-                         (:nombre, 
-                         :correo, 
-                         :telefono, 
-                         :contrasena, 
-                         1, 
-                         :id_tipo, 
-                         :id_carrera,
-                          EMPTY_BLOB())
-                         RETURNING id_usuario INTO :id_usuario";
+        $sql = "INSERT INTO usuario (
+                            nombre_usuario, 
+                            correo_usuario, 
+                            telefono_usuario, 
+                            contrasena_usuario, 
+                            activo_usuario, 
+                            id_tipo_usuario, 
+                            id_carrera, 
+                            cv_usuario)
+                VALUES 
+                            (:nombre, 
+                            :correo, 
+                            :telefono, 
+                            :contrasena, 
+                            1, 
+                            :id_tipo, 
+                            :id_carrera,
+                            EMPTY_BLOB())
+                            RETURNING id_usuario INTO :id_usuario";
 
 
         /**
@@ -275,32 +275,32 @@ class administrador{
     
     public function actUsuarios($id_usuario, $nombre, $correo, $telefono, $activo, $carrera) {
 
-    $sql = "UPDATE usuario
-            SET nombre_usuario = :nombre,
-                correo_usuario = :correo,
-                telefono_usuario = :telefono,
-                activo_usuario = :activo,
-                id_carrera = :nombre_carrera
-            WHERE id_usuario = :id";
+        $sql = "UPDATE usuario
+                SET nombre_usuario = :nombre,
+                    correo_usuario = :correo,
+                    telefono_usuario = :telefono,
+                    activo_usuario = :activo,
+                    id_carrera = :nombre_carrera
+                WHERE id_usuario = :id";
 
-    $stmt = oci_parse($this->conn, $sql);
+        $stmt = oci_parse($this->conn, $sql);
 
-    oci_bind_by_name($stmt, ':nombre', $nombre);
-    oci_bind_by_name($stmt, ':correo', $correo);
-    oci_bind_by_name($stmt, ':telefono', $telefono);
-    oci_bind_by_name($stmt, ':activo', $activo);
-    oci_bind_by_name($stmt, ':nombre_carrera', $carrera);
-    oci_bind_by_name($stmt, ':id', $id_usuario);
+        oci_bind_by_name($stmt, ':nombre', $nombre);
+        oci_bind_by_name($stmt, ':correo', $correo);
+        oci_bind_by_name($stmt, ':telefono', $telefono);
+        oci_bind_by_name($stmt, ':activo', $activo);
+        oci_bind_by_name($stmt, ':nombre_carrera', $carrera);
+        oci_bind_by_name($stmt, ':id', $id_usuario);
 
-    // Ejecuta sin auto-commit
-    if (oci_execute($stmt, OCI_DEFAULT)) {
-        oci_commit($this->conn);   
-        echo "Cambios realizados";
-    } else {
-        $e = oci_error($stmt);
-        echo "Error al modificar: " . $e['message'];
+        // Ejecuta sin auto-commit
+        if (oci_execute($stmt, OCI_DEFAULT)) {
+            oci_commit($this->conn);   
+            echo "Cambios realizados";
+        } else {
+            $e = oci_error($stmt);
+            echo "Error al modificar: " . $e['message'];
+        }
     }
-}
 }
 ?>
 
