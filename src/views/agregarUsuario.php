@@ -1,3 +1,12 @@
+ <?php 
+    require_once __DIR__.'/../controllers/AdminController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+     require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controladorA = new AuthController();
+    $controladorA->requireLogin();
+    $controlador = new AdminController();
+  ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,11 +21,7 @@
 </head>
 <body>
 
-  <?php 
-    require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
-    $controlador = new AdminController();
-  ?>
+ 
   
   <main>
     <section class="form-container">

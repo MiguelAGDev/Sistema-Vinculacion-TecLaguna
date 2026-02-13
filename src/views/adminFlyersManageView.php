@@ -2,6 +2,11 @@
 /**
  * VISTA: adminFlyerManageView.php
  */
+ require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controlador = new AuthController();
+    $controlador->requireLogin();
+    
 $controlador = new adminFlyersManageController();
 $editMode = $viewData['edit_mode'] ?? false;
 $id = $viewData['id'] ?? null;

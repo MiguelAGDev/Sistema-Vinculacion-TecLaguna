@@ -1,3 +1,17 @@
+
+<?php
+    require_once __DIR__.'/../controllers/LoginController.php';
+    $controlador = new AuthController();
+    $resultado = null;
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+           $controlador->validar();
+        }
+        if (isset($resultado['sesion_activa']) && $resultado['sesion_activa']){
+          header("Location: index.php?url=auth/confirmacion");
+          exit;
+        }
+    
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,5 +54,6 @@
   <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
 </body>
 </html>
+
 
 

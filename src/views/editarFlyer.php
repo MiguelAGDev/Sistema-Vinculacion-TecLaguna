@@ -1,4 +1,9 @@
-<?php require_once __DIR__.'/../includes/Header.ini.php';?>
+<?php require_once __DIR__.'/../includes/Header.ini.php';
+    require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controlador = new AuthController();
+    $controlador->requireLogin();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,7 +38,7 @@
                         name="abstract" 
                         id="abstract" 
                         class="tinymce-editor"><?php echo htmlspecialchars($formData['abstract'] ?? ''); ?></textarea>
-        <label>Imagen actual</label>
+       <!-- <label>Imagen actual</label>
 
             <div class="flyer-image-container">
                 <?php if (!empty($viewData['flyer']['URL_IMAGEN'])): ?>
@@ -44,7 +49,7 @@
                 <?php else: ?>
                     <div class="flyer-image-placeholder">📄</div>
                 <?php endif; ?>
-            </div>
+            </div>-->
 
 
         <label>Cambiar imagen (opcional)</label>
