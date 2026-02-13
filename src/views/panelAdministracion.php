@@ -1,24 +1,23 @@
+ <?php 
+    require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controlador = new AuthController();
+    $controlador->requireLogin();
+    $tipo = $controlador->role();
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Administracion</title>
     <link rel="stylesheet" href="/assets/css/global.css">
     <link rel="stylesheet" href="/assets/css/panelAdministracion.css">
     <script src="/assets/js/panelAdministracion.js"></script>
     
 </head>
 <body>
-    <?php 
-    require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
-   if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-   }
-    $controlador = new AdminController();
-    $tipo = $_SESSION['id_tipo_usuario'] ?? null;
-  ?>
+   
  <form name="tipo" id="tipo">
 
     <!-- ===================== PANEL ADMINISTRADOR ===================== -->

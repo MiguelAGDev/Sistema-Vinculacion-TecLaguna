@@ -3,7 +3,11 @@
  * VISTA: flyerSearchView.php
  * Búsqueda de flyers con filtros y paginación
  */
-
+ require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controlador = new AuthController();
+    $controlador->requireLogin();
+    
 $flyers = $viewData['flyers'] ?? [];
 $filters = $viewData['filters'] ?? [];
 $empresas_filtradas = $viewData['empresas_filtradas'] ?? [];

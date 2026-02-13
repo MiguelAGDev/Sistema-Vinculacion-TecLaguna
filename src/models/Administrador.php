@@ -182,8 +182,8 @@ class administrador{
 
             //***********************************  RESIDENTE *************************************// 
             case 2: 
-            $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_asesor, id_empresa)
-                     VALUES (:id_usuario,EMPTY_BLOB(),:id_empresa)
+            $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_empresa)
+                     VALUES                (:id_usuario,EMPTY_BLOB(),:id_empresa)
                      RETURNING proyecto_residente INTO :proyecto_residente";
             $stmt2 = oci_parse($this->conn, $sql2);
             $lob = oci_new_descriptor($this->conn, OCI_D_LOB);
@@ -206,7 +206,7 @@ class administrador{
             //**************************************  EMPRESA ******************************************//
             case 4: 
             $sql2 = "INSERT INTO empresa ( nombre_empresa,correo_empresa,telefono_empresa,id_usuario,giro_empresa,tamanio_empresa,sector_empresa)
-                                  VALUES (:nombre,:correo,:telefono,:id_usuario,:giro_empresa,:tamanio_empresa,:sector_empresa)";
+                    VALUES               (:nombre,:correo,:telefono,:id_usuario,:giro_empresa,:tamanio_empresa,:sector_empresa)";
                      
             $stmt2 = oci_parse($this->conn, $sql2);
             oci_bind_by_name($stmt2, ":nombre", $nombre);
@@ -222,9 +222,9 @@ class administrador{
 
        if ($tipo === '2') {
             if (oci_execute($stmt2, OCI_NO_AUTO_COMMIT)) {
-                if ($lob->save($datosExtra['proyecto'])) {
-                    oci_commit($this->conn);
-                    echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";
+                if (/*$lob->save($datosExtra['proyecto'])*/ true) {
+                    /*oci_commit($this->conn);
+                    echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";*/
                 } else {
                     oci_rollback($this->conn);
                     echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
@@ -247,60 +247,67 @@ class administrador{
 
     }
 
-     public function buscarUsuarioPorId($id_usuario) {
-        $sql = "SELECT  ID_USUARIO,
-                    NOMBRE_USUARIO,
-                    CORREO_USUARIO,
-                    TELEFONO_USUARIO,
-                    ACTIVO_USUARIO,
-                    NOMBRE_CARRERA
-                FROM usuario u
-                LEFT JOIN CARRERA c ON c.ID_CARRERA = u.ID_CARRERA
-                WHERE u.ID_USUARIO = :id";
+    public function buscarUsuarioPorId($id_usuario) {
+    $sql = "SELECT u.ID_USUARIO,
+                   u.NOMBRE_USUARIO,
+                   u.CORREO_USUARIO,
+                   u.TELEFONO_USUARIO,
+                   u.ACTIVO_USUARIO,
+                   NVL(c.NOMBRE_CARRERA, 'SIN CARRERA ASIGNADA') AS NOMBRE_CARRERA
+            FROM usuario u
+            LEFT JOIN CARRERA c ON c.ID_CARRERA = u.ID_CARRERA
+            WHERE u.ID_USUARIO = :id";
 
-        $stid = oci_parse($this->conn, $sql);
+    $stid = oci_parse($this->conn, $sql);
+    oci_bind_by_name($stid, ":id", $id_usuario);
+    oci_execute($stid);
 
-        oci_bind_by_name($stid, ":id", $id_usuario);
+    $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
 
-        oci_execute($stid);
-
-        $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
-        if($row['ACTIVO_USUARIO'] === '1'){
-            $row['ACTIVO_USUARIO']='ACTIVO';
-        }else{
-            $row['ACTIVO_USUARIO']='NO ESTA ACTIVO POR EL MOMENTO';
-        }
-        return $row ?: false;
+    if (!$row) {
+        return false;
     }
-    
+
+    $row['ACTIVO_USUARIO'] =
+        ((int)$row['ACTIVO_USUARIO'] === 1)
+        ? 'ACTIVO'
+        : 'NO ESTA ACTIVO POR EL MOMENTO';
+
+    return $row;
+}
+
     public function actUsuarios($id_usuario, $nombre, $correo, $telefono, $activo, $carrera) {
 
     $sql = "UPDATE usuario
-            SET nombre_usuario = :nombre,
-                correo_usuario = :correo,
+            SET nombre_usuario  = :nombre,
+                correo_usuario  = :correo,
                 telefono_usuario = :telefono,
-                activo_usuario = :activo,
-                id_carrera = :nombre_carrera
+                activo_usuario  = :activo,
+                id_carrera      = :id_carrera
             WHERE id_usuario = :id";
 
     $stmt = oci_parse($this->conn, $sql);
+
+    $id_usuario = (int)$id_usuario;
+    $activo     = (int)$activo;
+    $id_carrera = ($carrera === '' || $carrera === null) ? null : (int)$carrera;
 
     oci_bind_by_name($stmt, ':nombre', $nombre);
     oci_bind_by_name($stmt, ':correo', $correo);
     oci_bind_by_name($stmt, ':telefono', $telefono);
     oci_bind_by_name($stmt, ':activo', $activo);
-    oci_bind_by_name($stmt, ':nombre_carrera', $carrera);
+    oci_bind_by_name($stmt, ':id_carrera', $id_carrera);
     oci_bind_by_name($stmt, ':id', $id_usuario);
 
-    // Ejecuta sin auto-commit
-    if (oci_execute($stmt, OCI_DEFAULT)) {
-        oci_commit($this->conn);   
-        echo "Cambios realizados";
+    if (oci_execute($stmt, OCI_COMMIT_ON_SUCCESS)) {
+        oci_commit($this->conn);
+        return true;
     } else {
-        $e = oci_error($stmt);
-        echo "Error al modificar: " . $e['message'];
+        oci_rollback($this->conn);
+        return false;
     }
 }
+
 }
 ?>
 

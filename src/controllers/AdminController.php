@@ -5,15 +5,9 @@ class AdminController{
           private $adminModel;
 
           public function __construct(){
-               $this->adminModel= new administrador();
+               $this->adminModel = new administrador();
           }
-      /*private function verificarSesion() {
-        session_start();
-        if (!isset($_SESSION['usuario'])) {
-            header('Location: index.php?url=auth/login');
-            exit;
-        }
-    }*/
+    
       
      public function usuarios() {
         include __DIR__ . '/../views/usuarios.php';
@@ -43,8 +37,6 @@ class AdminController{
                     <td>" . htmlspecialchars($row['TELEFONO_USUARIO']) . "</td>
                     </tr>";
                     }
-
-
 
           return $html;
           }
@@ -79,7 +71,9 @@ class AdminController{
           }
      }
       public function obtenerUsuarioPorId($id) {
-        return $this->adminModel->buscarUsuarioPorId($id);
+       
+         $row = $this->adminModel->buscarUsuarioPorId($id);
+         return $row;
     }
     public function modficarUsuario (){
             if (isset($_POST['guardar'])) {
@@ -100,10 +94,17 @@ class AdminController{
             $carrera
         );
 
-        if ($resultado) {
-           // echo "<script>alert('Cambios guardados correctamente');</script>";
-        } else {
-           // echo "<script>alert('Error al actualizar');</script>";
+       if ($resultado) {
+           echo "
+            <script>
+                alert('Cambios guardados correctamente');
+                window.location.replace(window.location.href);
+            </script>";
+
+            exit;
+        }
+        else {
+           echo "<script>alert('Error al actualizar');</script>";
         }
        }
     }
