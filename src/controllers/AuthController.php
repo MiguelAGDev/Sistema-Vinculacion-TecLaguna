@@ -8,20 +8,20 @@ class AuthController {
     }
 
     public function login() {
-        include __DIR__ . '/../views/login.php';
+        include __DIR__ . '/../views/loginView.php';
     }
 
     public function agregarUsuario() {
-        include __DIR__ . '/../views/agregarUsuario.php';
+        include __DIR__ . '/../views/agregarUsuarioView.php';
     }
     public function panelAdministracion (){
-        include __DIR__.'/../views/panelAdministracion.php';
+        include __DIR__.'/../views/panelAdministracionView.php';
     }
       public function usuarios() {
         require_once __DIR__ . '/../views/usuarios.php';
     }
     public function main() {
-        require_once __DIR__ . '/../views/main.php';
+        require_once __DIR__ . '/../views/mainView.php';
     }
     public function adminFlyersManageView() {
         require_once __DIR__ . '/../views/adminFlyersManageView.php';
@@ -61,7 +61,7 @@ class AuthController {
             exit;
         } else {
             echo "<p style='color:red;'>Credenciales incorrectas</p>";
-            include __DIR__ . '/../views/login.php';
+            include __DIR__ . '/../views/loginView.php';
         }
     }
 
@@ -87,7 +87,7 @@ class AuthController {
 
     public function home() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/main.php';
+        include __DIR__ . '/../views/mainView.php';
     }
 }
 

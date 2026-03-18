@@ -170,7 +170,7 @@ class administrador{
         switch ($tipo){
             //************************************  ALUMNO ***********************************// 
             case '1':
-               $sql2 = "INSERT INTO alumno (id_usuario, matricula_alumno, semestre_alumno)
+             $sql2 = "INSERT INTO alumno (id_usuario, matricula_alumno, semestre_alumno)
                      VALUES (:id_usuario, :matricula_alumno,:semestre_alumno)";
 
             $stmt2 = oci_parse($this->conn, $sql2);

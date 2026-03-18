@@ -2,6 +2,13 @@
 
 //require __DIR__.'/../vendor/autoload.php';
 
+
+/** * DESPACHADOR:
+ * Recupera la ruta de la sesión o asigna la ruta por defecto.
+ */
+$url = $_SESSION['internal_route'] ?? 'auth/login';
+
+
 /* 16 de Noviembre 2025 01:36 AM */
 /** Sumary of Index.php
  * El index recibe las direcciones url para cada una de las 
@@ -14,6 +21,7 @@
  * httppd
  * 
  */
+
 
 /* Cargamos las configuraciones generales del config */ 
 require_once __DIR__.'/../config/Config.php';

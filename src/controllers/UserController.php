@@ -29,7 +29,7 @@ class UserController {
 
      public function agregar() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/agregarUsuario.php';
+        include __DIR__ . '/../views/agregarUsuarioView.php';
     }
     
     public function validarUsuario(){
