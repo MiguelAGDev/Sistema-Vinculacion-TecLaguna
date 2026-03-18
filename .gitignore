@@ -14,3 +14,6 @@ vendor/
 .vscode/
 .idea/
 Thumbs.db
+
+#Base de datos
+database/
