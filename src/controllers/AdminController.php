@@ -22,7 +22,7 @@ class AdminController{
       
         //metodos que llaman a las vistas
      public function usuarios() {
-        include __DIR__ . '/../views/usuarios.php';
+        include __DIR__ . '/../views/usuariosView.php';
     }
 
     //metodo para mostrar la vista de gestion de flyers
@@ -37,7 +37,7 @@ class AdminController{
 
     /*  Método para mostrar la vista de perfil  */
     public function perfil() {
-        include __DIR__ . '/../views/perfil.php';
+        include __DIR__ . '/../views/perfilView.php';
     }
 
      //metodos con logica

@@ -18,7 +18,7 @@ class AuthController {
         include __DIR__.'/../views/panelAdministracionView.php';
     }
       public function usuarios() {
-        require_once __DIR__ . '/../views/usuarios.php';
+        require_once __DIR__ . '/../views/usuariosView.php';
     }
     public function main() {
         require_once __DIR__ . '/../views/mainView.php';
@@ -27,7 +27,7 @@ class AuthController {
         require_once __DIR__ . '/../views/adminFlyersManageView.php';
     }
      public function perfil() {
-        require_once __DIR__ . '/../views/perfil.php';
+        require_once __DIR__ . '/../views/perfilView.php';
     }
     public function flyerCreateView() {
         require_once __DIR__ . '/../views/flyerCreateView.php';
