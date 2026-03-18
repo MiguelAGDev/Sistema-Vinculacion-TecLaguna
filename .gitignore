@@ -1,1 +1,16 @@
-config/Config.php
+# Configuración de Base de Datos (Seguridad Crítica)
+config/database.php
+
+# Logs y Temporales (Evita conflictos de merge)
+logs/
+*.log
+temp/
+
+# Dependencias (Se gestionan con Composer)
+vendor/
+
+# Archivos de Sistema y Entorno
+.env
+.vscode/
+.idea/
+Thumbs.db
