@@ -1,13 +1,6 @@
 <?php
 
-//require __DIR__.'/../vendor/autoload.php';
-
-
-/** * DESPACHADOR:
- * Recupera la ruta de la sesión o asigna la ruta por defecto.
- */
-$url = $_SESSION['internal_route'] ?? 'auth/login';
-
+require __DIR__.'/../vendor/autoload.php';
 
 /* 16 de Noviembre 2025 01:36 AM */
 /** Sumary of Index.php
@@ -21,7 +14,6 @@ $url = $_SESSION['internal_route'] ?? 'auth/login';
  * httppd
  * 
  */
-
 
 /* Cargamos las configuraciones generales del config */ 
 require_once __DIR__.'/../config/Config.php';
@@ -74,11 +66,11 @@ $controllerFile = __DIR__ . '/../src/controllers/' . $controllerName . '.php';
 
 /**Verificar si existe el archivo del controlador */ 
 if (file_exists($controllerFile)) {
-    
     /** Llama a la clase controllador, en el default llama a AuthController.php
      * Ej 
      * $controllerFile = __DIR__.'/../src/controllers/AuthController.php'
-     * require_once = __DIR__.'/../src/controllers/AuthController.php' 
+     * require_once = __DIR__.'/../src/controllers/AuthController.php'
+     * 
      */
     require_once $controllerFile;
     

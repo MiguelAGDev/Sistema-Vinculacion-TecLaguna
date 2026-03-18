@@ -19,17 +19,12 @@ class UserController {
 
     public function index() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/usuariosView.php';
+        include __DIR__ . '/../views/usuarios.php';
     }
 
     public function perfil() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/perfilView.php';
-    }
-
-     public function agregar() {
-        $this->verificarSesion();
-        include __DIR__ . '/../views/agregarUsuarioView.php';
+        include __DIR__ . '/../views/perfil.php';
     }
     
     public function validarUsuario(){
@@ -40,4 +35,4 @@ class UserController {
         }
     }  
 }
-
+?>

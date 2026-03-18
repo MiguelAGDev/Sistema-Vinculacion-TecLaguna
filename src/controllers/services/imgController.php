@@ -1,30 +1,16 @@
 <?php
     require_once __DIR__ . '/../../../config/config.php';
-    
-    /**
-     * Summary of imgController
-     * Clase imgController, maneja la subida y limpieza de imagenes temporales para flyers
-     */
     class imgController{
 
-        /**
-         * Summary of uploadImage
-         * Maneja la subida de imagenes para flyers, valida y guarda en el servidor
-         * @return void 
-         */
         public function uploadImage(){
-            // Respuesta JSON
             header('Content-Type: application/json');
 
-            // Verifica si hay un archivo
             if(empty($_FILES['file']) || $_FILES['file']['error'] !== UPLOAD_ERR_OK){
-                // Error en la subida
                 http_response_code(400);
                 echo json_encode(['error'=> 'Error de subida']);
                 exit;
             }
 
-            // Procesa el archivo
             $file = $_FILES['file'];
 
             //Validaciones 
@@ -32,14 +18,12 @@
             $allowed_mimes = ['image/jpeg', 'image/png', 'image/gif'];
             $max_size_bytes = 5 * 1024 * 1024; //Limite del archivo (5Mb)
 
-            // Validacion de tipo y tamaño
             if(!in_array($mime_type, $allowed_mimes)){
                 http_response_code(400);
                 echo json_encode(['error'=> 'Archivo no permitido']);
                 exit;
             }
 
-            // Validacion de tamaño
             if($file['size'] > $max_size_bytes){
                 http_response_code(400);
                 echo json_encode(['error'=> 'Archivo demasiado grande (Max. 5MB']);
@@ -52,12 +36,10 @@
             $target_file = UPLOADS_PATH.'/img_flyers/'.$filename;
             $public_url = PUBLIC_IMG_FLYERS.$filename;
 
-            // Crear directorio si no existe
             if(!is_dir(UPLOADS_PATH)){
                 mkdir(UPLOADS_PATH, 0777 , true);
             }
 
-            // Mueve el archivo subido
             if(move_uploaded_file($file['tmp_name'], $target_file)){
                 $_SESSION['temp_images'][] = [
                     'url' => $public_url,
@@ -71,11 +53,6 @@
             }
         }
 
-        /**
-         * Summary of cleanTempImg
-         * Elimina las imagenes temporales no usadas en la sesion actual
-         * @return void 
-         */
         public function cleanTempImg(){
             if(session_status() === PHP_SESSION_NONE){
                 session_start();

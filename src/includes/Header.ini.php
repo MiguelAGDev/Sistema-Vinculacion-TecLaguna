@@ -21,7 +21,7 @@ $tipo = $_SESSION['tipo_usuario'] ?? 0;
 
       <?php elseif ($tipo === 2): // Admin ?>
         <li><a href="dashboard.php">Dashboard</a></li>
-        <li><a href="agregarUsuarioView.php">Agregar Usuarios</a></li>
+        <li><a href="agregarUsuario.php">Agregar Usuarios</a></li>
         <li><a href="reportes.php">Reportes</a></li>
 
       <?php elseif ($tipo === 3): // Empresa ?>
@@ -29,7 +29,7 @@ $tipo = $_SESSION['tipo_usuario'] ?? 0;
         <li><a href="postulantes.php">Postulantes</a></li>
 
       <?php else: // Usuario NO logueado ?>
-        <li><a href="loginView.php">Iniciar Sesión</a></li>
+        <li><a href="login.php">Iniciar Sesión</a></li>
       <?php endif; ?>
 
       <!-- Botón de Cerrar Sesión (solo si hay usuario logueado) -->

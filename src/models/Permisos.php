@@ -26,6 +26,7 @@ class Permisos{
 
     /* PERMISO DE EMPRESA (CRUD ADMIN) (bits 24-28) */
     const PERMISO_VER_EMPRESAS                 = 16777216;          // 2^24
+   // const PERMISO_CREAR_EMPRESA                = 33554432;  // 2^25
     const PERMISO_VALIDAR_EMPRESA               = 33554432;         // 2^25
     const PERMISO_EDITAR_EMPRESA                = 67108864;         // 2^26
     const PERMISO_ELIMINAR_EMPRESA              = 134217728;        // 2^27
@@ -33,14 +34,13 @@ class Permisos{
 
 
     /* PERMISO DE RESIDENTES Y EGRESADOS (bits 32 - 38) */
-    const PERMISO_SUBIR_PROYECTO_RESIDENTE      = 536870912;        // 2^29
-    const PERMISO_VER_PROYECTOS                 = 1073741824;       // 2^30
-    const PERMISOS_EVALUAR_PROYECTOS            = 2147483648;       // 2^31
-
-    const PERMISO_VER_EGRESADO                  = 4294967296;       // 2^32
-    const PERMISO_EDITAR_EGRESADO               = 8589934592;       // 2^33
-    const PERMISO_VER_POSTULACIONES             = 17179869184;      // 2^34
-    const PERMISO_VER_ESTADISTICAS              = 34359738368;      // 2^35 
+    const PERMISO_SUBIR_PROYECTO_RESIDENTE      = 536870912;        // 2^32
+    const PERMISO_VER_PROYECTOS                 = 1073741824;       // 2^33
+    const PERMISOS_EVALUAR_PROYECTOS            = 2147483648;       // 2^34
+    const PERMISO_VER_EGRESADO                  = 4294967296;       // 2^35
+    const PERMISO_EDITAR_EGRESADO               = 8589934592;       // 2^36
+    const PERMISO_VER_POSTULACIONES             = 17179869184;      // 2^37
+    const PERMISO_VER_ESTADISTICAS              = 34359738368;      // 2^38 
 
     
     public static function verificarPermiso ($permisos_Usuario,$permiso){

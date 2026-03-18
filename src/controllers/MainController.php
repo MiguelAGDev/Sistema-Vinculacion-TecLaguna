@@ -27,7 +27,7 @@ class MainController {
     }
 
     private function agregarUsuario() {
-        include 'views/agregarUsuarioView.php';
+        include 'views/agregarUsuario.php';
     }
 
     private function flyers() {
@@ -35,7 +35,7 @@ class MainController {
     }
 
     private function login() {
-        include 'views/loginView.php';
+        include 'views/login.php';
     }
     public function manage() {
         include 'adminFlyersManageController.php';
@@ -43,10 +43,10 @@ class MainController {
         $ver->index();
     }
      private function perfil() {
-        include 'views/perfilView.php';
+        include 'views/perfil.php';
     }
      private function usuarios() {
-        include 'views/loginView.php';
+        include 'views/login.php';
     }
     public function aprobar() {
     include 'adminFlyersManageController.php';

@@ -1,6 +1,4 @@
-
 /* Estilos específicos para el layout del formulario */
-
 .form-container {
     max-width: 800px;       /* Limita el ancho (puedes bajar a 700px si lo quieres más angosto) */
     width: 90%;             /* En móviles ocupará el 90% para dejar margenes a los lados */
