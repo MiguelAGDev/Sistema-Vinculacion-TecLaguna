@@ -19,12 +19,12 @@ class UserController {
 
     public function index() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/usuarios.php';
+        include __DIR__ . '/../views/usuariosView.php';
     }
 
     public function perfil() {
         $this->verificarSesion();
-        include __DIR__ . '/../views/perfil.php';
+        include __DIR__ . '/../views/perfilView.php';
     }
 
      public function agregar() {

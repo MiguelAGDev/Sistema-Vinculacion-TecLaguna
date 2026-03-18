@@ -43,7 +43,7 @@ class MainController {
         $ver->index();
     }
      private function perfil() {
-        include 'views/perfil.php';
+        include 'views/perfilView.php';
     }
      private function usuarios() {
         include 'views/loginView.php';
