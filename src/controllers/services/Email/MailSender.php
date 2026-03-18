@@ -28,26 +28,30 @@ class MailSender {
      * @param string $password Contraseña SMTP
      * @param int $port Puerto SMTP
      * @param bool $useTLS Indica si se debe usar TLS
+     * @return void
      */
 
     public function __construct(string $host, string $username, string $password, int $port,  bool $useTLS = true) 
     {
         // Instancia PHPMailer
         $this->mailer = new PHPMailer(true);
-$this->mailer->isSMTP();
-$this->mailer->Host = $host;
-$this->mailer->SMTPAuth = true;
-$this->mailer->Username = $username;
-$this->mailer->Password = $password;
-$this->mailer->Port = $port;
 
-$this->mailer->AuthType = 'LOGIN'; // ESTA ES LA QUE TE FALTABA
+        // Configuración SMTP
+        $this->mailer->isSMTP();
+        $this->mailer->Host = $host;
+        $this->mailer->SMTPAuth = true;
+        $this->mailer->Username = $username;
+        $this->mailer->Password = $password;
+        $this->mailer->Port = $port;
+        $this->mailer->CharSet = 'UTF-8';
 
-if ($useTLS) {
-    $this->mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
-}
+        $this->mailer->AuthType = 'LOGIN'; // ESTA ES LA QUE TE FALTABA
 
-$this->mailer->CharSet = 'UTF-8';
+        if ($useTLS) {
+            $this->mailer->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $this->mailer->SMTPDebug = 2;
+
+        }
     }
 
 

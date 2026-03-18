@@ -32,7 +32,7 @@ class AdminController{
     
     //metodo para mostrar la vista de agregar usuario
     public function agregar() {
-        include __DIR__ . '/../views/agregarUsuario.php';
+        include __DIR__ . '/../views/agregarUsuarioView.php';
     }
 
     /*  Método para mostrar la vista de perfil  */

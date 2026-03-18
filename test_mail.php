@@ -12,7 +12,7 @@ echo "AUTOLOAD CARGADO\n";
 // Configuraciones de correo (SMTP)
 define('SMTP_HOST','smtp.gmail.com');
 define('SMTP_USERNAME','alu.23130638@correo.itlalaguna.edu.mx');
-define('SMTP_PASSWORD','rgynpypvoblvuwma');
+define('SMTP_PASSWORD',value: 'rgynpypvoblvuwma');
 //define('SMTP_PASSWORD','feye armf rwwf lbxg');
 define('SMTP_PORT',587); 
 define('SENDER_EMAIL','alu.23130638@correo.itlalaguna.edu.mx');
@@ -27,9 +27,9 @@ use PHPMailer\PHPMailer\Exception;
 $mail = new PHPMailer(true);
 
 $mail->SMTPDebug = 2;
-$mail->Debugoutput = function($str, $level) {
-    echo "DEBUG: $str\n";
-};
+// $mail->Debugoutput = function($str, $level) {
+//     echo "DEBUG: $str\n";
+// };
 
 try {
 
