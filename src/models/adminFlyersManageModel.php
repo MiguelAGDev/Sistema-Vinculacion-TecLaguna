@@ -13,17 +13,18 @@ class adminFlyersManageModel {
      * Obtiene todos los flyers pendientes de moderación con info de empresa
      */
     public function getFlyersPendientes() {
-        $sql = "SELECT 
-                    f.FLAYER_ID,
-                    f.TITULO,
-                    f.DESCRIPCION,
-                    f.FECHA_CREACION,
-                    f.URL_IMAGEN,
-                    e.ID_EMPRESA,
-                    e.NOMBRE_EMPRESA
-                FROM FLYER f
-                INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA
-                ORDER BY f.FECHA_CREACION DESC";
+          $sql = "SELECT 
+                f.FLAYER_ID,
+                f.TITULO,
+                f.DESCRIPCION,
+                f.FECHA_CREACION,
+                f.URL_IMAGEN,
+                e.ID_EMPRESA,
+                e.NOMBRE_EMPRESA
+            FROM FLYER f
+            INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA
+            WHERE f.ESTADO IS NULL   -- SOLO PENDIENTES por que cuando estan pendietes por default son null
+            ORDER BY f.FECHA_CREACION DESC";
         
         try {
             // 1. Conectar (igual que en tu saveFlyer)
@@ -119,29 +120,63 @@ class adminFlyersManageModel {
     /**
      * Aprueba un flyer (lo hace visible para todos)
      */
-    // public function aprobarFlyer($id) {
-    //     $sql = "UPDATE FLAYER SET ACTIVO = 1 WHERE FLAYER_ID = ?";
-    //     $stmt = $this->conn->prepare($sql);
-    //     $stmt->bind_param("i", $id);
-    //     return $stmt->execute();
-    // }
+     public function aprobarFlyer($id) {
+    try {
+        //se conecta a la base de datos 
+        $conn = $this->db->conectar();
+        //sentencia que se va a ejecutar  
+        $sql = "UPDATE FLYER SET estado = 2 WHERE FLAYER_ID = :id";
+        //se prepara la sentencia
+        $stid = oci_parse($conn, $sql);
+        oci_bind_by_name($stid, ":id", $id);
+        //se ejecuta y a su vez se guarda en una variable el renglon
+        $resultado = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
+
+        oci_free_statement($stid);
+        //retorna el resultado
+        return $resultado;
+
+    } catch (Exception $e) {
+        error_log("Error al aprobar flyer: " . $e->getMessage());
+        return false;
+    }
+}
+
     
     /**
      * Rechaza un flyer (lo oculta del administrador)
+     * practicamente ahce lo mismo que aprobar pero ahora el estado es 1 que quiere decir que no se aprobo
      */
-    // public function rechazarFlyer($id) {
-    //     $sql = "UPDATE FLAYER SET ACTIVO = -1 WHERE FLAYER_ID = ?";
-    //     $stmt = $this->conn->prepare($sql);
-    //     $stmt->bind_param("i", $id);
-    //     return $stmt->execute();
-    // }
+     public function rechazarFlyer($id) {
+       try {
+        $conn = $this->db->conectar();
+
+        $sql = "UPDATE FLYER SET estado = 1 WHERE FLAYER_ID = :id";
+
+        $stid = oci_parse($conn, $sql);
+        oci_bind_by_name($stid, ":id", $id);
+
+        $resultado = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
+
+        oci_free_statement($stid);
+
+        return $resultado;
+
+    } catch (Exception $e) {
+        error_log("Error al rechazar el flyer: " . $e->getMessage());
+        return false;
+    }
+     }
     
     /**
      * Cuenta flyers pendientes
+     * en este metodo igual hacemos una cosnutla al abase de datos pero ejecuta un count cuando el estado es ju8ll asi 
+     * sabemos cuantos flyer estan pendientes
      */
     public function contarPendientes() {
-        // $sql = "SELECT COUNT(*) as total FROM FLAYER WHERE ACTIVO = 0 OR ACTIVO IS NULL";
-        $sql = "SELECT COUNT(*) as TOTAL FROM FLYER";
+        // $sql = "SELECT COUNT(*) as total FROM FLYER WHERE ESTADO = 0 OR ACTIVO IS NULL";
+        $sql = "SELECT COUNT(*) as TOTAL FROM FLYER
+                WHERE  ESTADO is NULL";
         
         try {
             // 1. Conectar
@@ -180,5 +215,46 @@ class adminFlyersManageModel {
             return 0;
         }
     }
+   /**
+     * Actualiza el Flyer
+     * si encontrmoa alguna irregularidad podemos modficarlo y subir alguno falta de ortografia, 
+     */
+   public function updateFlyer($id, $titulo, $descripcion, $imagenNueva = null) {
+    $conn = $this->db->conectar();
+    //validamos si hay una iamgen que cabias para ejecutar una sentencia distinta 
+    if ($imagenNueva) {
+        $sql = "UPDATE flyer 
+                SET titulo = :titulo,
+                    descripcion = :descripcion,
+                    url_imagen = :img
+                WHERE flayer_id = :id";
+    } else {
+        $sql = "UPDATE flyer 
+                SET titulo = :titulo,
+                    descripcion = :descripcion
+                WHERE flayer_id = :id";
+    }
+
+    $stid = oci_parse($conn, $sql);
+
+    // Bind normales
+    oci_bind_by_name($stid, ":titulo", $titulo);
+    oci_bind_by_name($stid, ":descripcion", $descripcion);
+    oci_bind_by_name($stid, ":id", $id);
+
+    if ($imagenNueva) {
+        oci_bind_by_name($stid, ":img", $imagenNueva);
+    }
+
+    $ok = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
+
+    // Logs útiles
+    error_log("UPDATE flyer ejecutado. ID: $id, OK: " . json_encode($ok));
+
+    oci_free_statement($stid);
+
+    return $ok;
+}
+
 }
 ?>

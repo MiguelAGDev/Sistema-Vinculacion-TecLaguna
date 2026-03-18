@@ -92,7 +92,9 @@ class AdminController{
 
     /*  Método para obtener los datos de un usuario por ID  */
       public function obtenerUsuarioPorId($id) {
-        return $this->adminModel->buscarUsuarioPorId($id);
+       
+         $row = $this->adminModel->buscarUsuarioPorId($id);
+         return $row;
     }
 
     /*  Método para modificar los datos de un usuario  */
@@ -115,10 +117,17 @@ class AdminController{
             $carrera
         );
 
-        if ($resultado) {
-           // echo "<script>alert('Cambios guardados correctamente');</script>";
-        } else {
-           // echo "<script>alert('Error al actualizar');</script>";
+       if ($resultado) {
+           echo "
+            <script>
+                alert('Cambios guardados correctamente');
+                window.location.replace(window.location.href);
+            </script>";
+
+            exit;
+        }
+        else {
+           echo "<script>alert('Error al actualizar');</script>";
         }
        }
     }

@@ -31,10 +31,13 @@ class FlyerSearchModel {
                     FROM FLYER f
                     INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA";
             
-            // Construir WHERE dinámicamente
+           // Construir WHERE dinámicamente
             $where_conditions = [];
             $bind_params = [];
-            
+
+            // Forzar solo flyers publicados
+            $where_conditions[] = "f.ESTADO = 2";
+
             // Filtro por empresas
             if (!empty($filters['empresa_ids']) && is_array($filters['empresa_ids'])) {
                 $placeholders = [];
@@ -212,8 +215,12 @@ class FlyerSearchModel {
                     FROM FLYER f
                     INNER JOIN EMPRESA e ON f.ID_EMPRESA = e.ID_EMPRESA";
             
-            $where_conditions = [];
-            $bind_params = [];
+           $where_conditions = [];
+           $bind_params = [];
+
+            // Forzar solo flyers publicados
+            $where_conditions[] = "f.ESTADO = 2";
+
             
             // Filtro por empresas
             if (!empty($filters['empresa_ids']) && is_array($filters['empresa_ids'])) {

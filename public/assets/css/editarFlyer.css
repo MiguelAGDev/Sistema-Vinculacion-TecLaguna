@@ -1,0 +1,95 @@
+/* ========================== CONTENEDOR PRINCIPAL ========================== */
+.editar-contenedor {
+  max-width: 750px;
+  margin: 40px auto;
+  background: var(--blanco);
+  padding: 35px 45px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Título y subtítulo */
+.editar-contenedor h2 {
+  color: var(--azul-institucional);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.editar-contenedor p {
+  color: var(--gris-oscuro);
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+
+/* ========================== FORMULARIO ========================== */
+.editar-form label {
+  font-weight: 600;
+  color: var(--azul-institucional);
+  display: block;
+  margin-bottom: 6px;
+  margin-top: 18px;
+}
+
+.editar-form input[type="text"],
+.editar-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--gris-claro);
+  border-radius: 10px;
+  background: #FAFBFC;
+  outline: none;
+  resize: none;
+  transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.editar-form input[type="text"]:focus,
+.editar-form textarea:focus {
+  border-color: var(--azul-institucional);
+  background: #fff;
+}
+
+.editar-form input[type="file"] {
+  margin-top: 8px;
+}
+
+/* ========================== IMAGEN ========================== */
+.imagen-actual-container {
+  text-align: center;
+  margin: 15px 0;
+}
+
+.imagen-actual-container img {
+  width: 260px;
+  border-radius: 12px;
+  border: 3px solid var(--gris-claro);
+}
+
+/* ========================== BOTÓN GUARDAR ========================== */
+.btn-guardar {
+  background: var(--dorado-acento);
+  color: var(--blanco);
+  font-weight: 600;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 25px;
+  width: 100%;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.btn-guardar:hover {
+  background: #b18c2f;
+}
+
+/* ========================== RESPONSIVE ========================== */
+@media (max-width: 600px) {
+  .editar-contenedor {
+    padding: 25px;
+  }
+
+  .imagen-actual-container img {
+    width: 200px;
+  }
+}
