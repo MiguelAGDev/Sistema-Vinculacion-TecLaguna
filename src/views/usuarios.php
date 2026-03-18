@@ -16,7 +16,7 @@
     require_once __DIR__.'/../controllers/AdminController.php';
     require_once __DIR__.'/../includes/Header.ini.php';
     require_once __DIR__.'/../controllers/LoginController.php';
-    $controlador = new AuthController();
+    $controlador = new AdminController();
     $resultado = null;
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
            $controlador->validar();

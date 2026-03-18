@@ -3,12 +3,9 @@
  * Controlador API para la barra de búsqueda
  * /src/controllers/services/SearchbarApiController.php
  */
+
 require_once ROOT_PATH . '/database/Conexion.php';
 
-/**
- * Summary of SearchbarController
- * Clase SearchbarController, maneja las solicitudes de búsqueda de tags
- */
 class SearchbarController {
     
     private $conexion;
@@ -198,8 +195,7 @@ class SearchbarController {
                 */
             }
             
-            /* Ordenar resultados por count (descendente)
-            */
+            // Ordenar resultados por count (descendente)
             usort($response['empresas'], function($a, $b) {
                 return $b['count'] - $a['count'];
             });
@@ -248,7 +244,6 @@ class SearchbarController {
         exit;
     }
     
-    /*  Destructor para cerrar la conexión */
     public function __destruct() {
         if ($this->conexion) {
             $this->conexion->desconectar();
@@ -258,3 +253,4 @@ class SearchbarController {
 
 // Este archivo es llamado desde ApiController->search()
 // No necesita verificación de llamada directa
+?>
