@@ -1,0 +1,30 @@
+.confirm-box {
+    width: 450px;
+    margin: 100px auto;
+    border: 1px solid #ddd;
+    padding: 25px;
+    background: #fff;
+}
+
+.confirm-box h2 {
+    margin-bottom: 15px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.btn-primary {
+    background: #0d6efd;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+}
+
+.btn-secondary {
+    background: #ccc;
+    padding: 8px 16px;
+    text-decoration: none;
+}

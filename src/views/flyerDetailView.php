@@ -3,7 +3,10 @@
  * VISTA: flyerDetailView.php
  * Vista de detalle de un flyer
  */
-
+    require_once __DIR__.'/../controllers/AuthController.php';
+    require_once __DIR__.'/../includes/Header.ini.php';
+    $controlador = new AuthController();
+    $controlador->requireLogin();
 $flyer = $viewData['flyer'] ?? null;
 $carreras = $viewData['carreras'] ?? [];
 $tipos_estudiante = $viewData['tipos_estudiante'] ?? [];
@@ -62,7 +65,7 @@ require_once __DIR__.'/../includes/Header.ini.php';
                         <?php foreach ($carreras as $carrera): ?>
                             <a href="/index.php?url=flyer/search&tag_carrera_id[]=<?php echo $carrera['ID_CARRERA']; ?>" 
                                class="tag-item carrera">
-                                🎓 <?php echo htmlspecialchars($carrera['NOMBRE_CARRERA']); ?>
+                                 <?php echo htmlspecialchars($carrera['NOMBRE_CARRERA']); ?>
                             </a>
                         <?php endforeach; ?>
 
@@ -70,11 +73,20 @@ require_once __DIR__.'/../includes/Header.ini.php';
                         <?php foreach ($tipos_estudiante as $tipo): ?>
                             <a href="/index.php?url=flyer/search&tag_tipo_estudiante_id[]=<?php echo $tipo['ID_TIPO_ESTUDIANTE']; ?>" 
                                class="tag-item tipo">
-                                👤 <?php echo htmlspecialchars($tipo['NOMBRE_TIPO']); ?>
+                                 <?php echo htmlspecialchars($tipo['NOMBRE_TIPO']); ?>
                             </a>
-                        <?php endforeach; ?>
+                            <!-- campo para la imagen-->
+                    <?php endforeach; ?>
                     </div>
+                    <?php if (!empty($flyer['URL_IMAGEN'])): ?>
+                      <div class="detail-image-container">
+                        <img src="<?php echo htmlspecialchars($flyer['URL_IMAGEN']); ?>" 
+                            alt="<?php echo htmlspecialchars($flyer['TITULO']); ?>"
+                            class="detail-image"
+                            style="max-width:600px; width:100%; height:auto; margin:20px auto; display:block;">
 
+                      </div>
+                    <?php endif; ?>
                     <!-- Fecha de publicación -->
                     <div class="detail-meta">
                         Publicado el 
@@ -93,7 +105,7 @@ require_once __DIR__.'/../includes/Header.ini.php';
                     <?php echo $flyer['DESCRIPCION']; ?>
                 </div>
             </main>
-
+            
             <!-- Sidebar con publicaciones recientes -->
             <aside class="detail-sidebar">
                 <div class="sidebar-section">

@@ -2,7 +2,7 @@ function toggleMenu(id) {
     const content = document.getElementById(id);
     const allDropdowns = document.querySelectorAll('.dropdown');
     const allButtons = document.querySelectorAll('.panel-option');
-
+ 
     
 
     // Cerrar todos los demás

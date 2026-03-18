@@ -1,23 +1,32 @@
 <?php
 require_once __DIR__ . '/../controllers/AdminController.php';
+require_once __DIR__ . '/../controllers/AuthController.php';
 
-$adminController = new adminController();
 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+$controlador = new AuthController();
+$controlador->requireLogin();
+
+$adminController = new AdminController();
+require_once __DIR__ . '/../includes/Header.ini.php';
+if (isset($_GET['id'])) {
+    $tipo = (int) $_GET['id'];   // perfil desde link
+} else {
+    $tipo = $_SESSION['user']['id'] ?? null; // perfil propio
 }
-if(isset($_GET['id'])){
-    $tipo =  $_GET['id'];
-}else{
-    $tipo = $_SESSION['id_usuario'] ?? null;
+
+if ($tipo === null) {
+    die("Usuario no válido.");
 }
 
 $datosUsuario = $adminController->obtenerUsuarioPorId($tipo);
+$u = $datosUsuario ?? [];
 
-        if (!$datosUsuario) {
-            die("No se encontró el usuario.");
-        }
+
+if (!$datosUsuario) {
+    die("No se encontró el usuario.");
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -46,29 +55,29 @@ require_once __DIR__.'/../includes/Header.ini.php';
             <img src="../../assets/img/user-default.png" alt="Foto de perfil">
         </div>
 
-        <h2 class="perfil-nombre"><?= htmlspecialchars($datosUsuario['NOMBRE_USUARIO']) ?></h2>
+        <h2 class="perfil-nombre"><?= htmlspecialchars($datosUsuario['NOMBRE_USUARIO'] ?? '') ?></h2>
         <p class="perfil-rol">Usuario del sistema</p>
 
         <form action="" method="POST" class="perfil-form">
 
-    <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($datosUsuario['ID_USUARIO']) ?>">
+    <input type="hidden" name="id_usuario" value="<?= htmlspecialchars($datosUsuario['ID_USUARIO'] ?? '') ?>">
 
     <div class="campo">
         <label for="nombre">Nombre</label>
         <input type="text" id="nombre" name="nombre"
-               value="<?= htmlspecialchars($datosUsuario['NOMBRE_USUARIO']) ?>" required>
+               value="<?= htmlspecialchars($datosUsuario['NOMBRE_USUARIO'] ?? '') ?>" required>
     </div>
 
     <div class="campo">
         <label for="correo">Correo</label>
         <input type="email" id="correo" name="correo"
-               value="<?= htmlspecialchars($datosUsuario['CORREO_USUARIO']) ?>" required>
+               value="<?= htmlspecialchars($datosUsuario['CORREO_USUARIO'] ?? '') ?>" required>
     </div>
 
     <div class="campo">
         <label for="telefono">Teléfono</label>
         <input type="tel" id="telefono" name="telefono"
-               value="<?= htmlspecialchars($datosUsuario['TELEFONO_USUARIO']) ?>">
+               value="<?= htmlspecialchars($datosUsuario['TELEFONO_USUARIO'] ?? '') ?>">
     </div>
 
     <!-- ===== ESTATUS MOSTRAR ===== -->
@@ -80,12 +89,17 @@ require_once __DIR__.'/../includes/Header.ini.php';
 
     <!-- ===== ESTATUS MODIFICAR ===== -->
     <div id="divEstatusModificar" class="campo" style="display:none;">
-        <label for="estatusModificar">Estatus</label>
-        <select id="estatusModificar" name="estatus">
-            <option value="1" <?= $datosUsuario['ACTIVO_USUARIO'] == 1 ? 'selected' : '' ?>>Activo</option>
-            <option value="0" <?= $datosUsuario['ACTIVO_USUARIO'] == 0 ? 'selected' : '' ?>>Inactivo</option>
-        </select>
-    </div>
+    <label for="estatusModificar">Estatus</label>
+    <select id="estatusModificar" name="estatus">
+        <option value="1" <?= ($datosUsuario['ACTIVO_USUARIO'] ?? '') === 1 ? 'selected' : '' ?>>
+            Activo
+        </option>
+        <option value="0" <?= ($datosUsuario['ACTIVO_USUARIO'] ?? '') !== 0 ? 'selected' : '' ?>>
+            Inactivo
+        </option>
+    </select>
+</div>
+
 
 
     <!-- ===== CARRERA MOSTRAR ===== -->
@@ -98,18 +112,30 @@ require_once __DIR__.'/../includes/Header.ini.php';
     <!-- ===== CARRERA MODIFICAR ===== -->
     <div id="divCarreraModificar" class="campo" style="display:none;">
         <label for="carreraModificar">Carrera</label>
+        <pre>
+<?php var_dump($datosUsuario['ID_CARRERA']); ?>
+</pre>
+
         <select id="carreraModificar" name="carrera">
-            <option value="">Seleccione una carrera</option>
-            <option value="1">Licenciatura en Administración</option>
-            <option value="2">Ingeniería en Eléctrica</option>
-            <option value="3">Ingeniería en Electrónica</option>
-            <option value="4">Ingeniería en Energías Renovables</option>
-            <option value="5">Ingeniería en Gestión Empresarial</option>
-            <option value="6">Ingeniería en Sistemas Computacionales</option>
-            <option value="7">Ingeniería Industrial</option>
-            <option value="8">Ingeniería Mecánica</option>
-            <option value="9">Ingeniería Mecatrónica</option>
-            <option value="10">Ingeniería Química</option>
+            <option value="1" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 1 ? 'selected' : '' ?>>Licenciatura en Administración</option>
+            <option value="2" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 2 ? 'selected' : '' ?>>Ingeniería en Eléctrica</option>
+            <option value="3" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 3 ? 'selected' : '' ?>>Ingeniería en Electrónica</option>
+
+            <option value="4" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 4 ? 'selected' : '' ?>>
+               Ingeniería en Energias Renovables
+            </option>
+
+           <option value="5" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 5 ? 'selected' : '' ?>>
+               Ingeniería en Gestion Empresarial
+            </option>
+            <option value="6" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 6 ? 'selected' : '' ?>>
+               Ingeniería en Sistemas Computacionales
+            </option>
+
+            <option value="7" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 7 ? 'selected' : '' ?>>Ingeniería Industrial</option>
+            <option value="8" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 8 ? 'selected' : '' ?>>Ingeniería Mecánica</option>
+            <option value="9" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 9 ? 'selected' : '' ?>>Ingeniería Mecatrónica</option>
+            <option value="10" <?= ($datosUsuario['ID_CARRERA'] ?? '') == 10 ? 'selected' : '' ?>>Ingeniería Química</option>
         </select>
     </div>
 
@@ -119,7 +145,10 @@ require_once __DIR__.'/../includes/Header.ini.php';
         <button type="button" class="btn-cancelar" id="cancelar" style="display:none;">Cancelar</button>
         <button type="submit" class="btn-guardar" id="guardar" name="guardar" style="display:none;">Guardar Cambios</button>
 
-        <?php $adminController->modficarUsuario(); ?>
+        <?php 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar'])){
+            $adminController->modficarUsuario();
+            } ?>
     </div>
 
 </form>

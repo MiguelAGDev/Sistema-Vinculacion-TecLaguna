@@ -32,7 +32,7 @@
             'wordcount'         // Contador de palabras
         ],
 
-        toolbar: 'undo redo | formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent mobileUpload | link | code fullscreen preview | removeformat help',
+        toolbar: 'undo redo | code formatselect | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent mobileUpload | link | fullscreen preview | removeformat help',
 
         paste_data_images: true,
         paste_as_text: false,
@@ -107,7 +107,7 @@
 
             const fileInput = document.getElementById('image-upload-trigger');
 
-            if (!fileInput.getAttribute('data-listener-added')) {
+            /*if (!fileInput.getAttribute('data-listener-added')) {
                 fileInput.addEventListener('change', function() {
                     const file = this.files[0];
                     if (file) {
@@ -116,7 +116,7 @@
                     this.value = ''; // Limpiar para permitir seleccionar la misma imagen de nuevo
                 });
                 fileInput.setAttribute('data-listener-added', 'true');
-            }
+            }*/ 
 
             editor.on('BeforeSetContent', function(e){
                 if (e.content.match(/^<img[^>]*>$/)) {

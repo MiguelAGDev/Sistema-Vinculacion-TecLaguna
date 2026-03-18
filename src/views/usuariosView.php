@@ -15,6 +15,16 @@
 <?php 
     require_once __DIR__.'/../controllers/AdminController.php';
     require_once __DIR__.'/../includes/Header.ini.php';
+    require_once __DIR__.'/../controllers/LoginController.php';
+    $controlador = new AuthController();
+    $resultado = null;
+    if($_SERVER['REQUEST_METHOD'] === 'POST'){
+           $controlador->validar();
+        }
+        if (isset($resultado['sesion_activa']) && $resultado['sesion_activa']){
+          header("Location: index.php?url=auth/confirmacion");
+          exit;
+        }
     $controlador = new AdminController();
 ?>
 <main>

@@ -307,7 +307,11 @@ body {
     color: #dc2626;
     border: 2px solid #dc2626;
 }
-
+.btn-edit {
+    background: #fff;
+    color: #f2d049;
+    border: 2px solid #f2d049;
+}
 .btn-reject:hover {
     background: #fef2f2;
     transform: translateY(-1px);
