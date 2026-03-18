@@ -1,5 +1,5 @@
-# Configuración de Base de Datos (Seguridad Crítica)
-config/database.php
+# Configuraciones del sistema
+config/
 
 # Logs y Temporales (Evita conflictos de merge)
 logs/
@@ -15,5 +15,5 @@ vendor/
 .idea/
 Thumbs.db
 
-#Base de datos
+# Carpeta de base de datos
 database/
