@@ -32,5 +32,5 @@ El diseño está orientado a ser modular, seguro, escalable y accesible, con un 
 git clone httpsgithub.comtuusuarioSistema-Vinculacion-TecLaguna.git
 cd Sistema-Vinculacion-TecLaguna
 # Configura tu servidor local (XAMPP, WAMP)
-# Configura la base de datos y ajusta configConfig.php
+# Configura la base de datos y ajusta configconfig.php
 # Accede a publicindex.html desde el navegador

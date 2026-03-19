@@ -25,7 +25,7 @@
 
 <body>
 
-  <?php require_once __DIR__.'/../includes/Header.ini.copy.php'; ?>
+  <?php  require_once INCLUDES_PATH.'Header.ini.copy.php'; ?>
 
   <main>
     <h2>Bienvenido al Portal de Servicios en Línea.</h2>
@@ -51,7 +51,7 @@
 
   <script src="https://kit.fontawesome.com/a2e0d6b8c1.js" crossorigin="anonymous"></script>
 
-  <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
+  <?php require_once INCLUDES_PATH.'Footer.ini.php'; ?>
 </body>
 </html>
 
