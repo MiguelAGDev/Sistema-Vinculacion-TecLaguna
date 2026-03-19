@@ -42,7 +42,7 @@ if (!$datosUsuario) {
 <body>
 
 <?php  
-require_once  require_once INCLUDES_PATH.'Header.ini.php';
+  require_once INCLUDES_PATH.'Header.ini.php';
 ?>
 
 <main class="perfil-wrapper">

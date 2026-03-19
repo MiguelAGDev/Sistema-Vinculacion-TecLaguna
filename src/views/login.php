@@ -1,6 +1,6 @@
 
 <?php
-    require_once __DIR__.'/../controllers/LoginController.php';
+    require_once CONTROLLERS_PATH. 'LoginController.php';
     $controlador = new AuthController();
     $resultado = null;
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
