@@ -25,6 +25,7 @@ class RegistroPendienteModel{
      */
     public function __construct(){
         $this->db = new Conexion();
+        $this->db = $this->db->conexión();
     }
 
 

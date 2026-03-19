@@ -6,9 +6,9 @@
 
 // La clase principal que envía correos
 
-namespace Services;
+namespace services;
 
-require_once ROOT_PATH . '/vendor/autoload.php';
+require_once VENDOR_PATH;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

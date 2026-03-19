@@ -4,7 +4,7 @@
  * /src/controllers/services/SearchbarApiController.php
  */
 
-require_once ROOT_PATH . '/database/Conexion.php';
+require_once ROOT_PATH . '/database/conexion.php';
 
 class SearchbarController {
     

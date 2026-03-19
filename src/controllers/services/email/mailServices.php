@@ -10,16 +10,16 @@
  * Services, maneja el envío de correos electrónicos
  */
 
-namespace Services\Email;
+namespace services\email;
 
-use Services\MailSender;
+use services\mailSender;
 
-class MailServices
+class mailServices
 {
-    private MailSender $sender;
+    private mailSender $sender;
 
     public function __construct(){
-        $this->sender = new MailSender(
+        $this->sender = new mailSender(
             host: SMTP_HOST,
             username: SMTP_USERNAME,
             password: SMTP_PASSWORD,

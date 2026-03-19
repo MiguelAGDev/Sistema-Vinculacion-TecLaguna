@@ -2,8 +2,8 @@
 /**
  * VISTA: adminFlyerManageView.php
  */
- require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
+ require_once CONTROLLERS_PATH.'AuthController.php';
+    require_once INCLUDES_PATH.'Header.ini.php';
     $controlador = new AuthController();
     $controlador->requireLogin();
     
@@ -17,7 +17,7 @@ $totalPendientes = $viewData['totalPendientes'] ?? 0;
 $mensaje = $viewData['mensaje'] ?? '';
 $tipo_mensaje = $viewData['tipo_mensaje'] ?? '';
 
-require_once __DIR__.'/../includes/Header.ini.php';
+require_once INCLUDES_PATH.'Header.ini.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -121,7 +121,7 @@ require_once __DIR__.'/../includes/Header.ini.php';
     <!-- Toast para notificaciones -->
     <div class="toast" id="toast" style="display: none;"></div>
     <!-- FOOTER -->
-    <?php require_once __DIR__.'/../includes/Footer.ini.php'; ?>
+    <?php require_once INCLUDES_PATH.'Footer.ini.php'; ?>
     <!-- JavaScript externo -->
     <script src="assets/js/moderacion.js"></script>
    <!--<script src="assets/js/validacion.js"></script>-->

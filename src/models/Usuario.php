@@ -1,7 +1,7 @@
 <?php 
 /** Esta clase requiere */
-require_once __DIR__. '/../../database/Conexion.php';
-require_once __DIR__.'/Permisos.php';
+require_once DATABASE_PATH;
+require_once MODELS_PATH . 'Permisos.php';
     class usuario {
         /** 
          * Summary of conn

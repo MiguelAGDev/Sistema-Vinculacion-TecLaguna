@@ -1,5 +1,5 @@
 <?php
-require_once ROOT_PATH.'/src/models/adminFlyersManageModel.php';
+require_once MODELS_PATH . 'adminFlyersManageModel.php';
 
 class adminFlyersManageController {
     private $model;
@@ -64,7 +64,7 @@ class adminFlyersManageController {
         
         // 3. Llamamos a la vista
         // Asegúrate de que el nombre del archivo coincida con el que tienes en tu carpeta views
-        require_once ROOT_PATH.'/src/views/adminFLyersManageView.php';
+        require_once VIEWS_PATH . 'adminFlyersManageView.php';
     }
     
     /**
@@ -93,7 +93,7 @@ class adminFlyersManageController {
         unset($_SESSION['tipo_mensaje']);
         
         // Llamamos a la misma vista (asumiendo que usas la misma interfaz para ver detalles)
-        require_once __DIR__ . '/../views/adminFlyerManageView.php';
+        require_once VIEWS_PATH . 'adminFlyerManageView.php';
     }
     
     /**
@@ -207,7 +207,7 @@ class adminFlyersManageController {
 }
 
     public function editar($id) {
-    require_once ROOT_PATH.'/src/models/adminFlyersManageModel.php';
+    require_once MODELS_PATH . 'adminFlyersManageModel.php';
     $model = new adminFlyersManageModel();
 
     // Obtener datos del flyer por medio de la id
@@ -223,7 +223,7 @@ class adminFlyersManageController {
         'flyer' => $flyer
     ];
 
-   require_once ROOT_PATH. '/src/views/editarFlyer.php';
+   require_once VIEWS_PATH . 'editarFlyer.php';
 }
 }
 ?>
