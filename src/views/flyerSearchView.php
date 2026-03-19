@@ -3,8 +3,10 @@
  * VISTA: flyerSearchView.php
  * Búsqueda de flyers con filtros y paginación
  */
- require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
+ require_once CONTROLLERS_PATH.'AuthController.php';
+ require_once INCLUDES_PATH.'Header.ini.php';
+
+     
     $controlador = new AuthController();
     $controlador->requireLogin();
     
@@ -29,14 +31,14 @@ $items_per_page = $viewData['items_per_page'] ?? 20;
     <link rel="stylesheet" href="/assets/css/flyerSearch.css">
 </head>
 <body>
-    <?php require_once __DIR__.'/../includes/Header.ini.php';?>
+    <?php require_once INCLUDES_PATH.'Header.ini.php';?>
 
     <main>
         <div class="search-container">
             <!-- Barra de búsqueda -->
             <div class="search-header">
                 <h1 class="search-title">Buscar Publicaciones</h1>
-                <?php require_once __DIR__.'/../includes/searchbar.ini.php'; ?>
+                <?php require_once INCLUDES_PATH.'searchbar.ini.php'; ?>
             </div>
 
             <!-- Información de resultados -->

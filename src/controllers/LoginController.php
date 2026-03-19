@@ -1,8 +1,8 @@
 <?php
 //si requiero de la sesion
-require_once __DIR__ .'/../../public/sesiones.php';
-require_once __DIR__ .'/../../database/Conexion.php';
-require_once __DIR__.'/../models/Permisos.php';
+require_once PUBLIC_PATH.'sesiones.php';
+require_once DATABASE_PATH;
+require_once MODELS_PATH.'Permisos.php';
 class loginController{
    // private $sesion; ya se como se usan las sesiones Sesion::start();
     private $conn;

@@ -1,7 +1,7 @@
 <?php 
 // src/views/flyer_form.php
-    require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
+    require_once CONTROLLERS_PATH.'AuthController.php';
+require_once INCLUDES_PATH.'Header.ini.php';
     $controlador = new AuthController();
     $controlador->requireLogin();
 $formData = $viewData['form_data'] ?? [];
@@ -24,7 +24,7 @@ $id = $viewData['id'] ?? null;
     <link rel="stylesheet" href="/assets/css/flyers_form.css">
 </head>
 <body>
-<?php require_once __DIR__.'/../includes/Header.ini.php';?>
+<?php require_once INCLUDES_PATH.'Header.ini.php';?>
 <div class="main-container">
     <div class="form-container">
         <h1>

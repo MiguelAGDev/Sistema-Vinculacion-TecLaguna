@@ -4,7 +4,7 @@
  * Ruta: index.php?url=api/flyer
  */
 
-require_once ROOT_PATH.'/src/models/adminFlyersManageModel.php';
+require_once MODELS_PATH.'adminFlyersManageModel.php';
 
 class FlyerApiController {
     private $model;
