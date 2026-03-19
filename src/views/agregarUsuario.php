@@ -145,7 +145,6 @@
       </form>           
     </section>
   </main>
-    <!--<?php require_once  INCLUDES_PATH.'Footer.php';?>-->
  
 </body>
 </html>

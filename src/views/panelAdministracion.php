@@ -93,6 +93,5 @@ require_once INCLUDES_PATH.'Header.ini.php';
 
 </form>
 
-<!--<?php require_once INCLUDES_PATH.'Footer.php';?>-->
 </body>
 </html>

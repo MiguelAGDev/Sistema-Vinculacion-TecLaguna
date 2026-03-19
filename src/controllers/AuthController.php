@@ -70,7 +70,7 @@ class AuthController {
         }
     }
     public function validacionC($correo, $contrasena) {
-   if(Sesion::tieneSesionActiva($this->con)){
+   if(Sesion::tieneSesionActiva($this->conn)){
     return [
         'sesion_activa'=> true,
         'usuario'=>Sesion::user()
