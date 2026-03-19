@@ -1,8 +1,5 @@
 <?php
 
-require_once __DIR__ . '/../config/config.php';
-require VENDOR_PATH;
-
 /* 16 de Noviembre 2025 01:36 AM */
 /** Sumary of Index.php
  * El index recibe las direcciones url para cada una de las 
@@ -16,8 +13,10 @@ require VENDOR_PATH;
  * 
  */
 
+
 /* Cargamos las configuraciones generales del config */ 
-require_once CONFIG_PATH;
+require_once __DIR__ . '/../config/config.php';
+require VENDOR_PATH;
 
 /** @var string $url Obtiene el valor de la ruta URL que se presenta al 
  * realizar un accion dentro del sistema y lo redirige a la ventana requerida. 
@@ -64,6 +63,11 @@ $method = $urlParts[1] ?? 'index';
  * $controllerFile = __DIR__ . '/../src/controllers/' . 'AuthController' . '.php'
  */
 $controllerFile = CONTROLLERS_PATH . $controllerName . '.php';
+
+// Evitar que usen puntos o rutas extrañas para navegar por tus carpetas
+if (strpos($url, '..') !== false || strpos($url, './') !== false) {
+    die("Acceso no permitido.");
+}
 
 /**Verificar si existe el archivo del controlador */ 
 if (file_exists($controllerFile)) {

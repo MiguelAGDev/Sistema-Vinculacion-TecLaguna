@@ -18,7 +18,7 @@ if (!$flyer) {
     exit;
 }
 
-require_once __DIR__.'/../includes/Header.ini.php';
+  require_once INCLUDES_PATH.'Header.ini.php';
 ?>
 <!DOCTYPE html>
 <html lang="es">
