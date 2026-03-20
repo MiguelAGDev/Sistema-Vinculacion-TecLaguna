@@ -249,11 +249,13 @@ if ($stmt2 !== null) {
 }
 
     public function buscarUsuarioPorId($id_usuario) {
+    // 1. Agregamos u.ID_CARRERA a la consulta
     $sql = "SELECT u.ID_USUARIO,
                    u.NOMBRE_USUARIO,
                    u.CORREO_USUARIO,
                    u.TELEFONO_USUARIO,
                    u.ACTIVO_USUARIO,
+                   u.ID_CARRERA, 
                    NVL(c.NOMBRE_CARRERA, 'SIN CARRERA ASIGNADA') AS NOMBRE_CARRERA
             FROM usuario u
             LEFT JOIN CARRERA c ON c.ID_CARRERA = u.ID_CARRERA
@@ -263,16 +265,17 @@ if ($stmt2 !== null) {
     oci_bind_by_name($stid, ":id", $id_usuario);
     oci_execute($stid);
 
+    // OCI_ASSOC es clave para que las llaves sean ID_USUARIO, ID_CARRERA, etc.
     $row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS);
 
     if (!$row) {
         return false;
     }
 
-    $row['ACTIVO_USUARIO'] =
-        ((int)$row['ACTIVO_USUARIO'] === 1)
-        ? 'ACTIVO'
-        : 'NO ESTA ACTIVO POR EL MOMENTO';
+    /* CONSEJO: No cambies el valor de ACTIVO_USUARIO a texto aquí 
+       si planeas usarlo para comparaciones numéricas en la vista o en el SELECT de estatus.
+       Es mejor dejarlo como 1 o 0 y que la Vista decida qué texto mostrar.
+    */
 
     return $row;
 }
@@ -280,35 +283,41 @@ if ($stmt2 !== null) {
     public function actUsuarios($id_usuario, $nombre, $correo, $telefono, $activo, $carrera) {
 
     $sql = "UPDATE usuario
-            SET nombre_usuario  = :nombre,
-                correo_usuario  = :correo,
+            SET nombre_usuario   = :nombre,
+                correo_usuario   = :correo,
                 telefono_usuario = :telefono,
-                activo_usuario  = :activo,
-                id_carrera      = :id_carrera
+                activo_usuario   = :activo,
+                id_carrera       = :id_carrera
             WHERE id_usuario = :id";
 
     $stmt = oci_parse($this->conn, $sql);
 
+    // Tipado de datos
     $id_usuario = (int)$id_usuario;
     $activo     = (int)$activo;
+    
+    // Manejo de carrera nula para Oracle
     $id_carrera = ($carrera === '' || $carrera === null) ? null : (int)$carrera;
 
+    // Binds
     oci_bind_by_name($stmt, ':nombre', $nombre);
     oci_bind_by_name($stmt, ':correo', $correo);
     oci_bind_by_name($stmt, ':telefono', $telefono);
-    oci_bind_by_name($stmt, ':activo', $activo);
-    oci_bind_by_name($stmt, ':id_carrera', $id_carrera);
-    oci_bind_by_name($stmt, ':id', $id_usuario);
+    oci_bind_by_name($stmt, ':activo', $activo, -1, SQLT_INT); // Especificamos que es entero
+    oci_bind_by_name($stmt, ':id_carrera', $id_carrera, -1, SQLT_INT); // Maneja mejor el NULL si es int
+    oci_bind_by_name($stmt, ':id', $id_usuario, -1, SQLT_INT);
 
+    // Ejecución con commit automático
     if (oci_execute($stmt, OCI_COMMIT_ON_SUCCESS)) {
-        oci_commit($this->conn);
+        // Ya no es necesario oci_commit() aquí porque usamos OCI_COMMIT_ON_SUCCESS
         return true;
     } else {
-        oci_rollback($this->conn);
+        // En caso de error grave
+        $e = oci_error($stmt);
+        // error_log($e['message']); // Opcional: para saber qué falló
         return false;
     }
 }
-
 }
-?>
+
 

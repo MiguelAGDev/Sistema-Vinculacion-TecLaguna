@@ -119,5 +119,82 @@ main {
   flex: 1; /* El contenido crece y empuja el footer hacia abajo */
 }
 
+/* ========================== FORMULARIOS GLOBALES ========================== */
 
+/* Contenedor de cada grupo (Label + Input) */
+.campo {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--azul-institucional); /* Usamos tu variable azul */
+    font-size: 0.95rem;
+}
+
+/* Estilo para Inputs y Selects */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+select {
+    padding: 10px 14px;
+    border: 1px solid var(--gris-claro);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--blanco);
+    color: var(--gris-oscuro);
+    transition: all 0.3s ease;
+    outline: none;
+    width: 100%;
+}
+
+/* Estilo específico para SELECT (Flecha personalizada) */
+select {
+    appearance: none; /* Quita la flecha nativa de Windows */
+    -webkit-appearance: none; 
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23003366' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 1.1rem;
+    padding-right: 40px;
+    cursor: pointer;
+    width: 100%; /* Muy importante para que no se encoja */
+    height: 42px; /* Altura consistente con los inputs */
+}
+
+/* Estado de Enfoque (Focus) */
+input:focus,
+select:focus {
+    border-color: var(--azul-institucional);
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.15); /* Azul translúcido */
+}
+
+/* Campos de solo lectura (Vista de perfil) */
+input[readonly] {
+    background-color: #f0f2f5;
+    color: #555;
+    border-color: var(--gris-claro);
+    cursor: default;
+}
+
+/* Botones base */
+.btn-primario {
+    background-color: var(--azul-institucional);
+    color: var(--blanco);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primario:hover {
+    background-color: #004080;
+}
 

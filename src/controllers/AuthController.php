@@ -45,6 +45,9 @@ class AuthController {
     public function flyerCreateView() {
         require_once __DIR__ . '/../views/flyerCreateView.php';
     }
+     public function registro() {
+        require_once __DIR__ . '/../views/agregarUsuario.php';
+    }
     /********************************************************************************************************* */
     /*****************************VALIDACION*************************************************************** 
      * Basiacemte es para entrar a la pagina existe un metodo en usuarios y lo que hace que que verifica si esta el correo
