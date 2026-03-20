@@ -167,85 +167,86 @@ class administrador{
          * 3 --> EGRESAD: ['idUsuario', 'anio_egreso', 'empleo']
          * 4 --> EMPRESA: ['idUsuario', 'nombre', 'correo', 'telefono', 'tipo']
         */
-        switch ($tipo){
-            //************************************  ALUMNO ***********************************// 
-            case '1':
-               $sql2 = "INSERT INTO alumno (id_usuario, matricula_alumno, semestre_alumno)
-                     VALUES (:id_usuario, :matricula_alumno,:semestre_alumno)";
+        // ... (parte inicial del oci_parse de la tabla usuario se mantiene igual)
 
-            $stmt2 = oci_parse($this->conn, $sql2);
-            
-            oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
-            oci_bind_by_name($stmt2, ":matricula_alumno", $datosExtra['matricula']);
-            oci_bind_by_name($stmt2, ":semestre_alumno", $datosExtra['semestre']);
-            break;
+// Inicializamos stmt2 como null
+$stmt2 = null;
 
-            //***********************************  RESIDENTE *************************************// 
-            case 2: 
-            $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_empresa)
-                     VALUES                (:id_usuario,EMPTY_BLOB(),:id_empresa)
-                     RETURNING proyecto_residente INTO :proyecto_residente";
-            $stmt2 = oci_parse($this->conn, $sql2);
-            $lob = oci_new_descriptor($this->conn, OCI_D_LOB);
-            
-            oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
-            oci_bind_by_name($stmt2, ":proyecto_residente", $lob, -1, OCI_B_BLOB);
-            oci_bind_by_name($stmt2, ":id_empresa", $datosExtra['empresa']);
-            break;
+switch ($tipo) {
+    case '1': // ALUMNO
+        $sql2 = "INSERT INTO alumno (id_usuario, matricula_alumno, semestre_alumno)
+                 VALUES (:id_usuario, :matricula_alumno, :semestre_alumno)";
+        $stmt2 = oci_parse($this->conn, $sql2);
+        oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
+        oci_bind_by_name($stmt2, ":matricula_alumno", $datosExtra['matricula']);
+        oci_bind_by_name($stmt2, ":semestre_alumno", $datosExtra['semestre']);
+        break;
 
-            //*********************************  EGRESADO *****************************************//
-            case 3: 
-            $sql2 = "INSERT INTO egresado (id_usuario, anio_egreso, empleo_actual)
-                     VALUES      (:id_usuario, :anio_egreso, :empleo_actual)";
-            $stmt2 = oci_parse($this->conn, $sql2);
-            oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
-            oci_bind_by_name($stmt2, ":anio_egreso", $datosExtra['anio_egreso']);
-            oci_bind_by_name($stmt2, ":empleo_actual", $datosExtra['empleo']);
-            break;
-           
-            //**************************************  EMPRESA ******************************************//
-            case 4: 
-            $sql2 = "INSERT INTO empresa ( nombre_empresa,correo_empresa,telefono_empresa,id_usuario,giro_empresa,tamanio_empresa,sector_empresa)
-                    VALUES               (:nombre,:correo,:telefono,:id_usuario,:giro_empresa,:tamanio_empresa,:sector_empresa)";
-                     
-            $stmt2 = oci_parse($this->conn, $sql2);
-            oci_bind_by_name($stmt2, ":nombre", $nombre);
-            oci_bind_by_name($stmt2, ":correo", $correo);
-            oci_bind_by_name($stmt2, ":telefono", $telefono);
-            oci_bind_by_name($stmt2, ":id_usuario", $id_usuario, 32);
-            oci_bind_by_name($stmt2, ":giro_empresa", $giro_empresa, 32);
-            oci_bind_by_name($stmt2, ":tamanio_empresa", $tamanio_empresa, 32);
-            oci_bind_by_name($stmt2, ":sector_empresa", $sector_empresa, 32);
-            break;
+    case '2': // RESIDENTE
+        $sql2 = "INSERT INTO residente (id_usuario, proyecto_residente, id_empresa)
+                 VALUES (:id_usuario, EMPTY_BLOB(), :id_empresa)
+                 RETURNING proyecto_residente INTO :proyecto_residente";
+        $stmt2 = oci_parse($this->conn, $sql2);
+        $lob = oci_new_descriptor($this->conn, OCI_D_LOB);
+        oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
+        oci_bind_by_name($stmt2, ":proyecto_residente", $lob, -1, OCI_B_BLOB);
+        oci_bind_by_name($stmt2, ":id_empresa", $datosExtra['empresa']);
+        break;
 
-        }
+    case '3': // EGRESADO
+        $sql2 = "INSERT INTO egresado (id_usuario, anio_egreso, empleo_actual)
+                 VALUES (:id_usuario, :anio_egreso, :empleo_actual)";
+        $stmt2 = oci_parse($this->conn, $sql2);
+        oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
+        oci_bind_by_name($stmt2, ":anio_egreso", $datosExtra['anio_egreso']);
+        oci_bind_by_name($stmt2, ":empleo_actual", $datosExtra['empleo']);
+        break;
 
-       if ($tipo === '2') {
-            if (oci_execute($stmt2, OCI_NO_AUTO_COMMIT)) {
-                if (/*$lob->save($datosExtra['proyecto'])*/ true) {
-                    /*oci_commit($this->conn);
-                    echo "<p style='color:green;'> Usuario y archivo insertados correctamente </p>";*/
-                } else {
-                    oci_rollback($this->conn);
-                    echo "<p style='color:red;'> Error al guardar el contenido del archivo </p>";
-                }
+    case '4': // EMPRESA
+        $sql2 = "INSERT INTO empresa (nombre_empresa, correo_empresa, telefono_empresa, id_usuario, giro_empresa, tamanio_empresa, sector_empresa)
+                 VALUES (:nombre, :correo, :telefono, :id_usuario, :giro, :tamanio, :sector)";
+        $stmt2 = oci_parse($this->conn, $sql2);
+        oci_bind_by_name($stmt2, ":nombre", $nombre);
+        oci_bind_by_name($stmt2, ":correo", $correo);
+        oci_bind_by_name($stmt2, ":telefono", $telefono);
+        oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
+        // CORRECCIÓN: Usar $datosExtra
+        oci_bind_by_name($stmt2, ":giro", $datosExtra['giro_empresa']);
+        oci_bind_by_name($stmt2, ":tamanio", $datosExtra['tamanio_empresa']);
+        oci_bind_by_name($stmt2, ":sector", $datosExtra['sector_empresa']);
+        break;
+
+    case '5':
+        // Si el admin no requiere tabla extra, no hacemos nada aquí
+        // pero evitamos que el código falle.
+        break;
+}
+
+// EJECUCIÓN FINAL SEGURA
+if ($stmt2 !== null) {
+    if ($tipo === '2') {
+        if (oci_execute($stmt2, OCI_NO_AUTO_COMMIT)) {
+            if ($lob->save($datosExtra['proyecto'])) {
+                oci_commit($this->conn);
+                echo "<p style='color:green;'> Residente insertado con éxito </p>";
             } else {
-                echo "<p style='color:red;'> Error al insertar usuario residente </p>";
+                oci_rollback($this->conn);
+                echo "Error al guardar BLOB";
             }
-        
             $lob->free();
-            oci_free_statement($stmt2);
-        
-        }else {
-
-            if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
-                echo "<p style='color:green;'> Usuario insertado </p>";
-            } else {
-                echo "<p style='color:red;'> Usuario no insertado </p>";
-            }
         }
-
+    } else {
+        if (oci_execute($stmt2, OCI_COMMIT_ON_SUCCESS)) {
+            echo "<p style='color:green;'> Datos adicionales insertados </p>";
+        }
     }
+    oci_free_statement($stmt2);
+} else {
+    // Si no hubo tabla secundaria (como el Admin), confirmamos el primer insert
+    oci_commit($this->conn);
+    echo "<p style='color:green;'> Administrador creado correctamente </p>";
+}
+}
 
     public function buscarUsuarioPorId($id_usuario) {
     $sql = "SELECT u.ID_USUARIO,
