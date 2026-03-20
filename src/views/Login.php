@@ -43,7 +43,9 @@
           <input type="password" name="contrasena" id="contrasena" placeholder="Contraseña" required />
 
           <button type="submit" class="btn-primary">ACCEDER</button>
-          <button type="button" class="btn-secondary" onclick="window.location.href='index.php?url=admin/agregar'">REGISTRARSE</button>
+         <button type="button" class="btn-secondary" onclick="window.location.href='index.php?url=admin/agregar&action=register'">
+    REGISTRARSE
+</button>
         </form>
       </div>
     </section>

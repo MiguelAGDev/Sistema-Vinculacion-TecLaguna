@@ -1,12 +1,20 @@
- <?php 
+<?php 
     require_once __DIR__.'/../controllers/AdminController.php';
+    require_once __DIR__.'/../controllers/AuthController.php';
     require_once __DIR__.'/../includes/Header.ini.php';
-     require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
+
     $controladorA = new AuthController();
-    $controladorA->requireLogin();
+
+    // 1. Validamos si la acción actual es de registro
+    $esRegistro = (isset($_GET['action']) && $_GET['action'] === 'register');
+
+    // 2. Solo exigimos login si NO es un intento de registro
+    if (!$esRegistro) {
+        $controladorA->requireLogin();
+    }
+
     $controlador = new AdminController();
-  ?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -88,21 +96,8 @@
          <label for="proyecto">Proyecto</label>
          <input type="file" name="archivo_proyecto" id="proyecto">
 
-
           <!-- <input type="text" id="proyecto" name="proyecto" placeholder="Proyecto"> -->
 
-          <label for="empresa">Empresa</label>
-          <select id="empresa" name="empresa" >
-            <option value="">Seleccione una empresa</option>
-            <option value="1">Tech Solutions SA</option>
-            <option value="2">InnovaSoft</option>
-            <option value="3">AgroMex</option>
-            <option value="4">Construcciones del Norte</option>
-            <option value="5">Servicios MÃ©dicos TorreÃ³n</option>
-            <option value="6">EducaPlus</option>
-            <option value="7">LogÃ­stica Express</option>
-          </select>
-        </div>
 
         <!-- Campos Egresado -->
         <div id="egresado" style="display: none;">

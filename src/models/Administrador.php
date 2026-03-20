@@ -190,7 +190,7 @@ switch ($tipo) {
         $lob = oci_new_descriptor($this->conn, OCI_D_LOB);
         oci_bind_by_name($stmt2, ":id_usuario", $id_usuario);
         oci_bind_by_name($stmt2, ":proyecto_residente", $lob, -1, OCI_B_BLOB);
-        oci_bind_by_name($stmt2, ":id_empresa", $datosExtra['empresa']);
+        oci_bind_by_name($stmt2, ":id_empresa", 1);
         break;
 
     case '3': // EGRESADO
