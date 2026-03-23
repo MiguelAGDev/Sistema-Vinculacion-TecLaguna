@@ -13,11 +13,10 @@
 <body>
 
 <?php 
-    require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
-    require_once __DIR__.'/../controllers/LoginController.php';
-    require_once __DIR__ . '/../controllers/AuthController.php';
-    $controlador = new AuthController();
+    require_once CONTROLLERS_PATH.'AdminController.php';
+    require_once INCLUDES_PATH.'Header.ini.php';
+    require_once CONTROLLERS_PATH.'LoginController.php';
+    $controlador = new AdminController();
     $resultado = null;
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
            $controlador->validar();
@@ -47,7 +46,6 @@
     
 </div>
         </main>
-<!--<?php require_once __DIR__.'/../includes/Footer.php';?>-->
 </body>
 </html>
 

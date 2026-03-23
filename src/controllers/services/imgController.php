@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ . '/../../../config/config.php';
+    require_once CONFIG_PATH;
     class imgController{
 
         public function uploadImage(){

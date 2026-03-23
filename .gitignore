@@ -1,1 +1,19 @@
-config/Config.php
+# Configuraciones del sistema
+config/
+
+# Logs y Temporales (Evita conflictos de merge)
+logs/
+*.log
+temp/
+
+# Dependencias (Se gestionan con Composer)
+vendor/
+
+# Archivos de Sistema y Entorno
+.env
+.vscode/
+.idea/
+Thumbs.db
+
+# Carpeta de base de datos
+database/

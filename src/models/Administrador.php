@@ -1,13 +1,12 @@
 <?php
 // Se requiere de la clase conexion, ya que este envia query's
 /**
- * @requires Conexion.php
+ * @requires conexion.php
  * Esta clase es la que realiza las conexiones directamente con
  * la base de datos, solo tiene constructor, conectar, desconectar
  *  y destructor
  */
-require_once __DIR__. '/../../database/Conexion.php';
-    
+require_once DATABASE_PATH;    
 /**
  * Summary of administrador
  * Clase que se ecarga de las operaciones relacionadas con el administrador

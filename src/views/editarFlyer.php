@@ -1,6 +1,6 @@
-<?php require_once __DIR__.'/../includes/Header.ini.php';
-    require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
+<?php require_once INCLUDES_PATH.'Header.ini.php';
+    require_once CONTROLLERS_PATH.'AuthController.php';
+require_once INCLUDES_PATH.'Header.ini.php';
     $controlador = new AuthController();
     $controlador->requireLogin();
 ?>

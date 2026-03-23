@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../controllers/AdminController.php';
-require_once __DIR__ . '/../controllers/AuthController.php';
+require_once CONTROLLERS_PATH. 'AdminController.php';
+require_once CONTROLLERS_PATH.'AuthController.php';
 
 $auth = new AuthController();
 $auth->requireLogin();
@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['guardar'])) {
     exit;
 }
 
+require_once INCLUDES_PATH.'Header.ini.php';
 if (isset($_GET['id'])) {
     $id_busqueda = (int) $_GET['id'];
 } else {
@@ -38,7 +39,11 @@ if (!$datosUsuario) { die("No se encontró el usuario."); }
 </head>
 <body>
 
-<?php require_once __DIR__.'/../includes/Header.ini.php'; ?>
+
+<?php  
+  require_once INCLUDES_PATH.'Header.ini.php';
+?>
+
 
 <main class="perfil-wrapper">
     <div class="perfil-banner"></div>

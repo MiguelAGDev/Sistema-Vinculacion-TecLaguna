@@ -1,8 +1,8 @@
-<?php 
-    require_once __DIR__.'/../controllers/AdminController.php';
-    require_once __DIR__.'/../controllers/AuthController.php';
-    require_once __DIR__.'/../includes/Header.ini.php';
-
+ <?php 
+    require_once CONTROLLERS_PATH.'AdminController.php';
+    require_once INCLUDES_PATH.'Header.ini.php';
+     require_once CONTROLLERS_PATH.'AuthController.php';
+    require_once  INCLUDES_PATH.'Header.ini.php';
     $controladorA = new AuthController();
 
     // 1. Validamos si la acción actual es de registro
@@ -140,7 +140,6 @@
       </form>           
     </section>
   </main>
-    <!--<?php require_once __DIR__.'/../includes/Footer.php';?>-->
  
 </body>
 </html>
