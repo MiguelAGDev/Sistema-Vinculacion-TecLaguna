@@ -1,6 +1,6 @@
 <?php
 // src/controllers/FlyerCreateController.php
-require_once SERVICE_PATH . '/PurifierService.php';
+require_once SERVICES_PATH . 'PurifierService.php';
 
 class FlyerController {
     private $model;
@@ -16,7 +16,7 @@ class FlyerController {
      * Muestra el formulario de creación
      */
     public function create() {
-        require_once __DIR__ . '/../models/flyerCreateModel.php';
+        require_once MODELS_PATH  . 'flyerCreateModel.php';
         $this->model = new FlyerCreateModel();
         // Preparar datos para la vista
         $viewData = [
@@ -33,14 +33,14 @@ class FlyerController {
         unset($_SESSION['form_data']);
         
         // Cargar la vista
-        require_once __DIR__ . '/../views/flyerCreateView.php';
+        require_once VIEWS_PATH . 'flyerCreateView.php';
     }
 
     /**
      * Procesa y guarda el formulario
      */
     public function store() {
-        require_once __DIR__ . '/../models/flyerCreateModel.php';
+        require_once MODELS_PATH . 'flyerCreateModel.php';
         $this->model = new FlyerCreateModel();
         // Verificar que sea una petición POST
         if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -186,7 +186,7 @@ class FlyerController {
 
     public function search(){
         // Cargar el modelo
-        require_once __DIR__ . '/../models/FlyerSearchModel.php';
+        require_once MODELS_PATH . 'FlyerSearchModel.php';
         $model = new FlyerSearchModel();
         
         // Procesar filtros desde GET
@@ -221,11 +221,11 @@ class FlyerController {
         ];
         
         // Cargar la vista
-        require_once __DIR__ . '/../views/flyerSearchView.php';
+        require_once VIEWS_PATH . 'flyerSearchView.php';
     }
 
     public function view() {
-        require_once __DIR__ . '/../models/flyerViewModel.php';
+        require_once MODELS_PATH . 'flyerViewModel.php';
         $model = new FlyerViewModel();
 
         // 1. Obtener y validar el ID
@@ -259,6 +259,6 @@ class FlyerController {
         ];
 
         // 6. Cargar la vista
-        require_once __DIR__ . '/../views/flyerDetailView.php';
+        require_once VIEWS_PATH . 'flyerDetailView.php';
     }
 }

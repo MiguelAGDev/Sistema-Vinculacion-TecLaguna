@@ -1,13 +1,13 @@
 <?php
-require_once __DIR__ . '/../controllers/AdminController.php';
-require_once __DIR__ . '/../controllers/AuthController.php';
+require_once CONTROLLERS_PATH. 'AdminController.php';
+require_once CONTROLLERS_PATH.'AuthController.php';
 
 
 $controlador = new AuthController();
 $controlador->requireLogin();
 
 $adminController = new AdminController();
-require_once __DIR__ . '/../includes/Header.ini.php';
+require_once INCLUDES_PATH.'Header.ini.php';
 if (isset($_GET['id'])) {
     $tipo = (int) $_GET['id'];   // perfil desde link
 } else {
@@ -42,7 +42,7 @@ if (!$datosUsuario) {
 <body>
 
 <?php  
-require_once __DIR__.'/../includes/Header.ini.php';
+  require_once INCLUDES_PATH.'Header.ini.php';
 ?>
 
 <main class="perfil-wrapper">

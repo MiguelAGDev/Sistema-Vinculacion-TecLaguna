@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../database/Conexion.php';
+require_once DATABASE_PATH;
 
 class Sesion {
 

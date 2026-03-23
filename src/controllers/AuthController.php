@@ -1,7 +1,8 @@
 <?php
- require_once __DIR__ .'/../../public/sesiones.php';
- require_once __DIR__ .'/../../database/Conexion.php';
- require_once __DIR__.'/../models/Permisos.php';
+
+ require_once PUBLIC_PATH . 'sesiones.php';
+ require_once DATABASE_PATH;
+ require_once MODELS_PATH . 'Permisos.php';
 class AuthController {
 /***************************************FUNCIONES PARA LAS VISTAS******************************************** 
  * nada mas no sirven para movernos por medio del index hay una para cada vista 
@@ -19,31 +20,31 @@ class AuthController {
     }
 
     public function login() {
-        include __DIR__ . '/../views/login.php';
+        include VIEWS_PATH . 'login.php';
     }
      public function confirmacion() {
-        include __DIR__ . '/../views/confirmacion.php';
+        include VIEWS_PATH . 'confirmacion.php';
     }
     public function agregarUsuario() {
-        include __DIR__ . '/../views/agregarUsuario.php';
+        include VIEWS_PATH . 'agregarUsuario.php';
     }
     public function panelAdministracion (){
-        include __DIR__.'/../views/panelAdministracion.php';
+        include VIEWS_PATH . 'panelAdministracion.php';
     }
       public function usuarios() {
-        require_once __DIR__ . '/../views/usuarios.php';
+        require_once VIEWS_PATH . 'usuarios.php';
     }
     public function main() {
-        require_once __DIR__ . '/../views/main.php';
+        require_once VIEWS_PATH . 'main.php';
     }
     public function adminFlyersManageView() {
-        require_once __DIR__ . '/../views/adminFlyersManageView.php';
+        require_once VIEWS_PATH . 'adminFlyersManageView.php';
     }
      public function perfil() {
-        require_once __DIR__ . '/../views/perfil.php';
+        require_once VIEWS_PATH . 'perfil.php';
     }
     public function flyerCreateView() {
-        require_once __DIR__ . '/../views/flyerCreateView.php';
+        require_once VIEWS_PATH . 'flyerCreateView.php';
     }
     /********************************************************************************************************* */
     /*****************************VALIDACION*************************************************************** 
@@ -69,7 +70,7 @@ class AuthController {
         }
     }
     public function validacionC($correo, $contrasena) {
-   if(Sesion::tieneSesionActiva($this->con)){
+   if(Sesion::tieneSesionActiva($this->conn)){
     return [
         'sesion_activa'=> true,
         'usuario'=>Sesion::user()
